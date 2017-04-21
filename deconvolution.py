@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import re
 import random
 
@@ -44,7 +45,7 @@ def get_molecules():
     37: { "name": "Myco_RP1", "data": "GCGGTGTGTACAAGACCCGA" },
     38: { "name": "Myco_RP2", "data": "GCGGTGTGTACAAAACCCGA" },
     39: { "name": "Myco_RP3", "data": "GCGGTGTGTACAAACCCCGA"},
-#template 48: { "name": "67634", "data": "GCGGTGTGTACAAACCCCGA"},
+#template 40: { "name": "67634", "data": "GCGGTGTGTACAAACCCCGA"},
   }
 
 def chunk(s, chunklen):
