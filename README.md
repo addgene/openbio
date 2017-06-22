@@ -12,5 +12,5 @@ This script was originally written by Benjie Chen and has been edited to assist 
 
 ## Deconvolution v2
 
-This version of the deconvolution script uses a csv file as input rather than hardcoded sequences within the script. The first column of the csv file should contain sequence ids, and the second column contain the associated sequences. The command to run this script should look like:
+This version of the deconvolution script uses a csv file as input rather than hardcoded sequences within the script. The first column of the csv file should contain sequence ids, and the second column should contain the associated sequences. The command to run this script should look like:
 ./deconvolution_v2.py /path/to/FASTQ /path/to/csv
