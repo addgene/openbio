@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import collections
 import csv
 import re
 import random
@@ -7,9 +8,7 @@ import random
 def get_molecules():
   with open(inputseqs, 'rb') as readinput:
     reader = csv.reader(readinput.read().splitlines())
-    with open('inputseqs_dict.csv', 'w') as seqsdict:
-      writer = csv.writer(seqsdict)
-      seqsdict = {rows[0]:rows[1] for rows in reader}
+    seqsdict = collections.OrderedDict(reader)
   return seqsdict
 
 def chunk(s, chunklen):
@@ -28,7 +27,7 @@ def uniquefy(molecules, chunklen, samplesize=None):
   # this is a little memory intensive
   counts = {}
 
-  chunked = {}
+  chunked = collections.OrderedDict()
   for molecule_id, molecule in molecules.iteritems():
     name = molecule_id
     sequence = molecule
@@ -64,7 +63,6 @@ def uniquefy(molecules, chunklen, samplesize=None):
     for s in unique_chunks:
       assert s not in all_unique
       all_unique[s] = molecule_id
-  print len_unique_chunks
   return (all_unique, chunked, len_unique_chunks)
 
 def get_fastq_reads(fn):
@@ -153,9 +151,7 @@ def analyze(fns, verbose=False):
           print "%s: %s" % (name, normalized_count)
       total += normalized_count
       seq_place += 1
-
     print "Percent Matches"
-
     if total > 0:
       for id, m in identified.iteritems():
         name = m["name"]
