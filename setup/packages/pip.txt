@@ -1,0 +1,5 @@
+flake8
+isort
+virtualenv
+virtualenv-clone
+virtualenvwrapper
