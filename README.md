@@ -1,6 +1,14 @@
 # Research
 Scripts and stuff that's useful and public from Addgene Research
 
+* setup - configure your mac workstation
+* tools - various scripts
+
+## Recombination
+Detect recombination in VGS data. FASTQ files containing the data are read from an input directory and processed to return the sequences before and after a seed sequence. The output are CSV files, one per FASTQ file and per seed sequence.
+
+This script was originally written by Benjie Chen and has been edited to assist in Addgene's Viral Genome Sequencing pipeline.
+
 ## Deconvolution
 Detect contaminating sequences in FASTQ files
 
