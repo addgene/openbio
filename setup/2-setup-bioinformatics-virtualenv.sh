@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ve_name="bioinformatics"
+ve_name="research-bioinformatics"
 
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
@@ -18,10 +18,11 @@ fi
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd $script_dir
 
-workon $ve_name
+
+workon $ve_name || echo "virtualenv does not exist, creating it..."
 
 if [ $? -ne 0 ]; then
-    mkvirtualenv $ve_name
+    mkvirtualenv $ve_name -p python2.7
 fi
 
 workon $ve_name
