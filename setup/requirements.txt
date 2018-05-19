@@ -1,1 +1,2 @@
 biopython==1.71
+click==6.7
