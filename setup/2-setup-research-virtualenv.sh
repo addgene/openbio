@@ -31,4 +31,4 @@ workon $ve_name
 
 pip install pip==9.0.3
 
-pip install -r requirements.txt
+pip install -r ../requirements.txt
