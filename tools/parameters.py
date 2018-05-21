@@ -6,8 +6,8 @@ TAIL = 60
 HEAD = 60
 
 seed_sequences = {
-  "loxP":    "TAAAGCGGCCGTCGACGATAT",
-  "lox2272": "GGTCGATGGTGAAGCATTGGT",
+  "before_loxP":    "TAAAGCGGCCGTCGACGATAT",
+  "before_lox2272": "GGTCGATGGTGAAGCATTGGT",
 }
 
 # Change these to the folders you prefer - use an absolute path if necessary, e.g. /Users/Harry/fastq-data and
