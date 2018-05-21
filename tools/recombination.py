@@ -3,7 +3,7 @@ import glob
 import os
 import sys
 from Bio import SeqIO
-from parameters import HEAD, TAIL, seed_sequences
+from parameters import HEAD, TAIL, seed_sequences, input_folder, output_folder
 
 
 def split_pattern(pattern, seed_sequence):
@@ -79,13 +79,11 @@ def process(fn, seed_sequence_name, seed_sequence):
 
 @click.command(context_settings=dict(help_option_names=['-h', '--help']))
 @click.option('--input',
-              default='data',
-              prompt='Folder with input files. <ENTER> for default.',
+              default='',
               help='Folder with input FASTQ files. Full path or relative to here. Defaults to the relative folder "data". '
                    'Example: /Users/Harry/fastq-data')
 @click.option('--output',
-              default='data',
-              prompt='Folder for output files. <ENTER> for default.',
+              default='',
               help='Folder for output CSV files. Full path or relative to here. If the folder doesn\'t exist '
                    'it will be created. Defaults to the relative folder "data". '
                    'Example: /Users/Harry/csv-data')
@@ -95,6 +93,12 @@ def process_all(input, output):
     an input folder and processed to return the sequences before and after a seed sequence.
     The output are CSV files, one per FASTQ file and per seed sequence.'
     """
+    if not input:
+        input = input_folder
+
+    if not output:
+        output = output_folder
+
     if not os.path.isdir( input ):
         raise ValueError('The folder ' + input + ' does not exist.')
 
