@@ -18,9 +18,6 @@ fi
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd $script_dir
 
-git_dir=$(git rev-parse --show-toplevel)
-pushd $git_dir
-
 workon $ve_name
 
 if [ $? -ne 0 ]; then
@@ -34,3 +31,4 @@ pip install pip==9.0.3
 pip install -r ../requirements.txt
 
 echo "source virtualenvwrapper.sh" >> $HOME/.bash_profile
+
