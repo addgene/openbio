@@ -80,13 +80,13 @@ def process(fn, seed_sequence_name, seed_sequence):
 @click.command(context_settings=dict(help_option_names=['-h', '--help']))
 @click.option('--input',
               default='',
-              help='Folder with input FASTQ files. Full path or relative to here. Defaults to the relative folder "data". '
-                   'Example: /Users/Harry/fastq-data')
+              help='Override folder with input FASTQ files defined in parameters.py.'
+                   'Full path or relative to here. Example: /Users/Harry/fastq-data')
 @click.option('--output',
               default='',
-              help='Folder for output CSV files. Full path or relative to here. If the folder doesn\'t exist '
-                   'it will be created. Defaults to the relative folder "data". '
-                   'Example: /Users/Harry/csv-data')
+              help='Override folder for output CSV files defined in parameters.py. '
+                   'Full path or relative to here. If the folder doesn\'t exist '
+                   'it will be created. Example: /Users/Harry/csv-data')
 def process_all(input, output):
     """
     Detect recombination in VGS data. FASTQ files containing the data are read from
