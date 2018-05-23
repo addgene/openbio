@@ -7,7 +7,7 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo -e "\n** Creating / updating global prerequisites...\n"
 $script_dir/1-setup-usr-local.sh $1
 
-echo -e "\n** Creating / updating Bioinformatics virtual environment...\n"
+echo -e "\n** Creating / updating virtual environment...\n"
 $script_dir/2-setup-research-virtualenv.sh $1
 
 echo -e "\n---\n"
