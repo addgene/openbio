@@ -32,3 +32,5 @@ workon $ve_name
 pip install pip==9.0.3
 
 pip install -r ../requirements.txt
+
+echo "source virtualenvwrapper.sh" >> $HOME/.bash_profile
