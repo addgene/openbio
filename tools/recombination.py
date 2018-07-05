@@ -15,6 +15,7 @@ class GlobalData(object):
         self.total_reads = 0
         self.seed_occurrences = 0
         self.full_sequence_occurrences = 0
+        self.recombination_occurrences = 0
         self.recombination_percentage = 0
 
 
@@ -80,7 +81,8 @@ class Processor(object):
         ]
 
         recombination_occurrences = patterns[recombined_patterns[0]] + patterns[recombined_patterns[1]]
-        self. global_data.recombination_percentage = 100 * (
+        self.global_data.recombination_occurrences = recombination_occurrences
+        self.global_data.recombination_percentage = 100 * (
                 recombination_occurrences /
                 (recombination_occurrences + patterns[reference_patterns[0]] + patterns[reference_patterns[1]])
         )
@@ -148,6 +150,8 @@ class Processor(object):
                          ('Occurrences of a Full Sequence (includes both strands)',
                           self.global_data.full_sequence_occurrences, '', '', '', ''))
 
+            file.write('%s,%s,%s,%s,%s,%s\n' %
+                         ('Recombination occurrences', self.global_data.recombination_occurrences, '', '', '', ''))
             file.write('%s,%s,%s,%s,%s,%s\n' %
                          ('% Recombination', self.global_data.recombination_percentage, '', '', '', ''))
 
