@@ -1,4 +1,5 @@
-import argparse
+from __future__ import division
+
 import os
 
 import click
@@ -45,7 +46,7 @@ class Processor(object):
     def _process_one_file(self, input_file):
         filename = os.path.basename(input_file)
         reads = read_fastq_file(input_file)
-        number_of_reads = len(reads)
+        number_of_reads = len(reads) / 2
 
         signature_counts = []
         for name, signature in params.signatures.iteritems():
