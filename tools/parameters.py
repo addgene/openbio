@@ -4,8 +4,8 @@ class Recombination_Parameters(object):
     # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
     # /Users/Harry/csv-data or a path relative to the tools directory.
     # You may use the same folder for input and output.
-    input_folder = "/Users/Daniela/Home/Dev/Workspace/research/data/bla"
-    output_folder = "/Users/Daniela/Home/Dev/Workspace/research/data/bla"
+    input_folder = "data"
+    output_folder = "data"
 
     # The number of bases to retrieve before the seed sequence
     HEAD = 10
@@ -25,8 +25,8 @@ class Serotype_Report_Parameters(object):
     # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
     # /Users/Harry/csv-data or a path relative to the tools directory.
     # You may use the same folder for input and output.
-    input_folder = "/Users/Daniela/Home/Dev/Workspace/research/data/bla"
-    output_folder = "/Users/Daniela/Home/Dev/Workspace/research/data/bla"
+    input_folder = "data"
+    output_folder = "data"
 
     # These are the signatures that will be matched. The first part is the name, the second part is the actual signature
     signatures = {
