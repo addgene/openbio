@@ -1,12 +1,15 @@
 from __future__ import division
-from collections import Counter, OrderedDict
+from collections import Counter
 
+import argparse
 import click
-import glob
+import logging
 import os
 import sys
-from Bio import SeqIO
-from parameters import HEAD, TAIL, seed_sequences, input_folder, output_folder
+from parameters import Recombination_Parameters as params
+from utils import get_fastq_files, read_fastq_file, setup_dirs,log_to_stdout
+
+L = logging.getLogger(__name__)
 
 
 class GlobalData(object):
@@ -45,18 +48,14 @@ class Processor(object):
         """
         Processes FASTQ input file and returns a list of CSV rows
         """
-        reads = []
-        with open(self.input_file, "rU") as handle:
-            for record in SeqIO.parse(handle, "fastq"):
-                reads.append(str(record.seq))
-                reads.append(str(record.seq.reverse_complement()))
+        reads = read_fastq_file(self.input_file)
 
         self.global_data.total_reads = len(reads) / 2
         self.global_data.seed_occurrences = sum(1 for read in reads if self.seed_sequence in read)
-        patterns = Counter(
-                pattern for pattern in (self._extract_pattern(read) for read in reads)
-                if pattern
-        )
+        extracted_patterns = [self._extract_pattern(read) for read in reads]
+
+        patterns = Counter(pattern for pattern in extracted_patterns if pattern)
+
         self.global_data.full_sequence_occurrences = sum(patterns.values())
         return self._patterns_to_rows(patterns)
 
@@ -98,7 +97,7 @@ class Processor(object):
                 elif pattern.head_sequence not in reference_heads and pattern.tail_sequence in reference_tails:
                     note = "Tail match"
             rows.append(
-                '%s,%s,%s,%s,%s,%s\n' % (pattern.head_sequence, self.seed_sequence,
+                '{},{},{},{},{},{}\n'.format(pattern.head_sequence, self.seed_sequence,
                                          pattern.tail_sequence, pattern.full_pattern, occurrences, note))
 
         return rows
@@ -107,18 +106,18 @@ class Processor(object):
         if self.seed_sequence in read:
             seed_sequence_start = read.index(self.seed_sequence)
             # Seed sequence is too close to the beginning of the read
-            if seed_sequence_start < HEAD:
+            if seed_sequence_start < params.HEAD:
                 return None
 
             seed_sequence_end = seed_sequence_start + len(self.seed_sequence)
             # Seed sequence is too close to the end of the read
-            if len(read) - seed_sequence_end <  TAIL:
+            if len(read) - seed_sequence_end <  params.TAIL:
                 return None
 
-            head_sequence = read[seed_sequence_start - HEAD: seed_sequence_start]
-            assert len(head_sequence) == HEAD
-            tail_sequence = read[seed_sequence_end: seed_sequence_end + TAIL]
-            assert len(tail_sequence) == TAIL
+            head_sequence = read[seed_sequence_start - params.HEAD: seed_sequence_start]
+            assert len(head_sequence) == params.HEAD
+            tail_sequence = read[seed_sequence_end: seed_sequence_end + params.TAIL]
+            assert len(tail_sequence) == params.TAIL
             return Pattern(head_sequence, self.seed_sequence, tail_sequence)
 
     @staticmethod
@@ -135,98 +134,88 @@ class Processor(object):
         output_file_no_path = self._get_output_file_name(input_file_no_path)
         output_file = os.path.join(output_directory, output_file_no_path)
 
+        row_pattern = '{},{},{},{},{},{}\n'
         with open(output_file, 'w') as file:
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('File Name', input_file_no_path, '', '', '', ''))
+            file.write(row_pattern.format(
+                    'File Name',
+                    input_file_no_path,
+                    '', '', '', ''
+            ))
 
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('Total Reads', self.global_data.total_reads, '', '', '', ''))
+            file.write(row_pattern.format(
+                    'Total Reads',
+                    self.global_data.total_reads,
+                    '', '', '', ''
+            ))
 
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('Occurrences of ' + self.global_data.seed_sequence_name + ' (includes both strands)',
-                          self.global_data.seed_occurrences, '', '', '', ''))
+            file.write(row_pattern.format(
+                    'Occurrences of {} (includes both strands)'.format(self.global_data.seed_sequence_name),
+                    self.global_data.seed_occurrences,
+                    '', '', '', ''
+            ))
 
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('Occurrences of a Full Sequence (includes both strands)',
-                          self.global_data.full_sequence_occurrences, '', '', '', ''))
+            file.write(row_pattern.format(
+                    'Occurrences of a Full Sequence (includes both strands)',
+                    self.global_data.full_sequence_occurrences,
+                    '', '', '', ''
+            ))
 
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('Recombination occurrences', self.global_data.recombination_occurrences, '', '', '', ''))
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('% Recombination', self.global_data.recombination_percentage, '', '', '', ''))
+            file.write(row_pattern.format(
+                    'Recombination occurrences',
+                    self.global_data.recombination_occurrences,
+                    '', '', '', ''
+            ))
+            file.write(row_pattern.format('% Recombination', self.global_data.recombination_percentage, '', '', '', ''))
 
             file.write(',,,,,\n')
-            file.write('%s,%s,%s,%s,%s,%s\n' %
-                         ('Preceding ' + str(HEAD) + ' bases',
-                          self.global_data.seed_sequence_name,
-                          'Subsequent ' + str(TAIL) + ' bases',
-                          'Full Sequence',
-                          'Occurrences',
-                          'Notes'))
+            file.write(row_pattern.format(
+                    'Preceding {} bases'.format(params.HEAD),
+                    self.global_data.seed_sequence_name,
+                    'Subsequent {} bases'.format(params.TAIL),
+                    'Full Sequence',
+                    'Occurrences',
+                    'Notes'
+            )
+            )
             for row in rows:
                 file.write(row)
         return output_file
 
     def _get_output_file_name(self, input_file):
-        return (
-                input_file[:input_file.index('.fastq')]
-                + '-' + str(HEAD) + '-' + self.global_data.seed_sequence_name + '-' + str(TAIL)
-                + '.csv'
+        return '{}-{}-{}-{}.csv'.format(
+                input_file[:input_file.index('.fastq')],
+                params.HEAD,
+                self.global_data.seed_sequence_name,
+                params.TAIL
         )
 
-
-#### Commmand
-
+##### Command #####
 @click.command(context_settings=dict(help_option_names=['-h', '--help']))
-@click.option('--input',
-              default='',
-              help='Override folder with input FASTQ files defined in parameters.py.'
-                   'Full path or relative to here. Example: /Users/Harry/fastq-data')
-@click.option('--output',
-              default='',
-              help='Override folder for output CSV files defined in parameters.py. '
-                   'Full path or relative to here. If the folder doesn\'t exist '
-                   'it will be created. Example: /Users/Harry/csv-data')
-def recombination_command(input, output):
+def recombination_command():
     """
     Detect recombination in VGS data. FASTQ files containing the data are read from
     an input folder and processed to return the sequences before and after a seed sequence.
     The output are CSV files, one per FASTQ file and per seed sequence.'
     """
-    if not input:
-        input = input_folder
-
-    if not output:
-        output = output_folder
-
-    if not os.path.isdir(input):
-        raise ValueError('The folder ' + input + ' does not exist.')
-
-    if not os.path.isdir(output):
-        click.echo('\nThe folder ' + output + ' does not exist. Creating it...\n')
-        os.mkdir(output)
-
-    # grab all files ending in .fastq
-    input_files = [input_file for input_file in glob.glob("%s/*.fastq" % input)]
-    if not input_files:
-        click.echo('No FASTQ files in folder: ' + input)
-
+    setup_dirs(params)
+    input_files = get_fastq_files(params)
     output_files = []
     for input_file in input_files:
-        for seed_sequence_name, seed_sequence in seed_sequences.items():
-            click.echo('Processing file: ' + input_file + ' with seed sequence: ' + seed_sequence_name + '...')
+        for seed_sequence_name, seed_sequence in params.seed_sequences.items():
+            L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
             processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
-            output_file = processor.process_and_write_to_file(output)
+            output_file = processor.process_and_write_to_file(params.output_folder)
             output_files.append(output_file)
 
-    print('\nDone! Your output is in the following ' + str(len(output_files)) + ' files:')
+    L.info('\nDone! Your output is in the following {} files:'.format(str(len(output_files))))
     for output_file in output_files:
-        click.echo(output_file)
+        L.info(output_file)
 
 
 if __name__ == "__main__":
+    log_to_stdout(logging.INFO)
     try:
         recombination_command()
     except ValueError as e:
-        click.echo('\nError: ' + e.message)
+        L.error('\nError: {}'.format(e.message))
         sys.exit(1)
