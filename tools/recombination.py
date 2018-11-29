@@ -1,15 +1,41 @@
 from __future__ import division
 from collections import Counter
 
-import argparse
 import click
 import logging
 import os
 import sys
+
+from pandas import DataFrame
+
 from parameters import Recombination_Parameters as params
 from utils import get_fastq_files, read_fastq_file, setup_dirs,log_to_stdout
 
 L = logging.getLogger(__name__)
+
+#### Command ####
+@click.command()
+def recombination():
+    """
+    Detect recombination in VGS data. FASTQ files containing the data are read from
+    an input folder and processed to return the sequences before and after a seed sequence.
+    The output are CSV files, one per FASTQ file and per seed sequence.'
+    """
+    setup_dirs(params)
+    input_files = get_fastq_files(params)
+    output_files = []
+    for input_file in input_files:
+        for seed_sequence_name, seed_sequence in params.seed_sequences.items():
+            L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
+            processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
+            output_file = processor.process_and_write_to_file(params.output_folder)
+            output_files.append(output_file)
+
+    L.info('\nDone! Your output is in the following {} files:'.format(str(len(output_files))))
+    for output_file in output_files:
+        L.info(output_file)
+
+##################
 
 
 class GlobalData(object):
@@ -97,8 +123,9 @@ class Processor(object):
                 elif pattern.head_sequence not in reference_heads and pattern.tail_sequence in reference_tails:
                     note = "Tail match"
             rows.append(
-                '{},{},{},{},{},{}\n'.format(pattern.head_sequence, self.seed_sequence,
-                                         pattern.tail_sequence, pattern.full_pattern, occurrences, note))
+                    (pattern.head_sequence, self.seed_sequence, pattern.tail_sequence,
+                     pattern.full_pattern, occurrences, note)
+            )
 
         return rows
 
@@ -134,88 +161,43 @@ class Processor(object):
         output_file_no_path = self._get_output_file_name(input_file_no_path)
         output_file = os.path.join(output_directory, output_file_no_path)
 
-        row_pattern = '{},{},{},{},{},{}\n'
-        with open(output_file, 'w') as file:
-            file.write(row_pattern.format(
-                    'File Name',
-                    input_file_no_path,
-                    '', '', '', ''
-            ))
+        preamble = []
+        preamble.append(('File Name', input_file_no_path))
+        preamble.append(('Total Reads', self.global_data.total_reads))
+        preamble.append(('Occurrences of {} (includes both strands)'.format(self.global_data.seed_sequence_name),
+                    self.global_data.seed_occurrences))
+        preamble.append(('Occurrences of a Full Sequence (includes both strands)',
+                    self.global_data.full_sequence_occurrences))
+        preamble.append(('Recombination occurrences',
+                    self.global_data.recombination_occurrences))
+        preamble.append(('% Recombination', self.global_data.recombination_percentage))
+        preamble.append(('',''))
 
-            file.write(row_pattern.format(
-                    'Total Reads',
-                    self.global_data.total_reads,
-                    '', '', '', ''
-            ))
-
-            file.write(row_pattern.format(
-                    'Occurrences of {} (includes both strands)'.format(self.global_data.seed_sequence_name),
-                    self.global_data.seed_occurrences,
-                    '', '', '', ''
-            ))
-
-            file.write(row_pattern.format(
-                    'Occurrences of a Full Sequence (includes both strands)',
-                    self.global_data.full_sequence_occurrences,
-                    '', '', '', ''
-            ))
-
-            file.write(row_pattern.format(
-                    'Recombination occurrences',
-                    self.global_data.recombination_occurrences,
-                    '', '', '', ''
-            ))
-            file.write(row_pattern.format('% Recombination', self.global_data.recombination_percentage, '', '', '', ''))
-
-            file.write(',,,,,\n')
-            file.write(row_pattern.format(
-                    'Preceding {} bases'.format(params.HEAD),
+        preamble.append(('Preceding {} bases'.format(params.HEAD),
                     self.global_data.seed_sequence_name,
                     'Subsequent {} bases'.format(params.TAIL),
                     'Full Sequence',
                     'Occurrences',
-                    'Notes'
-            )
-            )
-            for row in rows:
-                file.write(row)
+                    'Notes'))
+
+        df = DataFrame(preamble + rows)
+        df.to_csv(output_file, header=False, index=False)
+
         return output_file
 
     def _get_output_file_name(self, input_file):
         return '{}-{}-{}-{}.csv'.format(
-                input_file[:input_file.index('.fastq')],
+                input_file[:input_file.index('.fastq')].replace(' ', '_'),
                 params.HEAD,
                 self.global_data.seed_sequence_name,
                 params.TAIL
         )
 
-##### Command #####
-@click.command(context_settings=dict(help_option_names=['-h', '--help']))
-def recombination_command():
-    """
-    Detect recombination in VGS data. FASTQ files containing the data are read from
-    an input folder and processed to return the sequences before and after a seed sequence.
-    The output are CSV files, one per FASTQ file and per seed sequence.'
-    """
-    setup_dirs(params)
-    input_files = get_fastq_files(params)
-    output_files = []
-    for input_file in input_files:
-        for seed_sequence_name, seed_sequence in params.seed_sequences.items():
-            L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
-            processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
-            output_file = processor.process_and_write_to_file(params.output_folder)
-            output_files.append(output_file)
-
-    L.info('\nDone! Your output is in the following {} files:'.format(str(len(output_files))))
-    for output_file in output_files:
-        L.info(output_file)
-
 
 if __name__ == "__main__":
     log_to_stdout(logging.INFO)
     try:
-        recombination_command()
+        recombination()
     except ValueError as e:
         L.error('\nError: {}'.format(e.message))
         sys.exit(1)
