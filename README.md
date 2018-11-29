@@ -1,23 +1,19 @@
-# Research
-Scripts and stuff that's useful and public from Addgene Research
+# The Addgene Open Tools Repository
+[Intro on what this repository is]
 
-* setup - configure your mac workstation
-* tools - various scripts
+## Prerequisites
+A Python environment
 
-## Recombination
-Detect recombination in VGS data. FASTQ files containing the data are read from an input directory and processed to return the sequences before and after a seed sequence. The output are CSV files, one per FASTQ file and per seed sequence.
+## Installation
+Clone this repository and run the following command:
+`pip install -r requirements.txt`
 
-This script was originally written by Benjie Chen and has been edited to assist in Addgene's Viral Genome Sequencing pipeline.
+Invoke the Addgene Toolkit by issuing the following command in a terminal:
+`python atk.py -- help`
 
-## Deconvolution
-Detect contaminating sequences in FASTQ files
-
-This tool finds unique sequences within a dictionary of AAV plasmid samples. These unique sequences, or chunks, are then compared to the reads in specified FASTQ files. The program counts the number of times that a unique chunk matches a read within a FASTQ file and calculates the percent of matches found for each AAV sample. This output allows the user to determine whether their sample is contaminated with other samples and how much contaminating material is in the sample.
-
-This script was originally written by Benjie Chen and has been edited to assist in Addgene's Viral Genome Sequencing pipeline.
-
-
-## Deconvolution v2
-
-This version of the deconvolution script uses a csv file as input rather than hardcoded sequences within the script. The first column of the csv file should contain sequence ids, and the second column should contain the associated sequences. The command to run this script should look like:
-./deconvolution_v2.py /path/to/FASTQ /path/to/csv
+## Serotypes
+Command to detect specific sequences in VGS data. It reads all FASTQ files from an input folder, extracts the reads and counts the occurrences of each sequence. The Research Team is using this software to detect specific sequences in the capsid genes, thereby differentiating between various serotypes.
+The script’s parameters can be modified by editing the file parameters.py. To change the parameter values, locate the block named Serotype_Report_Parameters and follow the examples in the file, paying special attention to the use of double quotes for all text. The parameters are:
+input_folder - folder where the FASTQ files are. Full path or relative to the tools folder.
+output_folder - folder for the output CSV files. Full path or relative to the tools folder.
+signatures - name and sequence of the signatures to look for. Add as many as you want, following the example syntax and separated by commas.
