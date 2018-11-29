@@ -3,7 +3,6 @@ import logging
 import sys
 
 from serotypes import serotypes
-from recombination import recombination
 from utils import log_to_stdout
 
 L = logging.getLogger(__name__)
