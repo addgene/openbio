@@ -8,7 +8,7 @@ echo -e "\n** Creating / updating global prerequisites...\n"
 $script_dir/1-setup-usr-local.sh $1
 
 echo -e "\n** Creating / updating virtual environment...\n"
-$script_dir/2-setup-research-virtualenv.sh $1
+$script_dir/2-setup-openbio-virtualenv.sh $1
 
 echo -e "\n---\n"
 echo -e "Your environment was correctly set up!\n"
