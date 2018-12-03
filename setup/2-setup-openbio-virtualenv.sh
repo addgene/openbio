@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ve_name="research"
+ve_name="openbio"
 
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
@@ -21,12 +21,12 @@ pushd $script_dir
 workon $ve_name
 
 if [ $? -ne 0 ]; then
-    mkvirtualenv $ve_name -p python2.7
+    mkvirtualenv $ve_name -p python3
 fi
 
 workon $ve_name
 
-pip install pip==9.0.3
+pip install pip==18.1
 
 pip install -r ../requirements.txt
 
