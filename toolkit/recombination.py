@@ -28,8 +28,12 @@ def recombination():
         for seed_sequence_name, seed_sequence in params.seed_sequences.items():
             L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
             processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
-            output_file = processor.process_and_write_to_file(params.output_folder)
-            output_files.append(output_file)
+            try:
+                output_file = processor.process_and_write_to_file(params.output_folder)
+                if output_file:
+                    output_files.append(output_file)
+            except Exception as e:
+                L.error('    >> Error: {}. Ignoring file...'.format(e))
 
     L.info('\nDone! Your output is in the following {} files:'.format(str(len(output_files))))
     for output_file in output_files:
@@ -79,6 +83,11 @@ class Processor(object):
         self.global_data.total_reads = len(reads) / 2
         self.global_data.seed_occurrences = sum(1 for read in reads if self.seed_sequence in read)
         extracted_patterns = [self._extract_pattern(read) for read in reads]
+
+        # The file did not contain the seed
+        if not any(extracted_patterns):
+            L.warning('    >> Error: the file does not contain the seed {}. Ignoring file...'.format(self.seed_sequence))
+            return []
 
         patterns = Counter(pattern for pattern in extracted_patterns if pattern)
 
@@ -147,6 +156,7 @@ class Processor(object):
             assert len(tail_sequence) == params.TAIL
             return Pattern(head_sequence, self.seed_sequence, tail_sequence)
 
+
     @staticmethod
     def _get_note(pattern, reference_patterns, recombined_patterns):
         if pattern in reference_patterns:
@@ -160,6 +170,9 @@ class Processor(object):
         input_file_no_path = os.path.basename(self.input_file)
         output_file_no_path = self._get_output_file_name(input_file_no_path)
         output_file = os.path.join(output_directory, output_file_no_path)
+
+        if not rows:
+            return ''
 
         preamble = []
         preamble.append(('File Name', input_file_no_path))
@@ -198,6 +211,6 @@ if __name__ == "__main__":
     log_to_stdout(logging.INFO)
     try:
         recombination()
-    except ValueError as e:
-        L.error('\nError: {}'.format(e.message))
+    except Exception as e:
+        L.error('\nError: {}'.format(e))
         sys.exit(1)
