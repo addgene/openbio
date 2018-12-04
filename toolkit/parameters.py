@@ -19,7 +19,8 @@ class Recombination_Parameters(object):
     }
 
 
-########## serotype_report.py parameters
+
+########## serotypes.py parameters
 class Serotypes_Parameters(object):
 
     # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
