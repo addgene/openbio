@@ -8,8 +8,8 @@ The command’s parameters can be modified by editing the file `parameters.py` u
 * __signatures__: name and sequence of the signatures that the command will look for. The Research team has identified a number of signatures that correlate to specific serotypes, and this parameter is pre-populated with them.  Add as many as you want, following the example syntax, and separated them by commas. 
 
 ## Procedure
-1. Make sure you have downloaded and expanded the latest code into your Home folder
-1. Adjust the parameters for the command as described above, by editing the file `parameters.py`.
+1. Make sure you have [downloaded](https://github.com/addgene/openbio/archive/master.zip) and expanded the latest code into your Home folder
+1. Adjust the parameters for the script by editing the file `parameters.py` as described above.
 1. Open a Terminal window and activate your Python environment:
     ```
     workon openbio
