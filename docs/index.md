@@ -28,13 +28,14 @@ If you used our shell script to set up, activate the virtual environment by issu
 ```
 workon openbio
 ```
-You should see the prompt in the Terminal change to indicate your environment (openbio) is active.
-
-Run atk as follows to access the help:
+Run atk as follows to learn more:
 ```
 python atk.py --help
 ```
-This lists the tools that are available as subcommands and their parameters.
+This lists the tools that are available as subcommands and their parameters. The general pattern is:
+```
+python atk.py [subcommand]
+```
 
 ## Commands
 1. __[Serotypes](https://addgene.github.io/openbio/serotypes)__ - detect and report specific signatures in VGS data, useful to differentiate viral serotypes.
