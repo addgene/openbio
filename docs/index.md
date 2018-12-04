@@ -1,4 +1,3 @@
-# Background
 Addgene is a nonprofit organization whose mission is to accelerate research and discovery by improving access to useful research materials and information. Since the company was founded in 2004, scientists have shared more than 70,000 unique published reagent samples via Addgene’s repository. We have also fulfilled requests for more than 1 million plasmid, viral vector, and other material types to scientists in 100 countries.
 
 Addgene conducts a rigurous quality control process for all [plasmids](https://blog.addgene.org/plasmids-101-an-inside-look-at-ngs-plasmid-quality-control) and 
@@ -9,7 +8,7 @@ Stay tuned as *the Addgene Toolkit* grows!
 
 # Setting up your Python environment
 First of all, [clone](https://github.com/addgene/openbio) or [download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository. 
-If you already have a Python environment of your liking, you simply need to navigate to the `openbio` root, install the requirements:
+If you already have a Python environment of your liking, you simply need to navigate to the `openbio` root, issue the command:
 ```
 pip install -r requirements.txt`
 ```
@@ -37,6 +36,7 @@ python atk.py --help
 ```
 This lists the tools that are available as subcommands and their parameters.
 
-## Subcommands
-1. [Serotypes](https://addgene.github.io/openbio/serotypes) - detect and report specific signatures in VGS data, useful to differentiate viral serotypes.
+## Commands
+1. __[Serotypes](https://addgene.github.io/openbio/serotypes)__ - detect and report specific signatures in VGS data, useful to differentiate viral serotypes.
+1. __Recombination__ (coming soon) - detect recombination in VGS data, used for Cre-Lox quality control.
 
