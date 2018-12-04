@@ -2,12 +2,12 @@
 # Setting up your development environment in a Mac
 
 You will use the Terminal application to run a script that installs everything you need. A few notes on the Terminal app:
-* The Terminal application can be launched by going to __Applications > Utilities__ and double clicking on Terminal. We suggest adding this application to your Dock.
+* The Terminal application can be launched by going to Applications > Utilities and double clicking on Terminal. We suggest adding this application to your Dock.
 * In the procedure below, commands that you need to type in the terminal window are in `this font`.
 * While on the Terminal, you can use TAB to complete a command after typing a few letters. Hit ENTER to execute the command. Use the Up arrow to get to the previous commands.
 
 ## Procedure
-1. [Download](https://github.com/addgene/openbio/archive/master.zip) the __addgene/openbio__ GitHub repository and move it to your Home folder.
+1. [Download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository and move it to your Home folder.
 1. Unzip it by double clicking on it. The top-level folder is called `openbio-master`
 1. Launch the Terminal application and navigate to the setup folder:
     ```
