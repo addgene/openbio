@@ -26,6 +26,7 @@ You will use the Terminal application to run a script that installs everything y
     ```
     workon openbio
     ```
+    You should see the prompt in the Terminal change to indicate your environment (openbio) is active.
     * Navigate to the toolkit folder: 
     ```
     cd openbio/toolkit
