@@ -1,3 +1,4 @@
+[addgene/openbio/docs](https://addgene.github.io/openbio)
 # The Serotypes Command
 The __serotypes__ command helps Addgene's Research team detect specific sequences in Viral Next Generation Sequencing (VGS) data. The command reads all FASTQ files from an input folder, extracts the reads and counts the occurrences of each sequence. The Research team uses this command to detect specific sequences in the capsid genes, thereby differentiating between various serotypes.
 
