@@ -10,7 +10,7 @@ Stay tuned as *the Addgene Toolkit* grows!
 First of all, [clone](https://github.com/addgene/openbio) or [download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository. 
 If you already have a Python environment of your liking, you simply need to navigate to the `openbio` root, issue the command:
 ```
-pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 and move on.
 
