@@ -2,6 +2,7 @@ import click
 import logging
 import sys
 
+from recombination import recombination
 from serotypes import serotypes
 from utils import log_to_stdout
 
@@ -12,12 +13,13 @@ def atk():
     pass
 
 atk.add_command(serotypes)
+atk.add_command(recombination)
 
 
 if __name__ == "__main__":
     log_to_stdout(logging.INFO)
     try:
         atk()
-    except ValueError as e:
-        L.error('\nError: ' + e.message)
+    except Exception as e:
+        L.error('\nError: {}'.format(e))
         sys.exit(1)
