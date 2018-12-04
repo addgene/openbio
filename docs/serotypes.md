@@ -16,7 +16,7 @@ The command’s parameters can be modified by editing the file `parameters.py` u
     ```
 1. Navigate to the toolkit folder:
     ```
-    cd openbio/toolkit
+    cd openbio-master/toolkit
     ```
 1. Issue the following command:
     ```
