@@ -7,8 +7,8 @@ The aim of this code repository is to make these tools available to the broader 
 Stay tuned as *the Addgene Toolkit* grows!
 
 # Setting up your Python environment
-First of all, [clone](https://github.com/addgene/openbio) or [download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository. 
-If you already have a Python environment of your liking, you simply need to navigate to the `openbio` root, issue the command:
+First of all, [download](https://github.com/addgene/openbio/archive/master.zip) and expand the `addgene/openbio` GitHub repository. 
+If you already have a Python environment of your liking, you simply need to navigate to the `openbio-master` root, issue the command:
 ```
 pip install -r requirements.txt
 ```
@@ -22,7 +22,7 @@ Follow [these instructions](https://addgene.github.io/openbio/setup).
 The main entry point to the Addgene Toolkit is the script `atk`.
 Open up a Terminal and navigate to the toolkit directory:
 ```
-cd openbio/toolkit
+cd openbio-master/toolkit
 ```
 If you used our shell script to set up, activate the virtual environment by issuing the following command:
 ```
