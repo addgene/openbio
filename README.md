@@ -1,3 +1,3 @@
-# The Addgene Open Tools Repository
+# The Addgene Open Toolkit
 
 ### Please see [our documentation](https://addgene.github.io/openbio/)...
