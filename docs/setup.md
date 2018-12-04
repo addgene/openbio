@@ -8,10 +8,10 @@ You will use the Terminal application to run a script that installs everything y
 
 ## Procedure
 1. [Download](https://github.com/addgene/openbio/archive/master.zip) the __addgene/openbio__ GitHub repository and move it to your Home folder (or [clone](https://github.com/addgene/openbio) it into your Home folder).
-1. If you downloaded the repo, unzip it by double clicking on it. The top-level folder is called `openbio`
+1. If you downloaded the repo, unzip it by double clicking on it. The top-level folder is called `openbio-master`
 1. Launch the Terminal application and navigate to the setup folder:
     ```
-    cd openbio/setup
+    cd openbio-master/setup
     ```
 1. Type the following command:
     ```
@@ -29,7 +29,7 @@ You will use the Terminal application to run a script that installs everything y
     
     * Navigate to the toolkit folder: 
     ```
-    cd openbio/toolkit
+    cd openbio-master/toolkit
     ```
     * Execute the `atk.py` command with the `--help` option to see a help message:
     ```
