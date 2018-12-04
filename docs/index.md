@@ -19,7 +19,7 @@ Follow [these instructions](https://addgene.github.io/openbio/setup).
 
 # The Addgene Tolkit
 ## Basics
-The main entry point to the Addgene Toolkit is the script `atk`.
+The entry point to the Addgene Toolkit is the command `atk`.
 Open up a Terminal and navigate to the toolkit directory:
 ```
 cd openbio-master/toolkit
@@ -28,13 +28,13 @@ If you used our shell script to set up, activate the virtual environment by issu
 ```
 workon openbio
 ```
-Run atk as follows to learn more:
+Run `atk` as follows to learn more:
 ```
 python atk.py --help
 ```
-This lists the tools that are available as subcommands and their parameters. The general pattern is:
+This lists the tools that are available as commands and their parameters. The general pattern to invoke a command is:
 ```
-python atk.py [subcommand]
+python atk.py [command]
 ```
 
 ## Commands
