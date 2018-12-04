@@ -22,11 +22,11 @@ You will use the Terminal application to run a script that installs everything y
     * Downloads and configures everything else you need - you’ll see text scrolling in the Terminal indicating what’s going on. At some point you may be asked for your password - this is the password you use for your local Mac account.
 1. When the script is done, you’ll see a success message. Close your Terminal window and open a new one so everything is loaded freshly.
 1. Test that you can run our Python scripts:
-    * Activate your Python environment
+    * Activate your Python environment - after thisthe prompt in the Terminal changes to indicate your environment (openbio) is active:
     ```
     workon openbio
     ```
-    You should see the prompt in the Terminal change to indicate your environment (openbio) is active.
+    
     * Navigate to the toolkit folder: 
     ```
     cd openbio/toolkit
