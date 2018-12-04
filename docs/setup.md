@@ -1,3 +1,4 @@
+[addgene/openbio/docs](https://addgene.github.io/openbio)
 # Setting up your development environment in a Mac
 
 You will use the Terminal application to run a script that installs everything you need. A few notes on the Terminal app:
