@@ -7,11 +7,11 @@ The __serotypes__ command helps Addgene’s Research team determine the serotype
 * Only a small amount of RepCap plasmid is packaged, so if you don’t have any matches it may be that you need a higher number of NGS reads. 
 * If you are using a different capsid sequence (for instance, you may have the same amino acid sequence, but have a different DNA sequence than the one Addgene uses in our RepCap plasmids), you will need to adjust the capsid sequences that the program is searching for such that your capsid sequence matches the one in the program.
 
-
+## Configuration
 The command’s parameters can be modified by editing the file `parameters.py` using your favorite text editor) To change the parameter values, locate the block named `Serotypes_Parameters` and follow the examples in the file, paying special attention to the use of double quotes for all text. The parameters are:
 * __input_folder__: the folder where the FASTQ files are. Enter the full path or a path relative to the toolkit folder.
 * __output_folder__: the folder for the output CSV files. Enter the full path or a path relative to the toolkit folder.
-* __signatures__: name and sequence of the signatures that the command will look for. The Research team has identified a number of signatures that correlate to specific serotypes, and this parameter is pre-populated with them.  Add as many as you want, following the example syntax, and separated them by commas. 
+* __signatures__: name and sequence of the signatures that the command will look for. Addgene has identified unique sequences for commonly used capsids, and this parameter is pre-populated with them.  If need be, add as many as you want, following the example syntax, and separate them by commas. 
 
 ## Procedure
 1. Make sure you have [downloaded](https://github.com/addgene/openbio/archive/master.zip) and expanded the latest code into your Home folder
