@@ -67,7 +67,7 @@ class Processor(object):
         number_of_reads = len(reads) / 2
 
         signature_counts = []
-        for name, signature in params.signatures.iteritems():
+        for name, signature in params.signatures.items():
             count = self._count_signature(reads, signature)
             signature_counts.append(SignatureCount(name=name, count=count))
 
@@ -79,9 +79,12 @@ class Processor(object):
             if signature_count.count:
                 found_signatures.append('{} ({})'.format(signature_count.name, signature_count.count))
             is_top = 'YES' if index == 0 and signature_count.count else ''
-            is_match = 'YES' if (
-                    index == 0 and signature_count.count and self._is_match(signature_count.name, input_file)
-            ) else ''
+            if is_top == 'YES':
+                is_match = 'YES' if (
+                        index == 0 and signature_count.count and self._is_match(signature_count.name, input_file)
+                ) else 'NO'
+            else:
+                is_match = ''
 
             self.main_rows.append(
                 (filename, number_of_reads, signature_count.name, signature_count.count, is_top, is_match)
