@@ -17,7 +17,7 @@ and move on.
 If you don't already have a Python environment, and you have a Mac, you are welcome to use the shell script that we use internally. You need to have admin privileges on your Mac. 
 Follow [these instructions](https://addgene.github.io/openbio/setup).
 
-# The Addgene Tolkit
+# The Addgene Toolkit
 ## Basics
 The entry point to the Addgene Toolkit is the command `atk`.
 Open up a Terminal and navigate to the toolkit directory:
