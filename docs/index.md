@@ -38,6 +38,6 @@ python atk.py [command]
 ```
 
 ## Commands
-1. __[Serotypes](https://addgene.github.io/openbio/serotypes)__ - detect and report specific signatures in VGS data, useful to differentiate viral serotypes.
-1. __Recombination__ (coming soon) - detect recombination in VGS data, used for Cre-Lox quality control.
+1. __[Serotypes](https://addgene.github.io/openbio/serotypes)__ - detect and report specific signatures in NGS data, useful to differentiate viral serotypes.
+1. __Recombination__ (coming soon) - detect recombination in NGS data, used for Cre-Lox quality control.
 
