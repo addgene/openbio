@@ -24,7 +24,11 @@ if [ -d /usr/local/Caskroom ]; then
     sudo chown -R $(whoami):admin $(brew --prefix)/Caskroom
 fi
 
-chmod 755 /usr/local/share
+if [ -d /usr/local/var/homebrew ]; then
+    sudo chown -R $(whoami):admin $(brew --prefix)/Caskroom
+fi
+
+sudo chmod 755 /usr/local/share
 
 if [ ! -d /usr/local/man ]; then
     echo -e $sudo_message
