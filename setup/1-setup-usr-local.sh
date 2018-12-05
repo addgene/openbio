@@ -13,6 +13,16 @@ fi
 xcode-select --install || true
 
 test -d /usr/local/Homebrew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo -e $sudo_message
+sudo chown -R $(whoami):admin $(brew --prefix)/Homebrew
+
+if [ -d /usr/local/Cellar ]; then
+    sudo chown -R $(whoami):admin $(brew --prefix)/Cellar
+fi
+
+if [ -d /usr/local/Caskroom ]; then
+    sudo chown -R $(whoami):admin $(brew --prefix)/Caskroom
+fi
 
 chmod 755 /usr/local/share
 
