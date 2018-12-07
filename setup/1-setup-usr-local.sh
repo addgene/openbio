@@ -13,28 +13,18 @@ fi
 xcode-select --install || true
 
 test -d /usr/local/Homebrew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo -e "\nUpdating permissions, this may take a while..."
 echo -e $sudo_message
-sudo chown -R $(whoami):admin $(brew --prefix)/Homebrew
-
-if [ -d /usr/local/Cellar ]; then
-    sudo chown -R $(whoami):admin $(brew --prefix)/Cellar
+if [ ! -d /usr/local/Frameworks ]; then
+    sudo mkdir /usr/local/Frameworks
 fi
-
-if [ -d /usr/local/Caskroom ]; then
-    sudo chown -R $(whoami):admin $(brew --prefix)/Caskroom
-fi
-
-if [ -d /usr/local/var/homebrew ]; then
-    sudo chown -R $(whoami):admin $(brew --prefix)/Caskroom
-fi
-
-sudo chmod 755 /usr/local/share
-
 if [ ! -d /usr/local/man ]; then
-    echo -e $sudo_message
     sudo mkdir /usr/local/man
-    sudo chown $(whoami):admin /usr/local/man
 fi
+
+sudo chown -R $(whoami):admin $(brew --prefix)/*
+sudo chmod 755 /usr/local/share
 
 brew update
 brew upgrade
@@ -45,7 +35,9 @@ done < ${script_dir}/packages/homebrew.txt
 
 brew cleanup
 
-# ref /usr/local
+ln -s /usr/local/Cellar/python/3.7.1/bin/python3 /usr/local/bin/python
+ln -s /usr/local/Cellar/python/3.7.1/bin/pip3 /usr/local/bin/pip
+
 /usr/local/bin/pip install --upgrade pip
 while read pips; do
     /usr/local/bin/pip install ${pips}
