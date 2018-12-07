@@ -21,6 +21,7 @@ You will use the Terminal application to run a script that installs everything y
     * Launches installation of XCode, a set of Mac tools for developers - you’ll see this in a separate window.
     * Downloads and configures everything else you need - you’ll see text scrolling in the Terminal indicating what’s going on. At some point you may be asked for your password - this is the password you use for your local Mac account.
 1. When the script is done, you’ll see a success message. Close your Terminal window and open a new one so everything is loaded freshly.
+    This may take a while, especially the first time you do it. Please be patient.
 1. Test that you can run Python code:
     * Activate your Python environment - after this, the prompt in the Terminal changes to indicate your environment (openbio) is active:
     ```
