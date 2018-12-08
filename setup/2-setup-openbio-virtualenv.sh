@@ -25,9 +25,6 @@ if [ $? -ne 0 ]; then
 fi
 
 workon $ve_name
-
-pip install pip==18.1
-
 pip install -r ../requirements.txt
 
 echo "source virtualenvwrapper.sh" >> $HOME/.bash_profile
