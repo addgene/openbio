@@ -6,11 +6,11 @@ In order to use this procedure, you need to have admin privileges on your Mac. T
 You will use the Terminal application to run a script that installs everything you need. A few notes on the Terminal app:
 * The Terminal app can be launched by going to Applications > Utilities and double clicking on Terminal. We suggest adding this application to your Dock.
 * In the procedure below, commands that you need to type in the Terminal window are in `this font`.
-* Quick cheat sheet for the Terminal app:
+* Cheat sheet for the Terminal app:
   * Use TAB to complete a command or file name after typing a few letters. 
   * Hit ENTER to execute the command. 
   * Use Ctrl-C to interrupt a command.
-  * Use the Up arrow to get to the previous commands.
+  * Use the Up arrow to get to the previously typed commands.
 
 ## Procedure
 1. [Download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository and move it to your Home folder.
@@ -41,4 +41,4 @@ You will use the Terminal application to run a script that installs everything y
     ```
     python atk.py --help
     ```
-1. In order to use the toolkit, you will need to enter your own parameters in a Python file (`parameters.py`), which can be done with any text editor. Because XCode was installed, your Mac will want to open `.py` files with XCode, which we don’t want. The first time you need to edit a Python file, right click on the file and choose “Open with…”. To permanently associate a text editor with `.py` files: select the file and hit Command-i, go to the “Open with” section and select your favorite text editor - if you don’t have a favorite, just use TextEdit.app.
+1. In order to use the toolkit, you will need to enter your own parameters in a Python file (`parameters.py`), which can be done with any text editor. Because XCode was installed, your Mac will want to open `.py` files with XCode, which you probably don’t want. The first time you need to edit a Python file, right click on the file and choose “Open with…”. To permanently associate a text editor with `.py` files: select the file and hit Command-i, go to the “Open with” section and select your favorite text editor - if you don’t have a favorite, just use TextEdit.app.
