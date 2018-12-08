@@ -16,6 +16,10 @@ test -d /usr/local/Homebrew || /usr/bin/ruby -e "$(curl -fsSL https://raw.github
 
 echo -e "\nUpdating permissions, this may take a while..."
 echo -e $sudo_message
+
+sudo chown -R $(whoami):admin $(brew --prefix)/*
+sudo chmod 755 /usr/local/share
+
 if [ ! -d /usr/local/Frameworks ]; then
     sudo mkdir /usr/local/Frameworks
 fi
@@ -23,9 +27,7 @@ if [ ! -d /usr/local/man ]; then
     sudo mkdir /usr/local/man
 fi
 
-sudo chown -R $(whoami):admin $(brew --prefix)/*
-sudo chmod 755 /usr/local/share
-
+echo -e "\nUpdating Homebrew..."
 brew update
 brew upgrade
 
@@ -35,10 +37,8 @@ done < ${script_dir}/packages/homebrew.txt
 
 brew cleanup
 
-ln -s /usr/local/Cellar/python/3.7.1/bin/python3 /usr/local/bin/python
-ln -s /usr/local/Cellar/python/3.7.1/bin/pip3 /usr/local/bin/pip
-
 /usr/local/bin/pip install --upgrade pip
+
 while read pips; do
     /usr/local/bin/pip install ${pips}
 done < ${script_dir}/packages/pip.txt
