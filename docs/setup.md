@@ -1,10 +1,16 @@
 [addgene/openbio/docs](https://addgene.github.io/openbio)
-# Setting up your development environment in a Mac
+# Setting up your development environment on a Mac
+
+In order to use this procedure, you need to have admin privileges on your Mac. This is normally the case if you're working on your personal Mac. If you're using a Mac provided by your institution, and you get errors during the procedure, please seek assistance from your IT department, as every institution does things slightly differently!
 
 You will use the Terminal application to run a script that installs everything you need. A few notes on the Terminal app:
-* The Terminal application can be launched by going to Applications > Utilities and double clicking on Terminal. We suggest adding this application to your Dock.
+* The Terminal app can be launched by going to Applications > Utilities and double clicking on Terminal. We suggest adding this application to your Dock.
 * In the procedure below, commands that you need to type in the Terminal window are in `this font`.
-* While on the Terminal, you can use TAB to complete a command after typing a few letters. Hit ENTER to execute the command. Use the Up arrow to get to the previous commands.
+* Quick cheat sheet for the Terminal app:
+  * Use TAB to complete a command or file name after typing a few letters. 
+  * Hit ENTER to execute the command. 
+  * Use Ctrl-C to interrupt a command.
+  * Use the Up arrow to get to the previous commands.
 
 ## Procedure
 1. [Download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository and move it to your Home folder.
@@ -17,12 +23,11 @@ You will use the Terminal application to run a script that installs everything y
     ```
     ./setup-openbio-workstation.sh
     ```
-    This does two things in parallel:
-    * Launches installation of XCode, a set of Mac tools for developers - you’ll see this in a separate window.
-    * Downloads and configures everything else you need - you’ll see text scrolling in the Terminal indicating what’s going on. At some point you may be asked for your password - this is the password you use for your local Mac account.
-1. When the script is done, you’ll see a success message. Close your Terminal window and open a new one so everything is loaded freshly.
-    This may take a while, especially the first time you do it. Please be patient.
-1. Test that you can run Python code:
+    This may take a while, especially the first time you do it, so please be patient. The command does two things in parallel:
+    * Launches installation of XCode, a set of Mac tools for developers - you’ll see this in a separate window. 
+    * Downloads and configures everything else you need - you’ll see text scrolling in the Terminal indicating what’s going on.     At some point you may be asked for your password - this is the password you use for your local Mac account.
+1. When the command is done, you’ll see a success message. Close your Terminal window and open a new one so everything is loaded freshly.
+1. Test that you can run Python 3 code:
     * Activate your Python environment - after this, the prompt in the Terminal changes to indicate your environment (openbio) is active:
     ```
     workon openbio
@@ -32,7 +37,7 @@ You will use the Terminal application to run a script that installs everything y
     ```
     cd openbio-master/toolkit
     ```
-    * Execute the `atk.py` command with the `--help` option to see a help message:
+    * Execute the `atk.py` command with the `--help` option. If you see a help message for the toolkit, everything worked:
     ```
     python atk.py --help
     ```
