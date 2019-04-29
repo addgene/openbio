@@ -23,8 +23,8 @@ You will use the Terminal application to run a script that installs everything y
     ```
     ./setup-openbio-workstation.sh
     ```
-    This may take a while, especially the first time you do it, so please be patient. The command does two things in parallel:
-    * Launches installation of XCode, a set of Mac tools for developers - you’ll see this in a separate window. 
+    This may take a while, especially the first time you do it, so please be patient. The command does two things:
+    * Launches installation of XCode, a set of Mac tools for developers - you’ll see this in a separate window. Please follow the prompts in this separate window and, when the installation finishes, return to the Terminal and follow the instructions.
     * Downloads and configures everything else you need - you’ll see text scrolling in the Terminal indicating what’s going on.     At some point you may be asked for your password - this is the password you use for your local Mac account.
 1. When the command is done, you’ll see a success message. Close your Terminal window and open a new one so everything is loaded freshly.
 1. Test that you can run Python 3 code:
@@ -42,3 +42,11 @@ You will use the Terminal application to run a script that installs everything y
     python atk.py --help
     ```
 1. In order to use the toolkit, you will need to enter your own parameters in a Python file (`parameters.py`), which can be done with any text editor. Because XCode was installed, your Mac will want to open `.py` files with XCode, which you probably don’t want. The first time you need to edit a Python file, right click on the file and choose “Open with…”. To permanently associate a text editor with `.py` files: select the file and hit Command-i, go to the “Open with” section and select your favorite text editor - if you don’t have a favorite, just use TextEdit.app.
+
+## Maintenance
+Please run the setup script periodically to pick up any new updates.
+
+If something goes wrong or you wish to start allover, the setup script has an option to completely delete the install directory. Use it cautiously:
+```
+./setup-openbio-workstation.sh nuke
+```
