@@ -10,7 +10,7 @@ if [ "$1" == "nuke" ]; then
     sudo rm -rf /usr/local/*
 fi
 
-xcode-select --install || true
+xcode-select -p 1>/dev/null 2>&1 || (xcode-select --install && echo -e "\n\n" && read -rp "Installing xcode command line tools.  Hit enter to continue once it is done")
 
 test -d /usr/local/Homebrew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -31,14 +31,14 @@ echo -e "\nUpdating Homebrew..."
 brew update
 brew upgrade
 
-while read homebrew; do
+while read -r homebrew; do
     brew install ${homebrew}
 done < ${script_dir}/packages/homebrew.txt
 
 brew cleanup
 
-/usr/local/bin/pip install --upgrade pip
+pip3 install --upgrade pip
 
-while read pips; do
-    /usr/local/bin/pip install ${pips}
+while read -r    pips; do
+    pip3 install ${pips}
 done < ${script_dir}/packages/pip.txt

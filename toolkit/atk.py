@@ -2,6 +2,7 @@ import click
 import logging
 import sys
 
+from recombination import recombination
 from serotypes import serotypes
 from utils import log_to_stdout
 
@@ -12,6 +13,7 @@ def atk():
     pass
 
 atk.add_command(serotypes)
+atk.add_command(recombination)
 
 
 if __name__ == "__main__":
