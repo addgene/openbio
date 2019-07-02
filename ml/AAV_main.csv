@@ -1,0 +1,308 @@
+,Plasmid ID,Serotype,Plasmid Size,PI,Team,Transfection date,STATUS ,Viral Lot #,Final Titer GC/mL,# SU,Total Yield (GC),Notes,PEI,PEG,Cell Lysis Buffer,85307 pHelper lot #,pRepCap lot #,Cis plasmid lot #,in vivo testing,Vessel
+pAAV-CAG-tdTomato,59462,AAVrg,6208,Boyden,Karen,1/19/2017,Rejected,v8266; v8267,,50,0.0E+00,"did not satisfy Janelia, poor in vivo performance. Higher titer is needed",,,,,,,Yes Failure,HF
+AAV-Cre-GFP,68544,AAVrg,6476,Nestler,Karen,2/2/2017,Rejected,v8268,,66,0.0E+00,NOT FOR DISTRIBUTION; CMV not a good promoter for neurons,,,,,,,No,HF
+pAAV-Syn-Chronos-GFP,59170,AAV5,6078,Boyden,Karen,2/9/2017,Online,v8269,5.3E+12,95,5.0E+13,"old and new RC5 (#85608) mixed. Boyden lab reports weak expression in primary neurons, but comparison to AAV8",,,,,,,Yes Success,HF
+pAAV-Syn-FLEX-rc[ChrimsonR-tdTomato],62723,AAV5,7180,Boyden,Karen,2/23/2017,Online,v8331,,71,0.0E+00,"Boyden lab reports weak expression in primary neurons, but comparison to AAV8",,,,,,,in vitro,HF
+AAV-hSyn1-GCaMP6f-P2A-nls-dTomato,51085,AAVrg,6739,Ting,Karen,3/2/2017,Online,v8622,7.7E+12,21,1.6E+13,"1.5mg total DNA per HF, no media exchange (by accident).; Good retrograde, low expression, did not see tdTomato expression",,,,d5453,d5464,,Yes Success,HF
+AAV pmSyn1-EBFP-Cre,51507,AAVrg,6878,Zeng,Meghan,3/9/2017,Online,v8625,,49,0.0E+00,"compare with and without media exchange 24h post transfection; Works ""superbly well""",,,,d5471,d5464,,Yes Success,HF
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,AAV5,7034,Roth,Meghan,3/16/2017,Online,v8736 ,5.3E+12,53,2.8E+13,Test this virus head-to-head vs. Vigene's version of this in an infectivity assay. Roth lab testing complete. Ready for distribution,,,,,,d5261,Yes Success,HF
+pAAV-CAG-tdTomato,59462,AAV5,6208,Boyden,Karen,3/16/2017,Online,v8737,,59,0.0E+00,backordered,,,,,,,,HF
+pAAV-CAG-tdTomato,59462,AAVrg,6208,Boyden,Meghan,3/30/2017,Online,v8764,,46,0.0E+00,"Works ""superbly well""; started doing sonication on ice  + add 200mM NaCl to storage /formulation buffer",,,,d5470,d5463,,Yes Success,HF
+pAAV-EF1a-DIO-hM3D(Gq)-mCherry,50460,AAV5,8095,Roth,Karen,4/6/2017,Online,v8912,7.5E+12,11,8.3E+12,started using Tris buffer for cell lysis,,,,,,d5966,No,HF
+pAAV-EF1a-DIO-hM4D(Gi)-mCherry,50461,AAV5,7762,Roth,Meghan,4/6/2017,Online,v9071 ,4.4E+12,6,2.6E+12,"Compare media with 2% FBS, 10% FBS or no FBS (Opti-Pro SFM); Roth lab testing complete. Ready for distribution",,,,,,d5968,No,HF
+AAVpCAG-FLEX-tdTomato-WPRE,51503,AAVrg,7197,Zeng,Karen,4/20/2017,Online,v9163,,31,0.0E+00,,,,,d5470,d5463,,No,HF
+pAAV-Syn-Chronos-GFP,59170,AAV5,6078,Boyden,Karen,4/20/2017,Rejected,v9164,,,Rejected,bacterial contamination in HF,,,,,,,No,HF
+AAV pmSyn1-EBFP-Cre,51507,AAV1,6878,Zeng,Luke,4/27/2017,Online,v9198,,30,0.0E+00,,,,,,,,No,HF
+pAAV-EF1a-DIO-mCherry,50462,AAV5,6304,Roth,Meghan,5/4/2017,Online,v9233,3.3E+12,11,3.6E+12,,,,,,,d6837,No,HF
+pAAV-CaMKIIa-hM3D(Gq)-mCherry  (remake by Aug 2017),50476,AAV5,7875,Roth,Karen,5/4/2017,Online,v9235,,57,0.0E+00,,,,,,,,,HF
+AAV-CAG-GFP,37825,AAVrg,5439,Boyden,Karen,5/4/2017,Online,v9234,,55,0.0E+00,,,,,d5468,d5574,,,HF
+AAV-EF1a-DIO-GCaMP6f-P2A-nls-dTomato,51083,AAVrg,7480,Ting,Karen,5/11/2017,Online,v9527,,63,0.0E+00,,,,,d5466,d5574,,,HF
+AAV-hSyn1-GCaMP6f-P2A-nls-dTomato,51085,AAVrg,6739,Ting,Ina,5/18/2017,Online,v10572,9.0E+12,113,1.0E+14,Started using 4 HF for all preps unless otherwise specified,,,,d5468,d7434,,Yes Success,4HF
+AAV pmSyn1-EBFP-Cre,51507,AAVrg,6878,Zeng,Karen,5/26/2017,Online,v10867,5.4E+12,23,1.2E+13,"`1 CF5; Friday transfection, no media exchange, Tuesday harvest",,,,d7433,d7157,,No,CS5
+AAV pmSyn1-EBFP-Cre,51507,AAVrg,6878,Zeng,Meghan,5/26/2017,Online,v10757,,52,0.0E+00,"Friday transfection, no media exchange, Tuesday harvest ",,,,d5469,d7157,,,4HF
+pAAV-Syn-ChR2(H134R)-GFP (Syn promoter),58880,AAVrg,6360,Boyden,Luke,5/26/2017,Online,v10758,,29,0.0E+00,"d5244 /  Friday transfection, no media exchange, Tuesday harvest; only produced 5 mL at 3E+12 from 3HF. Concentrate more next prep",,,,d5469,d7434,,,4HF
+AAV-hSyn1-GCaMP6s-P2A-nls-dTomato,51084,AAVrg,6739,Ting,Meghan,6/1/2017,Online,v10813,9.0E+12,74,6.7E+13,,,,,d5469,d7157,,,4HF
+AAVpCAG-FLEX-tdTomato-WPRE ,51503,AAVrg,7197,Zeng,Karen,6/1/2017,Online,v10759  ,,24,0.0E+00,"low titer; d8757; use 1:1:2 ratio, with 2 being from Cis/transfer plasmid",,,,d5468,d7704,,,4HF
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry ,44362,AAVrg,7034,Roth,Karen,6/8/2017,Online,v11258,9.0E+12,92,8.3E+13,@Kash lab for in vivo testing,,,,d6846,d7832,d5261,Ongoing,4HF
+AAV-CAG-hChR2-H134R-tdTomato,28017,AAVrg,7124,Svoboda ,Karen,6/8/2017,Online,v11259,,34,0.0E+00,,,,,d7433,d7833,,No,4HF
+pAAV-Ef1a-DO_DIO-TdTomato_EGFP-WPRE-pA,37120,AAVrg,7779,Sabatini,Luke,6/15/2017,Online,v11420,8.0E+12,71,5.7E+13,This was used in Alla's paper - it's the red/green flip construct,,,,d6846,d7832,,,4HF
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,AAVrg,7315,Roth,Karen,6/22/2017,Online,v11553,6.6E+12,11,7.3E+12,"low yield. gave good yield in AAV8, but we this time had ultracentrifuge issue. *this is at Kash lab for testing",,,,d6846,d7832,d5260,Ongoing,4HF
+pAAV-CAG-tdTomato,59462,AAVrg,6208,Boyden,Meghan,6/22/2017,Online,v11551,6.8E+12,11,7.5E+12,"low yield. gave good yield in AAV8, but we this time had ultracentrifuge issue. *this is at Kash lab for testing",,,,d8095,d7833,,No,4HF
+AAV-pgk-Cre,24593,AAVrg,5638,Aebischer,Luke,7/6/2017,Online,v12224,8.0E+12,20,1.6E+13,,,,,d6846,d7252,,,4HF
+pAAV-EF1a-mCherry-IRES-Flpo,55634,AAVrg,7879,Deisseroth,Meghan,7/6/2017,Online,v12223,8.0E+12,24,1.9E+13,,,,,d8095,d7832,,,4HF
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,AAVrg,7315,Roth,Kate,7/13/2017,Online,v12225,9.0E+12,63,5.7E+13,,,,,d6846,d7252,d5283,Ongoing,4HF
+pAAV-EF1a-double floxed-hChR2(H134R)-mCherry-WPRE-HGHpA,20297,AAVrg,7241,Deisseroth,Ina,7/13/2017,Online,v12250,7.5E+12,45,3.4E+13,"new item, use different polymerase and protocol for part of the ID-PCR",,,,d6846,d8091,,Yes Success,4HF
+pAAV-CAG-FLEX-rc [Jaws-KGC-GFP-ER2],84445,AAVrg,6780,Boyden,Luke,7/14/2017,Online,v12304,9.0E+12,65,5.9E+13,"@ janelia 
+IDPCR was done on DNA extracted from the purified prep. A very faint band was found indicating a low amount of cre-independent recombination. However when 4E+06 vector genome per cells were added to 293 cells, no GFP expression was detected in absence of Cre. Therefore the prep is good for distribution. ",,,,d6846,d7831,,Yes Success,4HF
+pAAV-hSyn-hM3D(Gq)-mCherry,50474,AAVrg,7059,Roth,Meghan,7/20/2017,Online,v12307,7.0E+12,25,1.8E+13,"2HF were transfected with 1mg DNA and 2 with 1.5mg. 
+The 1.5mg prep was too low to distribute even after reconcentrating down to 400ul. 1mg re-titered at 5E12. This is being tested in vivo at Janelia",,,,d6846,,,Yes Success,4HF
+pAAV-hSyn-hM4D(Gi)-mCherry,50475,AAVrg,6726,Roth,Ina,7/20/2017,Online,v12308,1.0E+13,20,2.0E+13,"2HF were transfected with 1mg DNA and 2 with 1.5mg. 
+The 1.5mg prep was too low to distribute even after reconcentrating down to 400ul.
+Waiting on Janelia in vivo data from similar titer",,,,d6846,,,No,4HF
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAVrg,7658,Deisseroth,Ina,7/27/2017,Online,v12564,7.5E+12,10,7.5E+12,"low titer, had to be reconcentrated",,,,d6846,,,No,4HF
+AAV-hSyn-Jaws-KGC-GFP-ER2,65014,AAVrg,6351,Boyden,Luke,7/27/2017,Online,v12565,9.0E+12,41,3.7E+13,,,,,d6846,d9989,,No,4HF
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAV1,7658,Deisseroth,Kate,8/3/2017,Rejected,v12755 / v12567 ,2.4E+11,0,Rejected,"Titer too low, prep physically discarded",,,,d6846, d6086,,No,4HF
+AAV-hSyn1-GCaMP6s-P2A-nls-dTomato,51084,AAV1,6739,Ting,Luke,8/3/2017,Online,v12687,5.5E+12,14,7.7E+12,One column's set of fractions was discarded due to a spill. Re-concentration needed. Initial titer was 2E12,,,,d6846, d8753,,No,4HF
+pAAV-EF1a-mCherry-IRES-Flpo,55634,AAVrg,7879,Deisseroth,Brendan/Kate/Ina,8/10/2017,Online,v12800,1.0E+13,6,6.0E+12,"6HF; d8757; use 1:1:2 ratio, with 2 being from Cis/transfer plasmid; OVERSIZED 
+15% and 25% layers of one gradient mixed; 
+had to reconcentrate",,,,d6846,d10187,,No,6HF
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAVrg,7658,Deisseroth,Ina,8/17/2017,Online,v12824,7.8E+12,33,2.6E+13,"6HF, used 1:1:1 ratio",,,,d6846,,,No,6HF
+AAV-EF1a-DIO-GCaMP6s-P2A-nls-dTomato,51082,AAV1,7480,Ting,Luke,8/17/2017,Online,v12825,5.8E+12,12,6.9E+12,,,,,d6846,,,No,4HF
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,AAV1,7256,Deisseroth,Ina,8/24/2017,Online,v12827,7.9E+12,28,2.2E+13,"popular(7), new item
+IDPCR on DNA extracted from virus was acceptable. Prep is good for distribution",,,,d6846,,d10185,No,4HF
+AAV-hSyn1-GCaMP6f-P2A-nls-dTomato,51085,AAV1,6739,Ting,Luke,8/24/2017,Online,v12828,1.1E+13,23,2.5E+13,"test D2 vs D10 for media replacement, used Pell concentration centrifuge filters instead of normal pink filters; popular(2), new item",,,,d6846,,,No,4HF
+AAV-EF1a-DIO-GCaMP6s-P2A-nls-dTomato,51082,AAVrg,7480,Ting,Kate/Brendan ,8/25/2017,Rejected,v12826,5.0E+12,0,Rejected,"Friday transfection. Karen seed cells. Had to reconcentrate, low volume (750uL), borderline titer and purity. Decided to not distribute",,,,d6846,,,No,4HF
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,AAVrg,7256,Deisseroth,Ina,9/1/2017,Online,v12841,1.1E+13,37,4.1E+13,"Friday transfection.
+IDPCR on DNA extracted from virus was acceptable. Prep is good for distribution",,,,d6846,,d10185,No,4HF
+pAAV-CAG-tdTomato (codon diversified),59462,AAV1,6208,Boyden,Kate/Brendan,9/1/2017,Rejected,v12840,9.4E+11,0,0.0E+00,"Friday transfection.
+Titer too low, prep physically discarded",,,,d6846,,,No,4HF
+pAAV-Syn-Chronos-GFP,59170,AAVrg,6078,Boyden,Luke,9/7/2017,Online,v13092,9.0E+12,48,4.3E+13,Need high titer (syn + retro). new item - Luke made it in AAV5 and got high yields. Test D2 vs D4 for media replacement,,,,d6846,,,No,4HF
+pAAV-CAG-tdTomato,59462,AAVrg,6208,Boyden,Karen,9/7/2017,Online,v13091,7.2E+12,51,3.7E+13,"2*CF5, no media exchange; Friday transfection. / need by Oct 18",,,,d6846,,,No,CS5
+pAAV-EF1a-double floxed-hChR2(H134R)-mCherry-WPRE-HGHpA,20297,AAVrg,7241,Deisseroth,Kate,9/14/2017,Online,v13250,1.0E+13,42,4.2E+13,,,,,d6846,,,No,4HF
+pAAV-hSyn-hM4D(Gi)-mCherry,50475,AAVrg,6726,Roth,Luke,9/14/2017,Online,v13516,1.0E+13,59,5.9E+13,Test D2 vs D4 for media replacement,,,,d6846,,,No,4HF
+pAAV-hSyn-GFP,50465,AAVrg,5265,Roth,Ina,9/21/2017,Online,v14317,7.4E+12,30,2.2E+13,3HF,,,,d6846,,,No,3HF
+pAAV-FLEX-tdTomato,28306,AAVrg,6469,Boyden,Karen/Brendan,9/21/2017,Online,v14314,7.5E+12,29,2.2E+13," 3HF
+Orientation was confirmed by IDPCR on virus and plasmid. Need at least 25 SU to get us to Feb 2018
+Waiting for VGS to confirm insert. Orientation was confirmed by IDPCR on virus and plasmid.
+VGS confirmed insert ",,,,d6846,,,No,3HF
+pAAV-EF1a-mCherry-IRES-Flpo,55634,AAVrg,7879,Deisseroth,Kate/Ina ,9/28/2017,Online,v14717,8.0E+12,38,3.0E+13,8 HFs pooled into 4mLs,,,,d6846,,,No,8HF
+AAV pmSyn1-EBFP-Cre  ,51507,AAVrg,6878,Zeng,Luke ,10/6,Online,v14719,7.6E+12,53,4.0E+13,,,,,d6846,,,No,4HF
+AAV-CAG-GFP,37825,AAVrg,5439,Boyden,Kate/Brendan,10/6,Online,v14718,7.0E+12,6,4.2E+12,"3 HF used: fourth one contaminated. Low titer, reconcentrated with low volume (700 µL).",,,,d6846,d10427,d5465,No,3HF
+AAV-CAG-GFP,37825,AAV5,5439,Boyden,Ina,10/12,Online,v14896,1.0E+13,38,3.8E+13,Test D0 vs D4,,,,,,,No,4HF
+AAV pmSyn1-EBFP-Cre  ,51507,AAV5,6878,Zeng,Luke,10/12,Online,v14895,1.0E+13,68,6.8E+13,,,,,,,,No,4HF
+AAV-pgk-Cre,24593,AAVrg,5638,Aebischer,Brendan,10/19,Online,v14932,1.4E+13,34,4.8E+13,,,,,,,,No,4HF
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,AAV5,7315,Roth,Luke,10/19/2017,Online,v14933,1.3E+13,93,1.2E+14,,,,,,,,No,4HF
+pAAV-hSyn-DIO-EGFP,50457,AAVrg,5533,Roth,Kate,10/26/2017,Online,v15004,7.6E+12,31,2.4E+13,d6142,,,,,,,No,4HF
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry ,44362,AAV5,7034,Roth,Ina,10/26/2017,Online,v15116,1.2E+13,82,9.8E+13, D0 vs D4. Need at least 45 SU to get us to Feb 2018         ,,,,,,,No,4HF
+pAAV-hSyn Con/Fon hChR2(H134R)-EYFP,55645,AAVrg,6898,Deisseroth,Luke,11/2/2017,Online,v15288,1.2E+13,88,1.1E+14,,,,,,,,No,4HF
+pAAV-hSyn Con/Fon EYFP,55650,AAVrg,5843,Deisseroth,Ina,11/2/2017,Online,v15289,1.0E+13,35,3.5E+13,,,,,,,,No,4HF
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,AAV5,7256,Deisseroth,Kate,11/10,Online,v15411,1.0E+13,52,5.2E+13,Friday transfection. IDPCR suggested recombination.,,,,,,,No,4HF
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAVrg,7658,Deisseroth,Luke/Ina,11/9,Online,v15410,1.3E+13,46,6.0E+13,"Double prep! 8HF.  Need by Jan 20, 2018. Need at least 35 SU to get to Feb 2018",,,,,,,No,8HF
+AAV pmSyn1-EBFP-Cre (AAV Retrograde),51507,AAVrg,6878,Zeng,Luke/Ina,11/16,Online,v15413,1.0E+13,40,4.0E+13,Need at least 67 SU to get us to Feb 2018,,,,,,,No,4HF
+pAAV-CAG-GFP,37825,AAVrg,5439,Boyden,Brendan,11/16,Online,v15412,7.0E+12,32,2.2E+13,,,,,,,,No,4HF
+pAAV-hSyn-DIO-mCherry (AAV5),50459,AAV5,5524,Roth,Kate,11/30,Online,v16112,1.0E+13,42,4.2E+13,,,,,,,,No,4HF
+AAV-EF1a-DIO-GCaMP6f-P2A-nls-dTomato (AAV Retrograde),51083,AAVrg,7480,Ting,Meghan,11/30,Rejected,v15760,2.3E+12,0,Rejected,Titer too low,,,,,,,No,4HF
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry (AAV2),44361,RepCap2 v3 - 104963,7315,Roth,Karen/Luke/Ina,12/7/2017,Online,v16068,4.3E+12,42,1.8E+13,,,,,,,,No,4HF
+pAAV-CAG-mKate2 (WT ITR),105922,RepCap2 v3 - 104963,5886,Fan,Karen/Luke/Ina,12/14/2017,Online,v16500,7.0E+12,21,1.5E+13,waiting to confirm with ITR team,,,,,,,No,4HF
+pAAV-CAG-mKate2 (C-gapITR),105921,RepCap2 v3 - 104963,5897,Fan,Karen/Luke/Ina,12/14/2017,Online,v16499,1.0E+13,17,1.7E+13,waiting to confirm with ITR team,,,,,,,No,4HF
+2018,,,,,,,,,,,,,,,,,,,,4HF
+AAV-EF1a-DIO-GCaMP6f-P2A-nls-dTomato,51083,AAVrg,7480,Ting,Ina,1/12/2018,Online,v16601,1.0E+13,14,1.4E+13,Friday transfection - Monday 15th is MLK holiday. need by 1/25/2018,,,,,,,No,4HF
+pAAV-hSyn-EGFP,50465,AAVrg,5265,Roth,Brendan,1/12/2018,Online,v16600,1.0E+13,30,3.0E+13,Friday transfection - Monday 15th is MLK holiday. need by 2/6/2018,,,,,,,No,4HF
+pAAV-FLEX-tdTomato,28306,AAVrg,6469,Boyden,Meghan,1/18/2018,Online,v16602,1.4E+13,51,7.1E+13,Evidence of recombination in ID-PCR of plasmid and virus. No observable recombination in cells.,,,,,,,No,4HF
+pAAV-CAG-tdTomato (codon diversified),59462,AAVrg,6208,Boyden,Luke,1/18/2018,Online,v16603,7.0E+12,25,1.8E+13,need by 2/21/2018,,,,,,,No,4HF
+pAAV-Ef1a-DO_DIO-TdTomato_EGFP-WPRE-pA,37120,AAVrg,7779,Sabatini,Brendan,1/25/2018,Online,v16635,1.7E+13,32,5.4E+13,need by 2/24/2018,,,,,,,No,4HF
+AAV-CAG-hChR2-H134R-tdTomato,28017,AAVrg,7124,Svoboda,Ina,1/25/2018,Online,v16637,1.0E+13,29,2.9E+13,need by 4/24/2018,,,,,,,No,4HF
+AAV pmSyn1-EBFP-Cre,51507,AAVrg,6878,Zeng,Luke,2/1/2018,Online,v17259,1.5E+13,43,6.5E+13,need by 3/12/2018,,,,,,,No,4HF
+pAAV-Syn-ChR2(H134R)-GFP,58880,AAVrg,6360,Boyden,Ina,2/8/2018,Online,v17571,7.4E+12,41,3.0E+13,backorder,,,,,,,No,4HF
+pGP-AAV-syn-jGCaMP7f-WPRE,104488,AAVrg,5624,Kim,Luke/Ina,2/8/2018,Online,v17604,1.6E+13,47,7.5E+13,,,,,,,,No,4HF
+pAAV-hSyn-DIO-mCherry,50459,RepCap5 v3 - 104964,5524,Roth,Meghan,2/15/2018,Online,v18065,1.5E+13,66,9.9E+13,"4HFs v18065, no media exchange due to President's Day",,,,,,,No,4HF
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,AAVrg,7256,Deisseroth,Brendan,2/22/2018,Online,v19066,1.7E+13,14,2.4E+13,need by 4/8/2018,,,,,,,No,4HF
+pAAV.Syn.Flex.GCaMP6s.WPRE.SV40,100845,RepCap5 v3 - 104964,5917,Kim,Ina,2/22/2018,Online,v19064,1.1E+13,71,7.8E+13,Penn inventory remake; d18793,,,,,,,No,4HF
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAVrg  - 81070,7658,Deisseroth,Luke/Meghan,3/1/2018,Online, v19786,8.0E+12,80,6.4E+13,Double prep. 8 HFs. Purify as one prep. need by 4/7,,,,,,,No,8HF
+pAAV-hSyn-hM4D(Gi)-mCherry,50475,RepCap5 v3 - 104964,6726,Roth,Brendan,3/8/2018,Online,v20733,9.0E+12,29,2.6E+13,need by 4/10/2018. Friday transfection as Thursday storm precaution.,,,,,,,No,4HF
+pAAV-Syn-ChrimsonR-tdT (AAV5),59171,RepCap5 v3 - 104964,6864,Boyden,Ina,3/8/2018,Online,v20645,8.2E+12,61,5.0E+13,need by 4/25. Penn remake,,,,,,,No,4HF
+pAAV-CAG-GFP,37825,AAVrg  - 81070,5439,Boyden,Brendan,3/15/2018,Online,v21717,1.1E+13,40,4.5E+13,need by 4/16,,,,,,,No,4HF
+pAAV-EF1a-double floxed-hChR2(H134R)-mCherry-WPRE-HGHpA (AAV5),20297,RepCap5 v3 - 104964,7241,Deisseroth,Luke,3/15/2018,Online,v21718,1.4E+13,46,6.4E+13,need by 4/4,,,,,,,No,4HF
+pZac2.1 gfaABC1D-cyto-GCaMP6f,52925,RepCap5 v3 - 104964,5819,Khakh,Luke,3/22/2018,Online,v21843,1.4E+13,121,1.7E+14,diluted a lot,,,,,,,No,4HF
+pGP-AAV-syn-jGCaMP7f-WPRE,104488,AAVrg  - 81070,5624,Kim,Meghan,3/22/2018,Online,v21720 (untreated) v22122 (sucrose treated),v21720 1e13 v22122 1.85e13,79,1.16E+14,Each prep was diluted to target of 1.2e13. Lot v22122 (sucrose treated is on hold pending sucrose testing); waiting on expression data,,,,d19634 , d16674 ,d16186,No,4HF
+pAAV-CAG-tdTomato (codon diversified),59462,AAVrg  - 81070,6208,Boyden,Karen,3/22/2018,Online,v21719,1.2E+13,59,7.1E+13,one CellStack-10 instead of 4 HF; 4.5mg total DNA,,,,,,,No,CS10
+pAAV-CaMKIIa-hChR2(H134R)-EYFP (AAV2),26969,RepCap2 v3 - 104963,7041,Deisseroth,Meghan,3/29/2018,Online,v22204,9.3E+12,27,2.5E+13,need by 5/10. Keep early bc its AAV2. Only 2 HFs because 2 of the gradients shattered in the centrifuge. Diluted from 1.3e13 to 9.3e12.,,,,d19634,d15318,d17141 ,No,2HF
+pAAV-hSyn-DIO-EGFP,50457,AAVrg  - 81070,5533,Roth,Ina,3/29/2018,Online,v22205,1.0E+13,37,3.7E+13,need by 4/16/2018,,,,,,,No,4HF
+AAV-EF1a-DIO-GCaMP6f-P2A-nls-dTomato,51083,AAVrg  - 81070,7480,Ting,Luke,4/5/2018,Online,v23716,1.0E+13,61,6.1E+13,"need by 5/19 (this is a low yield typically), D2 Media Exchange",,,,,,,No,4HF
+AAV-pgk-Cre,24593,AAVrg  - 81070,5638,Aebischer,Meghan,4/5/2018,Online,"v23426 (untreated), v23717 (sucrose) ",7.4e12 v23426 (untreated) 9.5e12 v23717 (Sucrose),62,5.28E+13,Need 4/28. ,,,,d19634,d11222,d10404,No,4HF
+pAAV.CMV.HI.eGFP-Cre.WPRE.SV40  ,105545,RepCap5 v3 - 104964,6464,Wilson,Karen/Ina,4/5/2018,Online,v23163,1.0E+13,111,1.1E+14,At Penn. Super popular. CS 10 used for production,,,,,,,No,CS10
+pENN.AAV.EF1a.eGFP.WPRE.rBG  ,105547,RepCap5 v3 - 104964,6286,Wilson,Ina,4/13/2018,Online,v24803,8.9E+12,58,5.2E+13,Friday Transfection. Monday is Patriot's Day.,,,,"Penn remake. Super popular, 0 units left at Penn.",,,No,4HF
+pAAV-FLEX-ArchT-tdTomato,28305,RepCap5 v3 - 104964,7225,Boyden,Luke,4/13/2018,Online,v24870,1.3E+13,93,1.2E+14,Friday Transfection. Monday is Patriot's Day.,,,,need by 4/25,,,No,4HF
+small scale transfection (seed 12E6/T-175 on thursday),104487 / 104488,AAVrg  - 81070,5624,GENIE,Karen,4/13/2018,Not in LIMS,not in LIMS,not in LIMS,,not in LIMS,Friday Transfection. Monday is Patriot's Day.,,,,,,,not in LIMS,4HF
+pAAV-hsyn-Jaws-KGC-GFP-ER2,65014,RepCap5 v3 - 104964,6351,Boyden,Meghan,4/13/2018,Online,v23746,1.30E+13,53,6.89E+13,Friday Transfection. Monday is Patriot's Day.,,,,d19634,d22772,d8756,,4HF
+pAAV-EF1a-mCherry-IRES-Flpo,55634,AAVrg  - 81070,7879,Deisseroth,Meghan,4/19/2018,Rejected,,,,0,Contaminated - discarded prep,,,,"need by 5/25. CS-10 layer, will compare to 4 HF",,,,4HF
+pAAV-EF1a-mCherry-IRES-Flpo,55634,AAVrg  - 81070,7879,Deisseroth,Luke,4/19/2018,Online,v24935,8.3E+12,53,4.4E+13,4 HF,,,,"need by 5/25. 4HF, will compare to CS10",,,No,4HF
+pZac2.1 gfaABC1D-lck-GCaMP6f,52924,RepCap5 v3 - 104964,5929,Khakh,Karen,4/19/2018,Online,v26882,1.3E+13,78,9.8E+13,Friday Transfection. DNA lot d13928- CS10,,,,,"Penn remake, we don't have it yet but it's popular, ~10 units left at Penn, 38 shipped last year",,No,4HF
+AAV pmSyn1-EBFP-Cre (AAV Retrograde),51507,AAVrg  - 81070,6878,Zeng,Ina,4/26/2018,Online,v27021 (pooled with HFs),1.1E+13 (pooled titer),115,1.27E+14,Comparison of yields from 4 HF vs 1 CS10 - CS10 adn HFs were pooled after titering and retitered,,,,d19634,d20442,d24046,No,4HF+CS10
+AAV pmSyn1-EBFP-Cre (AAV Retrograde),51507,AAVrg  - 81070,6878,Zeng,Meghan,4/26/2018,Online,see above,see above,,,Comparison of yields from 4 HF vs 1 CS10 - CS10 adn HFs were pooled after titering and retitered,,,,d19634,d20442,d24046,No,4HF+CS10
+"repeat CMV/SV40-Cap small scale in AAV5, 37825",37825,RepCap5 v2 - 99286,5439,Boyden,Luke,4/26/2018,Not in LIMS,Not in LIMS,Not in LIMS,,not in LIMS,,,,,,,,not in LIMS,CS10
+pAAV-Ef1a-DO_DIO-TdTomato_EGFP-WPRE-pA (AAV Retrograde),37120,AAVrg  - 81070,7779,Deisseroth,Karen,5/3/2018,Online,v27938 ,1.0E+13,49,4.9E+13,Start using 0.1M sucrose in D4 at media exchange,,,,,,,No,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,RepCap5 v3 - 104964,7034,Roth,Luke,5/3/2018,Online,v28546,1.2E+13,96,1.2E+14,,,,,,,,No,CS10
+"repeat CMV/SV40-Cap small scale in AAV5, 59462",59462,RepCap5 v2 - 99286,6208,Boyden,Luke,5/1/2018,Not in LIMS,Not in LIMS,Not in LIMS,,not in LIMS,,,,,,,,not in LIMS,CS10
+pAAV-Ef1a-DIO EYFP,27056,RepCap5 v3 - 104964,6313,Deisseroth,Luke,5/11/2018,Online,v29488,1.3E+13,190,2.5E+14,Friday Transfection,,,,,,,No,CS10
+pAAV.CMV.PI.EGFP.WPRE.bGH,105530,RepCap5 v3 - 104964,5514,Wilson,Ina,5/10/2018,Online,v28616,1.3E+13,176,2.3E+14,"Penn remake; d18786. 36 shipped last year, 11 units left at Penn, but we have 37825 which is very similar.",,,,,,,No,CS10
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,RepCap5 v3 - 104964,7256,Deisseroth,Meghan,5/17/2018,Online,v30041,7.7E+12,76,5.9E+13,"use 0.1M sucrose in D4 at media exchange, 1 gradient shattered while centrifuging so yield is from 3 HFs ",,,,d19634,d24042,d22868,No,3HF
+pAAV-hSyn-EGFP,50465,AAVrg  - 81070,5265,Roth,Luke,5/17/2018,Online,v30042,1.5E+13,114,1.7E+14,use 0.1M sucrose in D4 at media exchange,,,,need by 5/17,,,No,CS10
+pGP-AAV-syn-jGCaMP7s-WPRE,104487,AAVrg  - 81070,5602,Kim,Karen,5/17/2018,Online,v29920,1.5E+13,94,1.4E+14,use 0.1M sucrose in D4 at media exchange,,,,new catalog item,,,No,CS10
+pAAV-GFAP-hM4D(Gi)-mCherry,50479,RepCap5 v3 - 104964,6919,Roth,Luke,5/24/2018,Online,v30819,1.0E+13,129,1.3E+14,Friday Transfection Monday is Memorial Day,,,,new catalog item,,,No,CS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,RepCap5 v3 - 104964,7315,Roth,Ina,5/24/2018,Online,v30818,7.8E+12,90,7.0E+13,Friday Transfection Monday is Memorial Day,,,,need by 6/29,,,No,CS10
+pGP-AAV-syn-FLEX-jGCaMP7f-WPRE,104492,AAVrg  - 81070,5765,Kim,Karen,5/31/2018,Online,v30897,1.5E+13,79,1.2E+14,use 0.1M sucrose in D4 at media exchange,,,,new catalog item,,,No,CS10
+pGP-AAV-syn-FLEX-jGCaMP7s-WPRE,104491,AAVrg  - 81070,5791,Kim,Meghan,5/31/2018,Online,v31119 ,1.2E+13,45,5.4E+13,"4HFs, Meghan comparing fresh versus 1 month stored sucrose",,,,d19634,d16674,d23474,No,CS10
+pAAV.Syn.NES-jRGECO1a.WPRE.SV40,100854,AAVrg  - 81070,5684,Genie,Ina,6/7/2018,Online,v31560,1.3E+13,77,1.0E+14,use 0.1M sucrose in D4 at media exchange,,,,new catalog item,,,No,CS10
+pAAV-GFAP-hM3D(Gq)-mCherry,50478,RepCap5 v3 - 104964,7252,Roth,Luke,6/7/2018,Online,v31561,1.2E+13,89,1.1E+14,Split prep to test 0.1M sucrose in D4 at media exchange,,,,new catalog item,,,No,CS10
+pAAV-hsyn-Jaws-KGC-GFP-ER2,65014,AAVrg  - 81070,6351,Boyden,Luke,6/14/2018,Online,v32356,1.3E+13,135,1.8E+14,Split prep to test 0.1M sucrose in D4 at media exchange,,,,need by 7/16,,,No,CS10
+pAAV-CAG-tdTomato (codon diversified),59462,RepCap2 v3- 104963,6208,Boyden,Greg/Meghan,6/14/2018,Rejected,v32264,6.2E+12,10,6.2E+12,Split prep to test 0.1M sucrose in D4 at media exchange,,,,"new catalog item. contamination detected, all 10 units have been discarded",,,No,CS10
+pAAV-hSyn-EGFP,50465,RepCap5 v3 - 104964,5265,Roth,Ina,6/21/2018,Online,v32532,1.2E+13,141,1.7E+14,Split prep to test 0.1M sucrose in D4 at media exchange,,,,need by 8/6,,,No,CS10
+pAAV-Ef1a-DIO eNpHR 3.0-EYFP,26966,RepCap5 v3 - 104964,7276,Deisseroth,Luke,6/21/2018,Online,v32533,1.1E+13,142,1.6E+14,Split prep to test 0.1M sucrose in D4 at media exchange,,,,need by 7/19,,,No,CS10
+pAAV-hSyn-hM3D(Gq)-mCherry,50474,AAVrg  - 81070,7059,Roth,Karen,6/28/2018,Online,v32675,1.1E+13,81,9.2E+13,Split prep to test 0.1M sucrose in D4 at media exchange,,,,Sucrose and no sucrose pooled in one lot,,,No,CS10
+pAAV.Syn.Flex.NES-jRGECO1a.WPRE.SV40,100853,AAVrg  - 81070,5999,Genie,Ina,6/28/2018,Online,v32703,1.2E+13,58,7.0E+13,Split prep to test 0.1M sucrose in D4 at media exchange,,,,new catalog item,,,No,CS10
+pAAV-hSyn-DIO-EGFP,50457,AAVrg  - 81070,5533,Roth,Karen,6/26/2018,Online,v32676,1.4E+13,32,4.5E+13,CS2 - pilot for made to order scale,,,,need by 10/9,,,No,CS2
+pAAV-CAG-tdTomato (codon diversified),59462,AAVrg  - 81070,6208,Boyden,Ina,6/26/2018,Not in LIMS,not in LIMS,not in LIMS,,not in LIMS,small scale pHelper testing,,,,,,,No,CS10
+pAAV-CaMKIIa-hM4D(Gi)-mCherry,50477,RepCap5 v3 - 104964,7594,Roth,Greg/Meghan,7/6/2018,Online,v33825,9.5E+12,27,2.76E+13,4th of July week . Friday transfection,,,,need by 10/3,,,No,CS10
+pAAV-hSyn-hM4D(Gi)-mCherry,50475,RepCap5 v3 - 104964,6726,Roth,Luke,7/6/2018,Online,v33826,1.2E+13,59,7.1E+13,4th of July week . Friday transfection,,,,need by 10/21,,,No,CS10
+pAAV-CAG-GFP,37825,AAVrg  - 81070,5439,Boyden,Karen,7/9/2018,Not in LIMS,not in LIMS,not in LIMS,,not in LIMS,500mL transfection in suspension cells - optimization of protocol,,,,,,,No,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,AAVrg  - 81070,7034,Roth,Meghan,7/12/2018,Online,v34457,1.4E+13,73,9.9E+13,use 0.1M sucrose in D4 at media exchange,,,,,,,No,CS10
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,AAVrg  - 81070,7256,Deisseroth,Luke,7/12/2018,Online,v32674,1.0E+13,70,7.0E+13,use 0.1M sucrose in D4 at media exchange,,,,,,,No,CS10
+pAAV-Ef1a-mCherry-IRES-Cre  ,55632,AAVrg - 81070,7658,Deisseroth,Meghan,7/10/2018,Online,v34020,1.1E+13,35,3.9E+13,CS2 custom prep pilot - also sugar comparison,,,,,,,No,CS2
+pAAV-hSyn-EGFP,50465,RepCap2 v3- 104963,5265,Roth,Ina,7/19/2018,Online,v34712,8.0E+12,31,2.5E+13,Split prep to test 0.1M sucrose in D4 at media exchange,,,,Backordered,,,No,CS10
+pAAV-Syn-ChR2(H134R)-GFP,58880,AAVrg  - 81070,6360,Boyden,Luke,7/19/2018,Online,v34713,1.1E+13,57,6.3E+13,use 0.1M sucrose in D4 at media exchange,,,,need by 8/27,,,No,CS10
+pAAV-CaMKIIa-hM4D(Gi)-mCherry,50477,RepCap5 v3 - 104964,7594,Roth,Meghan/Izzy,7/20/2018,Online,v34714,9.3E+12,16,1.5E+13,"CS10, no media exchange",,,,need by 11/15,,,No,CS10
+AAV-hSyn1-GCaMP6s-P2A-nls-dTomato,51084,AAVrg  - 81070,6739,Ting,Greg ,7/26/2018,Online,v36117,1.0E+13,72,7.4E+13,use 0.1M sucrose in D4 at media exchange,,,,,,,No,CS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,AAVrg  - 81070,7315,Roth,Ina,7/26/2018,Online,v36470,1.0E+13,61,6.1E+13,use 0.1M sucrose in D4 at media exchange,,,,,,,No,CS10
+pAAV-hSyn-EGFP,50465,RepCap2 v3- 104963,5265,Roth,Meghan/Izzy,7/26/2018,Online,v36469,3.0E+12,54,1.6E+13,"CS2 each condition, 33 versus 37 , both +sucrose",,,,,,,No,2xCS2
+pAAV-CAG-GFP,37825,AAVrg  - 81070,5439,Boyden,Meghan/Izzy,7/31/2018,Online,v36812,1.0E+13,45,4.5E+13,"CS2 - sucrose, fructose, sorbitol test",,,,need by 9/2,,,No,CS2
+pAAV-FLEX-tdTomato,28306,AAVrg  - 81070,6469,Boyden,Luke,8/2/2018,Online,v37854,1.2E+13,68,8.2E+13,use 0.1M sucrose in D4 at media exchange,,,,need by 10/5,,,No,CS10
+pAAV-CAG-tdTomato (codon diversified),59462,AAVrg  - 81070,6208,Boyden,Luke/Ina/Erin,8/9/2018,Online,v38519,7.1E+12,61,4.3E+13,use 0.1M sucrose in D4 at media exchange,,,,need by 10/5,need QC summary,,No,CS10
+pAAV.Syn.GCaMP6f.WPRE.SV40 (AAV5),100837,RepCap5 v3 - 104964,5624,GENIE,Karen,8/9/2018,Online,v37852,1.3E+13,92,1.2E+14,"v37852, popsicle sticks added",,,,need by 10/18,,,No,CS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,RepCap2 v3- 104963,7315,Roth,Meghan/Izzy,8/7/2018,Rejected,v37962,4.2E+12,,0.0E+00,"CS2 - sucrose, fructose, sorbitol test, Silver stain was dirty so the sample was discarded
+Rejected due to DIRTY SILVER STAIN",,,,need by 12/15,,,No,CS2
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,RepCap5 v3 - 104964,7034,Roth,Greg,8/7/2018,Online, v37888 ,8.8E+12,10,8.8E+12,"CS2 - sucrose, fructose, sorbitol test",,,,,,,No,CS2
+pAAV-CAG-tdTomato (codon diversified),59462,RepCap1 - 112862,6208,Boyden,Karen,8/14/2018,On hold,v39801,1.20E+13,11,1.32E+13,"Testing of RC1- in CS2, 0.1M sucrose in D4",,,,,,,No,CS2
+pAAV-CAG-tdTomato (codon diversified),59462,RepCap8 - 112864,6208,Boyden,Karen,8/14/2018,On hold,v39802,1.10E+13,16,,"Testing of RC8- in CS2, 0.1M sucrose in D4",,,,,,,No,CS2
+pAAV-CAG-tdTomato (codon diversified),59462,RepCap9 -112865,6208,Boyden,Karen,8/14/2018,On hold,v39803,1.90E+13,11,,"Testing of RC9- in CS2, 0.1M sucrose in D4",,,,,,,No,CS2
+pAAV-CAG-tdTomato (codon diversified),59462,RepCapRh10 - 112866,6208,Boyden,Karen,8/14/2018,On hold,v39804,4.60E+12,16,,"Testing of RCrh10- in CS2, 0.1M sucrose in D4",,,,,,,No,CS2
+AAV-CAG-hChR2-H134R-tdTomato,28017,AAVrg  - 81070,7124,Svoboda,Erin/Ina,8/16/2018,Online,v38830,7.6E+12,56,4.3E+13,need by 10/15/2018,,,,,need QC summary,,No,CS10
+pAAV-CAG-FLEX-Archon1-KGC-EGFP-ER2,108422,RepCap5 v3 - 104964,6654,Boyden,Greg,8/16/2018,Online,v38829,1.2E+13,38,4.5E+13,New item,,,,,,,No,CS10
+pENN.AAV.CMVs.Pl.Cre.rBG,105537,RepCap2 v3 - 104963,5342,Penn,Meghan/Izzy,8/23/2018,Rejected,v39099,,,0.0E+00,"New item - transfect Friday, no media exchange harvest 1 CS5 Monday and 1 CS5 Tuesday. Silver stain dirty so prep discarded. Reprep looks good.",,,,,,,No,CS10
+pENN.AAV.hSyn.HI.eGFP-Cre.WPRE.SV40,105540,AAVrg,6733,Wilson,Luke/Erin/Ina,8/23/2018,Online,v38984,1.3E+13,54,7.2E+13,New item,,,,,,,No,CS10
+pAAV-FLEX-EGFPL10a,98747,RepCap5 v3 - 104964,6998,"Heintz, Nectow, Schmidt",Greg,8/31/2018,Online,v39563,7.9E+12,43,3.4E+13,"Friday transfection, Monday is Labor day",,,,New item,,,No,CS10
+pAAV-CAG-Archon1-KGC-EGFP-ER2,108420,RepCap5 v3 - 104964,6324,Boyden,Ina,8/31/2018,Rejected,v39621,5.0E+11,0,0.0E+00,"Friday transfection, Monday is Labor day
+Rejected due to LOW TITER",,,,New item,,,No,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,RepCap5 v3 - 104964,7034,Roth,Erin,8/28/2018,Online,v39314,5.7E+12,3,1.7E+12,"CS2 practice -- Tuesday transfection, Friday harvest ",,,,,,,No,CS2
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,RepCap2 v3- 104963,7034,Roth,Meghan,9/6/2018,Online,v39662,7.1E+12,31,2.2E+13,Sugar comparison - 3 CS2s,,,,need by 11/13/2018,,,No,3xCS2
+pAAV.CMV.HI.eGFP-Cre.WPRE.SV40,105545,RepCap2 v3 - 104963,6464,Penn,Karen,9/7/2018,Online,v39661,7.0E+12,25,1.8E+13,"2 CS5 with harvest at 72h vs 96h, no media exchange. Samples pooled into one lot",,,,"New item - transfect Friday, no media exchange harvest 1 CS5 Monday and 1 CS5 Tuesday",,,No,CS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,RepCap2 v3 - 104963,7315,Roth,Izzy,9/6/2018,Rejected,v39663,5.7E+12,,0.0E+00,need by 12/11/2018 - Rejected due to dirty silver stain. Not submitted for VGS.,,,,,,,No,CS10
+AAV-pgk-Cre ,24593,AAVrg  - 81070,5638,Aebischer,Ina,9/13/2018,Online,v40447,1.0E+13,40,4.0E+13,need by 11/28/2018,,,,,,,No,CS10
+pAAV-EF1a-double floxed-hChR2(H134R)-mCherry-WPRE-HGHpA,20297,AAVrg  - 81070,7241,Deisseroth,Greg,9/13/2018,Rejected,,,,0.0E+00,need by 12/10/2018. Prep was contaminated after transfection.,,,,,,,No,CS10
+pAAV-CAG-FLEX-rc [Jaws-KGC-GFP-ER2],84445,RepCap5 v3 - 104964,6780,Boyden,Erin,9/11/2018,Online,v40163,9.1E+12,9,8.2E+12,"New item/CS2, Friday transfection",,,,,,,No,CS2
+pENN.AAV.CMVs.Pl.Cre.rBG,105537,RepCap2 v3 - 104963,5342,Penn,Meghan,9/13/2018,Online,v40414,7.1E+12,30,2.1E+13,,,,,,,,No,CS10
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,RepCap1 - 112862,7256,Deisseroth,Karen,9/17/2018,Online,v40449,1.3E+13,24,3.2E+13,"CS2, media exchange,72h  harvest",,,,,,,No,CS2
+pAAV-EF1a-double floxed-hChR2(H134R)-EYFP-WPRE-HGHpA,20298,RepCap5 v3 - 104964,7256,Deisseroth,Karen,9/17/2018,Online,v40448,1.0E+13,28,2.8E+13,"CS2, media exchange,72h  harvest",,,,,,,No,CS2
+pENN.AAV.hSyn.Cre.WPRE.hGH,105553,AAVrg  - 81070,5605,Wilson,Greg/Meghan,9/20/2018,Online,v40450,1.2E+13,43,5.2E+13,,,,,need by 12/20/2018 to replace 51507-AAVrg,,,No,CS10
+pAAV-hSyn-DIO-mCherry,50459,RepCap5 v3 - 104964,5524,Roth,Ina,9/20/2018,Online,v40451,1.1E+13,75,8.3E+13,,,,,,,,No,CS10
+pAAV-hSyn-dLight1.2,111068,RepCap5 v3 - 104964,6622,Tian,Meghan/Izzy,9/25/2018,Online,v40520,4.6E+12,62,2.9E+13,"2CS5s in parallel (Meghan does one, Izzy does one) Needs Silver Stain. Waiting for MTA approval.",,,,,,,No,CS10
+pAAV-EF1a-double floxed-hChR2(H134R)-mCherry-WPRE-HGHpA,20297,AAVrg  - 81070,7241,Deisseroth,Erin,9/27/2018,Online,v40525,1.2E+13,51,6.1E+13,,,,,,,,No,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,RepCap5 v3 - 104964,7034,Roth,Izzy,10/2/2018,Online,v41035 ,8.6E+12,19,1.6E+13,Needs silver stain - 2 CS5s in parallel with Meghan,,,,need by 10/12/2018,,,No,CS10
+pAAV-CAG-dLight1.1,111067,RepCap5 v3 - 104964,7041,Tian,Karen ,10/5/2018,Online,v41033,8.1E+12,24,1.9E+13,Friday Transfection - Monday is Columbus Day. Waiting for MTA approval.,,,,,,,No,CS10
+Testing of Aldevron's DNA lots (85037 and 104964),37825,RepCap5 v3 - 104964,5439,Boyden ,Karen,10/5/2018,NA,not in LIMS,not in LIMS,,not in LIMS,"Friday Transfection - Monday is Columbus Day
+9 * T175",,,,,,,No,CS10
+pAAV-Syn-FLEX-rc[ChrimsonR-tdTomato],62723,RepCap5 v3 - 104964,7180,Boyden,Meghan,10/5/2018,Online,v41089 ,1.1E+13,45,5.1E+13,Friday Transfection - Monday is Columbus Day,,,,,d26729,,No,2xCS10
+pAAV-Ef1a-mCherry-IRES-Cre (2xCS10),55632,AAVrg  - 81070,7658,Deisseroth,Karen,10/11/2018,Online,v41090,8.6E+12,76,6.5E+13,"2 * CS10 with DNA d12955
+0.1M SORBITOL used in media exchange",,,,,,,No,2xCS10
+pAAV-Ef1a-DIO EYFP (AAV2),27056,RepCap2 v3- 104963,6313,Deisseroth,Erin,10/11/2018,Online,v41176,1.0E+13,23,2.3E+13,1.46M sorbitol used in media exchange,,,,,,,No,CS10
+pAAV-hSynapsin1-FLEx-axon-GCaMP6s,112010,RepCap5 v3 - 104964,6227,Lin Tian,Izzy,10/16/2018,Online,v41409,1.5E+13,31,4.7E+13,"New item. MoR. Order 428170 - Use DNA lot d28141
+AAV-5 viral parent lot v41409; AAV5.s lot v41484""",,,,,,,No,CS10
+pAAV.GFAP.eGFP.WPRE.hGH,105549,RepCap5 v3 - 104964,7136,Penn,Erin,10/18/2018,Online,v42350,1.3E+13,45,5.9E+13,,,,,,,,No,CS10
+pAAV.CMV.PI.EGFP.WPRE.bGH,105530,RepCap2 v3- 104963,5514,Penn,Ina,10/18/2018,Online,v42351,6.0E+12,49,2.9E+13,,,,,,,,No,CS10
+pAAV-CAG-Archon1-KGC-EGFP-ER2,108420,RepCap5 v3 - 104964,6324,Boyden,Meghan,10/19/2018,Rejected, v39621,5.0E+11,,0.0E+00,,,,,,,,No,CS10
+pAAV-CaMKIIa-hM4D(Gi)-mCherry,50477,RepCap5 v3 - 104964,7594,Roth,Meghan,10/16/2018,Online,v42222,6.0E+12,4,2.4E+12,"Meghan small scale ""bad"" AAV5 sucrose/sorbitol comparison",,,,,,,No,CS10
+pZac2.1 gfaABC1D-tdTomato,44332,RepCap5 v3 - 104964,5904,,Meghan,10/25/2018,Online,v42508,1.5E+13,61,9.2E+13,,,,,,,,No,CS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry,44361,RepCap2 v3- 104963,7315,,Ina,10/25/2018,Online,v42708,6.5E+12,30,2.0E+13,,,,,,,,No,CS10
+pAAV-hSynapsin1-axon-GCaMP6s-P2A-mRuby,112005,RepCap5 v3 - 104964,6789,Lin Tian,Izzy,10/23/2018,Online,v41485,9.9E+12,27,2.7E+13,"New item. MoR 428170 - Use DNA lot d29059
+AAV-5 viral parent lot v41485;   AAV5.s lot v41487",,,,,,,No,CS10
+pAAV.CMV.HI.eGFP-Cre.WPRE.SV40,105545,RepCap2 v3 - 104963,6464,Wilson,Ina,11/15/2018,Online,v43361,5.1E+12,27,1.4E+13,need by 1/21/2018 for VGS,,,,,,,No,CS10
+pAAV-hSyn-mCherry,114472,RepCap2 v3 - 104963,5247,Deisseroth,Erin,11/15/2018,Online,v43128,5.4E+12,18,9.7E+12,"New item . use DNA lot d28139, 1 gradient lost in ultracentrifuge",,,,,,,,CS10
+pAAV-hSynapsin1-axon-GCaMP6s,111262,AAV1,5991,Lin Tian,Izzy,11/13/2018,Rejected,v42709,1.0E+12,,0.0E+00,"Rejected due to low titer. Lot # will be re-used for repeat production run
+New item. MoR 432766. Use DNA lot d29334
+AAV-1 viral parent lot v42709, AAV1.s lot v42710
+",,,,,,,,CS10
+pAAV-Syn-Chronos-GFP,59170,AAV1 - 112862,6078,Boyden,Erin,11/29/2018,Online,v44177,1.4E+13,47,6.6E+13,,,,,need by 12/3/2018 for VGS,,,,CS10
+pAAV.CMV.HI.eGFP-Cre.WPRE.SV40,105545,AAV1 - 112862,6464,Wilson,Izzy,11/29/2018,Online,v43581,8.8E+12,10,8.8E+12,,,,,need by 12/3/2018 for VGS,,,,CS10
+AAV:ITR-U6-sgRNA(NeuN)-pCBh-Cre-WPRE-hGHpA-ITR  ,60227,AAV1 - 112862,6363,Zhang,Ina,11/27/2018,Online,v43413,1.3E+13,12,1.6E+13,"CS5. New item. MoR. Use DNA lot d15929
+AAV-1 viral parent lot v43413;  AAV1.s lot v43414",,,,New item. MoR 434530,,,,CS5
+pAAV-CaMKIIa-eNpHR 3.0-EYFP ,26971,AAV1 - 112862,7058,Deisseroth,Ina,11/27/2018,Online,v43580,5.2E+12,12,6.2E+12,CS5,,,,need by 12/1/2018 for VGS,,,,CS5
+pAAV-Ef1a-DO_DIO-TdTomato_EGFP-WPRE-pA,37120,AAVrg  - 81070,7779,Sabatini,Izzy,12/6/2018,Online,v44676,8.3E+12,33,2.7E+13,need by 1/2/2019 for VGS,,,,,,,,CS10
+small scale testing of  PEI and PEG ,59462,"AAV5, PEI - PEG",6208,Boyden,Karen ,12/6/2018,Not in LIMS,not in LIMS,not in LIMS,,not in LIMS,,,,,,,,,CS10
+pAAV-hSynapsin1-axon-GCaMP6s,111262,AAV1 - 112862,5991,Lin Tian,Ina,12/6/2018,Online,v42709,1.0E+13,45,4.5E+13,"CS10, MoR repeat for order 432766",,,,,,,,CS10
+pAAV-hSyn-hM4D(Gi)-mCherry,50475,RepCap2 v3 - 104963,6726,Roth,Erin,12/6/2018,Online,v44677 ,1.1E+13,24,2.6E+13,need by 1/2/2019 for VGS,,,,,,,,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry,44362,RepCap5 v3 - 104964,7034,Roth,Erin,12/13/2018,Online,v44974,9.7E+12,18,1.7E+13,,,,,,,,,CS10
+pZac2.1-GfaABC1D-mCherry-hPMCA2w/b,111568,RepCap5 v3 - 104964,9029,Baljit Khakh,Izzy,12/13/2018,Online,v44678,2.7E+12,20,5.4E+12,"MoR order 440191. CS10
+Use DNA lot d160341; AAV5- viral parent lot v44678; AAV5.s lot v44679",,,,,,,,CS10
+2019,,,,,,,,,,,,,,,,,,,,CS10
+PEI Max ratio small scale,59462,RepCap5 v3 - 104964,6208,Boyden,Karen,1/8/2019,Not in LIMS,not in LIMS,not in LIMS,not in LIMS,not in LIMS,,,,,,,,,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry (CS10 DOUBLE PREP),44362,RepCap2 v3 - 104963,7034,Roth,Erin,1/10/2019,Online,v45281,5.3E+12,55,2.9E+13,"2 * CS10, with Izzy - keep separated. Pool only after titer and clean silver stain",,,,,,,,2xCS10
+pAAV-GFAP104-mCherry,58909,RepCap5 v3 - 104964,5606,Boyden,Ina,1/10/2019,Online,v45278,1.3E+13,42,5.5E+13,"Use DNA lot d160502, AAV5 viral parent lot v45278
+AAV5.S lot v45279",,,,New item. MoR 441655. CS10,,,,CS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry (double CS10 prep),44361,RepCap5 v3 - 104964,7315,Roth,Erin,1/18/2019,Online,v46506,8.2E+12,48,3.9E+13,"2 * CS10, with Izzy - keep separated. 
+",,,,need by 1/26/2019 for VGS,,,,2xCS10
+pAAV-hSyn-DIO-hM3D(Gq)-mCherry (double CS10 prep),44361,RepCap5 v3 - 104964,7315,Roth,Izzy,1/18/2019,Rejected,--,--,--,--,Unknown contamination in CS10 on harvest day. Prep discarded,,,,,,,,CS10
+pAAV-CAG-FLEX-rc [Jaws-KGC-GFP-ER2],84445,RepCap5 v3 - 104964,6780,Boyden,Ina,1/18/2019,Online,v46505,1.3E+13,25,3.3E+13,backordered. CS5,,,,,,,,CS5
+pAAV-hSynapsin1-axon-GCaMP6s-P2A-mRuby3 (AAV5),112005,RepCap5 v3 - 104964,6789,Boyden,Ina,1/18/2019,Online,v46504,1.1E+13,26,2.9E+13,need by 1/11/2019 for VGS. CS5,,,,,,,,CS5
+pAAV-hSyn-DIO-EGFP,50457,AAVrg  - 81070,5533,Roth,Izzy,1/24/2019,Rejected,v46509,4.1E+12,--,--,"need by 1/29/2019 for VGS
+Fractions from 40% iodixanol were very dirty on SS. 2nd gradient attempt did help in cleaning prep, but titer was too low.
+",,,,,,,,CS10
+pAAV-FLEX-tdTomato,28306,AAV1 - 112862,6469,Boyden,Kate,1/24/2019,Online,v45282,1.2E+13,50,5.9E+13,"New, replacing 100048-AAV1.",,,,,,,,CS10
+pAAV-CAG-GFP (AAV Retrograde),37825,AAVrg  - 81070,5439,,Erin/Meron,1/31/2019,Online,v46612,1.0E+13,31,3.1E+13,"Meron 1st large scale prep, with Erin shadowing",,,,,,,,CS10
+pAAV-CKIIa-stGtACR1-FusionRed,105679,RepCap5 v3 - 104964,7212,,Ina,1/31/2019,Online,v46507 + v46508,9.5E+12,42,4.0E+13,"Use DNA lot d162628 ; AAV5 viral parent lot v46507
+AAV5.S lot v45608",,,,"CS10, MoR order # 445334 (Netherlands, order placed 12/20/2018)",,,,CS10
+new RC1 testing,59462,Repcap1 3 plasmids,6208,Boyden,Karen,1/29/2019,Not in LIMS,,,,0.0E+00,"112862, 120265, 120266",,,,,,,,CS10
+pAAV-hsyn-flex-Voltron-ST,119036,AAV1 - 112862,6440,,Erin,,Online,v46960,2.7E+12,27,7.3E+12,"New., low titer approved for distribution",,,,,,,,CS10
+pOTTC1596 - pAAV SYN1 HA-hM3D(Gq),121539,RepCap5 v3 - 104964,6373,Richie,Kate,2/7/2019,Online,v46636,1.0E+13,26,2.6E+13,New,,,,,,,,CS10
+pOTTC1484 - pAAV SYN1 HA-hM4D(Gi),121538,RepCap5 v3 - 104964,6058,Richie,Izzy,2/7/2019,QC,v46959,1.7E+13,19,3.2E+13,New,,,,,,,,CS10
+pAAV-CaMKIIa-hChR2(H134R)-EYFP,26969,RepCap5 v3 - 104964,7041,Boyden,Erin,2/15/2019,Online,v47175,6.1E+12,31,1.9E+13,"Friday transfection, Monday is President's Day, low titer approved for distribution",,,,need by 2/15/2019 for VGS,,,,CS10
+pAAV-CAG-dLight1.1,111067,RepCap5 v3 - 104964,7041,Tian,Meron,2/15/2019,Online, v46961 ,4.1E+12,13,5.3E+12,"Friday transfection, Monday is President's Day",,,,need by 1/31/2019 for VGS,,,,CS10
+pEMS1994,49124,AAV1 - 112862,7682,Simpson,Ina,2/15/2019,Online,v46634,6.3E+12,12,7.6E+12,"Use DNA lot d163051
+AAV1 viral parent lot v46634; AAV1.S lot v46635",,,,"CS5, MoR order 447635. Order placed 1/9/2019",,,,CS10
+pAAV.CAG-FLEX.SF-iGluSnFR.A184S,106186,RepCap2 v3 - 104963,6905,Looger,Ina,2/15/2019,Online,v46637,5.8E+12,12,7.0E+12,"Use DNA lot d163265
+AAV2 viral parent lot v46637; AAV2.S lot v46638",,,,"CS5, MoR order 448956, placed 1/15/2019",,,,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry (AAV5),44362,RepCap5 v3 - 104964,7034,Roth,Izzy,2/21/2019,Online,v47232,1.3E+13,40,5.0E+13,need ASAP- backordered,,,,,,,,CS10
+pAAV-EF1a-Flpo  ,55637,AAVrg  - 81070,6595,Deisseroth,Kate,2/21/2019,Online,v47204,1.3E+13,20,2.7E+13,New.,,,,,,,,CS10
+pAAV-hSyn-DIO-EGFP  ,50457,AAVrg  - 81070,5533,Roth,Ina,2/21/2019,Online,v47253,1.4E+13,32,4.5E+13,CS5. backordered,,,,,,,,CS5
+pAAV-hSyn-mCherry,114472,RepCap5 v3 - 104964,5247,Deisseroth,Ina,2/21/2019,Online,v47254,1.4E+13,22,3.1E+13,New. use DNA lot d28139 (not available aymore. Used d160339). CS5,,,,,,,,CS5
+RC1 comparison in CS2,104496,AAV1 120266 vs 112862,6334,GENIE,Karen,2/26/2019,Online,v47300,8.2E+12,15,1.2E+13,"v47300, Tuesday transfection, Friday harvest; D4+sorbitol media exchange",,,,,,,,CS10
+pAAV-CAG-GFP (AAV5),37825,RepCap5 v3 - 104964,5439,Boyden,Erin,2/28/2019,Online,v47307,1.4E+13,32,4.5E+13,Made 40x20 ul aliquots in addition to 24x100 ul aliquots.,,,,need by 1/25 for VGS,,,,CS10
+pAAV-CaMKIIa-hChR2(H134R)-mCherry (AAV5),26975,RepCap5 v3 - 104964,7022,Deisseroth,Erin,2/28/2019,Online,v47306,1.3E+13,13,1.7E+13,,,,,need by 2/24 for VGS,,,,CS10
+pAAV-CAG-tdTomato (codon diversified),59462,AAVrg  - 81070,6208,Boyden,Meron,2/28/2019,Online,V47738,1.3E+13,45,5.9E+13,silver stain,,,,need by 2/24 for VGS,,,,CS10
+ ,37120,AAVrg  - 81070,7779,,Izzy,2/28/2019,Rejected,v47736 ,8.4E+12,,0.0E+00,silver stain. Rejected due to issues with VGS and expression of tdTomato. Looking into discontinuing this item and making an alternative.,,,,need by 1/28 for VGS,,,,CS10
+"RC5, PEI Max, PEG",44362,RepCap5 v3 - 104964,7034,,Karen,3/5/2019,Online,v47899,1.0E+13,16,1.6E+13,"CS2, CS5; Tuesday Transfection, Friday harvest, D4+ sorbitol media exchange",,,,,,,,CS2+CS5
+AAV pEF1a-DIO-FLPo-WPRE-hGHpA ,87306,AAV1,6892,,Kate,3/7/2019,Online,v47929,1.4E+13,61,8.5E+13,"CS10. customer requested titer of at least 1E13 GC/mL
+made on request, order 457529",,,,,,,,CS10
+pENN.AAV.hSyn.HI.eGFP-Cre.WPRE.SV40 (AAV Retrograde),105540,AAVrg  - 81070,6733,,Izzy,3/7/2019,Online,v48072,1.2E+13,106,1.2E+14,"CS10, silver stain",,,,need for VGS by 3/8/2019,,,,CS10
+pAAV-hSyn-DIO-mCherry,50459,AAVrg  - 81070,5524,Roth,Erin,3/7/2019,Online,v47930,1.3E+13,37,4.8E+13,CS10,,,,New.,,,,CS10
+AAV SYN flex PSAM4 GlyR IRES EGFP  ,119741,RepCap5 v3 - 104964,7806,Sternson,Ina,3/14/2019,Online,v48660,1.1E+13,28,3.1E+13,New. Oversized,,,,,,,,CS10
+pAAV-EF1a-mCherry-IRES-Flpo (AAV Retrograde),55634,AAVrg  - 81070,7879,Deisseroth,Meghan,3/14/2019,Online,v48659 ,1.2E+13,32,3.8E+13,need for VGS by 4/1/2019,,,,,,,,CS10
+pENN.AAV.hSyn.Cre.WPRE.hGH (AAV Retrograde),105553,AAVrg  - 81070,5605,Wilson,Meron,3/14/2019,Online,v48587,1.2E+13,53,6.4E+13,need for VGS by 3/21/2019,,,,,,,,CS10
+pAAV-hSyn-DIO-mCherry,50459,RepCap2 v3 - 104963,5524,Roth,Erin,3/14/2019,Online,v48661,1.2E+13,20,2.4E+13,,,,,,,,,CS10
+RC1 comparison in CS5,50942,AAV1 120266 vs 112862,6414,,Karen,3/12/2019,Online,v48612,1.3E+13,17,2.2E+13,2xCS5 --> only one CS5 suitable for distribution ,,,,,,,,CS5
+pAAV-Ef1a-DIO ChETA-EYFP (AAV5),26968,RepCap5 v3 - 104964,7256,,Ina,3/21/2019,Online,v49830,1.5E+13,26,3.9E+13,cs5,,,,5/8/2019,,,,CS5
+AAV pmSyn1-EBFP-Cre  ,51507,AAVrg  - 81070,6878,,Ina,3/21/2019,Online,v49829,1.3E+13,14,1.8E+13,"CS5 (we don't want extra units for inventory), titer at least 7.6E12 GC/ml
+MoR order 460587",,,,,,,,CS5
+pAAV.CAG.Flex.GCaMP6s.WPRE.SV40,100842,RepCap5 v3 - 104964,6379,GENIE/Kim,Kate,3/21/2019,Online,v49433,1.1E+13,32,3.5E+13,,,,,3/8/2019,,,,CS10
+pAAV-Syn-FLEX-rc[ChrimsonR-tdTomato] (AAV5),62723,RepCap5 v3 - 104964,7180,Boyden,Izzy,3/21/2019,Online,v49831,1.2E+13,39,4.6E+13,,,,,3/29/2019,,,,CS10
+pAAV-CAG-dLight1.1 (AAV5),111067,RepCap5 v3 - 104964,7041,Tian,Erin,3/28/2019,Online,v49906,2.0E+12,20,4.0E+12,,,"PEG_20190307MT, 20190326MTPEG8000",20190318MRCellLysis,,,,,CS10
+pAAV-FLEX-tdTomato (AAV Retrograde),28306,AAVrg  - 81070,6469,Boyden,Meron,3/28/2019,Online,v49904,1.3E+13,31,4.0E+13,,,PEG_20190307MT,20190318MRCellLysis,,,,,CS10
+pENN.AAV.CAG.tdTomato.WPRE.SV40 (AAV1),105554,AAV1,6146,,Izzy,3/28/2019,Online,v50419,4.2E+12,28,1.2E+13,,,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-CaMKIIa-HA-hM4D(Gi)-IRES-mCitrine  ,50467,RepCap2 v3 - 104963,8146,Roth,Meghan,3/28/2019,Online,v49905,2.7E+12,22,5.9E+12,"CS10, extra units for inventory if possible. Min titer 2E12
+MoR order 462929",,20190326MTPEG8000,,,,,,CS10
+pAAV-CAG-GFP,37825,AAV1 120266 vs 112862,5439,,Ina,3/28/2019,Online,v50523,1.2E+13,30/17,2.8E+13,CS5,2018-09-07 ES,20190326MTPEG8000,20190318MRCellLysis,,,,,CS5
+AAV-pgk-Cre (AAV Retrograde),24593,AAVrg  - 81070,5638,,Karen/Ina,4/4/2019,Online,v50522,9.3E+12,37,3.4E+13,,2018-09-07 ES,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-CAG-FLEX-rc [Jaws-KGC-GFP-ER2] (AAV Retrograde),84445,AAVrg  - 81070,6780,,Erin,4/4/2019,Online,v50520,1.1E+13,37,4.1E+13,,,20190326MTPEG8000,PM: 20190318MRCellLysis,,,,,CS10
+pAAV.CMV.HI.eGFP-Cre.WPRE.SV40 (AAV1),105545,AAV1,6464,,Meghan,4/4/2019,Online,v50521,9.8E+12,36,3.5E+13,,2018-09-07 ES,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-EF1a-double floxed-hChR2(H134R)-mCherry-WPRE-HGHpA (AAV5),20297,RepCap5 v3 - 104964,7241,,Meron,4/12/2019,Online,v50837,5.3E+12,33,1.7E+13,"Friday transfection, Monday is Patriot's Day",2018-09-07 ES,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-CAG-tdTomato (codon diversified) (AAV5),59462,RepCap5 v3 - 104964,6208,BACKORDER,Erin,4/12/2019,Online,v50723,1.2E+13,57,6.8E+13,"Friday transfection, Monday is Patriot's Day",,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-CAG-FLEX-Archon1-KGC-EGFP-ER2 (AAV5),108422,RepCap5 v3 - 104964,6654,,Ina,4/12/2019,Online,v50732,1.0E+13,38,3.8E+13,"Friday transfection, Monday is Patriot's Day",2018-09-07 ES,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+AAV-CAG-GFP,37825,RepCap2 v3 - 104963,5439,5439 bp,Kate,4/18/2019,Online,v50838,8.2E+12,40/13,8.5E+12,For trial size units! Make ~40x20 ul aliquots in addition 100 ul aliquots.,,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-CamKII-ArchT-GFP (PV2527)  ,99039,AAVrg  - 81070,6563,6563 bp,Meron,4/18/2019,Online,v51001,1.2E+13,29,3.5E+13,MoR order 464194        ,2018-09-07 ES,20190326MTPEG8000,20190318MRCellLysis,,,,,CS10
+pOTTC1596 - pAAV SYN1 HA-hM3D(Gq) (AAV5),121539,RepCap5 v3 - 104964,6373,,Meghan,4/18/2019,Online,v51002,1.1E+13,26,2.9E+13,v51002,2018-09-07 ES,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-EF1a-Flpo (AAV Retrograde),55637,AAVrg  - 81070,6595,,Meghan,4/25/2019,Online,v52010,1.1E+13,25,2.8E+13,need by 4/22 for VGS,20180907ESPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pGP-AAV-syn-FLEX-jGCaMP7s-WPRE (AAV Retrograde),104491,AAVrg  - 81070,5791,5791 bp,Kate,4/25/2019,QC,v52014,1.2E+13,33,4.0E+13,need 5/16 for VGS,20180907ESPEI,20190326MTPEG8000,,,,,,CS10
+pGP-AAV-CAG-FLEX-jGCaMP7f-WPRE (AAV1),104496,AAV1,6334,,Erin,4/25/2019,Online,v52012,1.0E+13,46,4.6E+13,need by 5/13 for VGS,20180907ESPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pGP-AAV-syn-jGCaMP7c variant 1513-WPRE ,105321,AAV1,5624,5624 bp,Ina/Michelle,4/25/2019,QC,v52013,1.1E+13,,0.0E+00,New.,20180907ESPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-EF1a-mCherry-IRES-Flpo  ,55634,AAV1,7879,7879 bp,Erin,5/2/2019,Ready,v52229,7.9E+12,17,1.3E+13,New.,20180907ESPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAVrg  - 81070,7658,7658 bp,Meron,5/2/2019,Ready,v52201 ,1.3E+13,51,6.6E+13,need by 5/28 for VGS,20180907ESPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-Ef1a-mCherry-IRES-Cre,55632,AAVrg  - 81070,7658,7658 bp,Meghan,5/2/2019,QC,see above,see above,,#VALUE!,need by 5/28 for VGS,20180907ESPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pAAV-CAG-GFP (AAV Retrograde),37825,AAVrg  - 81070,5439,CS10,Meron,5/9/2019,Ready,v52756,9.5E+12,40/29,#VALUE!,need 6/3 for VGS. Make ~40x 20 ul aliquots in adition to 100 ul aliquots,20181204KGPEI,201904010MTPEG8000,20190318MRCellLysis,,,,,CS10
+pGP-AAV-syn-jGCaMP7f-WPRE (AAV Retrograde),104488,AAVrg  - 81070,5624,CS10,Erin,5/9/2019,Ready,v52598,1.2E+13,59,7.1E+13,need 5/19 for VGS,20180907ESPEI,201905100MTPEG8000,20190318MRCellLysis,,,,,CS10
+pGP-AAV-syn-FLEX-jGCaMP7c variant 1513-WPRE  ,105322,AAV1,5933,CS5,Ina/Michelle,5/9/2019,QC,v53293,9.4E+12,19,1.8E+13,New.,20180907ESPEI,201905100MTPEG8000,20190318MRCellLysis,,,,,CS5
+pAAV-EF1a-fDIO-Cre,121675,AAVrg  - 81070,6736,CS10,Kate,5/9/2019,Ready,v52571,9.1E+12,32/12,7.0E+12,MoR 473006. Make extra units for inventory,20180907ESPEI,,,,,,,CS10
+pAAV-CAG-tdTomato (codon diversified) (AAV Retrograde),59462,AAVrg  - 81070,6208,CS10,Kate,5/16/2019,QC,v53862,1.0E+13,,,"need 5/16 for VGS, Make 3x5uL aliquots for freeze-thaw testing",20180907ESPEI,,20190513KHCellLysis,,,,,CS10
+pAAV-hSyn-DIO-hM4D(Gi)-mCherry  ,44362,RepCap5 v3 - 104964,7034,2x CS10s,Meghan,5/16/2019,,,,,,7e8 cells in CS10 with 4mg versus 5e8 cells in CS10 with 4mg DNA,20180907ESPEI,201905100MTPEG8000,20190513KHCellLysis,,,,,2x CS10s
+pAAV-CaMKIIa-hChR2(H134R)-mCherry (AAV5),26975,RepCap5 v3 - 104964,7022,CS5,Erin/Ina,5/24/2019,,,,,,"Friday transfection, Monday is Memorial Day",Need Sep for VGS,201905100MTPEG8000,20190513KHCellLysis,,,,,CS5
+pAAV-hSyn-EGFP,50465,RepCap5 v3 - 104964,5265,CS5,Erin/Ina,5/24/2019,,,,,,"Friday transfection, Monday is Memorial Day","CS5, for trial size units.  Make ~40x20 ul aliquots in addition to 100 ul aliquots (even thought we have 100 units already). ",201905100MTPEG8000,20190513KHCellLysis,,,,,CS5
+pAAV-hSyn-DIO-EGFP (AAV Retrograde),50457,RepCap5 v3 - 104964,5533,CS5,Ina/Michelle,5/24/2019,,v54234,,,,"Friday transfection, Monday is Memorial Day",20180907ESPEI,201905100MTPEG8000,20190513KHCellLysis,new,,,,CS5
+pAAV-hSyn-DIO-EGFP (AAV Retrograde),50457,RepCap5 v3 - 104964,5533,CS5,Ina/Michelle,5/24/2019,,v54234,,,,"Friday transfection, Monday is Memorial Day",20180907ESPEI,201905100MTPEG8000,20190513KHCellLysis,new,,,,CS5
