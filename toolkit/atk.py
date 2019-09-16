@@ -1,8 +1,5 @@
-from builtins import SystemExit
-
 import click
 import logging
-import sys
 
 from recombination import recombination
 from serotypes import serotypes
