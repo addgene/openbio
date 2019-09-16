@@ -29,16 +29,48 @@ class Serotypes_Parameters(object):
     input_folder = "data"
     output_folder = "data"
 
-    # These are the signatures that will be matched. The first part is the name, the second part is the actual signature
+    # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
+    # actual signatures, separated by a comma (each serotype can have multiple signatures)
     signatures = {
-        "AAV1": "AGTGCTTCAACGGGGGCCAG",
-        "AAV2": "AACAGACAAGCAGCTACCGCA",
-        "AAV5": "TCCAAGCCTTCCACCTCGTCAGACGCCGAA",
-        "AAV7": "AGTGAAACTGCAGGTAGTACC",
-        "AAV8": "GCAAAACACGGCTCCTCAAAT",
-        "AAV9": "AGTGCCCAAGCACAGGCGCA",
-        "AAVrh10": "CTACAAATCTACAAATGTGGACTTTG",
-        "PHPeB": "CTTTGGCGGTGCCTTTTAAGGCACAGGCGCAGA",
-        "PHPS": "AGGCGGTTAGGACGTCTTTGGCACAGGCGCAGA",
-        "AAVrg": "TAGCAGACCAAGACTACACAAAAACTGCT",
+        "AAV1": [
+            "AGTGCTTCAACGGGGGCCAG",
+            "GGGCGTGAATCCATCATCAACCCTGG",
+            "CCGGAGCTTCAAACACTGCATTGGACAAT"
+        ],
+        "AAV2": [
+            "AGGCAACAGACAAGCAGCTACC",
+            "AACAGACAAGCAGCTACCGCA"
+        ],
+        "AAV5": [
+            "TCCAAGCCTTCCACCTCGTCAGACGCCGAA",
+            "CACCAACAACCAGAGCTCCACCACTG",
+            "GCCCGTCAGCAGCTTCATC"
+        ],
+        "AAV7": [
+            "AGTGAAACTGCAGGTAGTACC"
+        ],
+        "AAV8": [
+            "GCAAAACACGGCTCCTCAAAT",
+            "CAGCAAGCGCTGGAACCCCGAGATCCAGTA",
+            "AAATACCATCTGAATGGAAGAAATTCATTG",
+            "CGTGGCAGATAACTTGCAGC",
+            "ATCCTCCGACCACCTTCAACC"
+        ],
+        "AAV9": [
+            "AGTGCCCAAGCACAGGCGCA",
+            "ATCTCTCAAAGACTATTAAC",
+            "GGCGAGCAGTCTTCCAGGCA"
+        ],
+        "AAVrh10": [
+            "CTACAAATCTACAAATGTGGACTTTG"
+        ],
+        "PHPeB": [
+            "CTTTGGCGGTGCCTTTTAAGGCACAGGCGCAGA"
+        ],
+        "PHPs": [
+            "AGGCGGTTAGGACGTCTTTGGCACAGGCGCAGA"
+        ],
+        "AAVrg": [
+            "TAGCAGACCAAGACTACACAAAAACTGCT"
+        ],
     }

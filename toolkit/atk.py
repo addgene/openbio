@@ -1,6 +1,5 @@
 import click
 import logging
-import sys
 
 from recombination import recombination
 from serotypes import serotypes
@@ -21,5 +20,4 @@ if __name__ == "__main__":
     try:
         atk()
     except ValueError as e:
-        L.error('\nError: ' + e.message)
-        sys.exit(1)
+        raise SystemExit('\nError: ' + str(e))
