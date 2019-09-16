@@ -30,7 +30,7 @@ class Serotypes_Parameters(object):
     output_folder = "data"
 
     # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
-    # actual signatures - note that each serotype can have multiple signatures
+    # actual signatures, separated by a comma (each serotype can have multiple signatures)
     signatures = {
         "AAV1": [
             "AGTGCTTCAACGGGGGCCAG",
@@ -67,7 +67,7 @@ class Serotypes_Parameters(object):
         "PHPeB": [
             "CTTTGGCGGTGCCTTTTAAGGCACAGGCGCAGA"
         ],
-        "PHPS": [
+        "PHPs": [
             "AGGCGGTTAGGACGTCTTTGGCACAGGCGCAGA"
         ],
         "AAVrg": [

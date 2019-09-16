@@ -108,7 +108,7 @@ class Processor(object):
         reference_heads = [reference_head_0, reference_head_1]
         reference_tails = [reference_tail_0, reference_tail_1]
 
-        # Recombined patterns are when when head and tail fromr eference patterns are flipped
+        # Recombined patterns are when head and tail from reference patterns are flipped
         recombined_patterns = [
             Pattern(reference_head_0, self.seed_sequence, reference_tail_1),
             Pattern(reference_head_1, self.seed_sequence, reference_tail_0)

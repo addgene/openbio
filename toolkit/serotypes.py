@@ -3,7 +3,7 @@ import os
 import logging
 
 from collections import namedtuple
-from datetime import date
+from datetime import date, datetime
 from pandas import DataFrame
 from parameters import Serotypes_Parameters as params
 from utils import read_fastq_file, get_fastq_files, setup_dirs
@@ -19,14 +19,17 @@ def serotypes():
     The Research Team is using this tool to detect specific sequences in the capsid genes,
     thereby differentiating between various serotypes.
     """
+    start = datetime.now()
     setup_dirs(params)
     input_files = get_fastq_files(params)
     L.info('Found {} FASTQ files.'.format(len(input_files)))
     processor = Processor(input_files)
     processor.process()
-    L.info('Done! the following two files were created:\n')
+    L.info('\nDone! the following two files were created:\n')
     L.info(processor.full_output_file)
     L.info(processor.summary_output_file)
+    delta = datetime.now() - start
+    L.info('\nCommand took {} seconds.'.format(delta.total_seconds()))
 
 ##################
 
@@ -74,7 +77,7 @@ class Processor(object):
         for name, signature_list in params.signatures.items():
             total_count = 0
             for index, signature in enumerate(signature_list):
-                subname = '{}_{}'.format(name, str(index + 1))
+                subname = '{}-{}'.format(name, index + 1)
                 count = self._count_signature(reads, signature)
                 total_count += count
                 signature_counts.append(SignatureCount(name=subname, count=count))
@@ -88,7 +91,7 @@ class Processor(object):
             is_top = 'YES' if index == 0 and signature_count.count else ''
             if is_top == 'YES':
                 is_match = 'YES' if (
-                        index == 0 and signature_count.count and self._is_match(signature_count.name.split('_')[0],
+                        index == 0 and signature_count.count and self._is_match(signature_count.name.split('-')[0],
                                                                                 input_file)
                 ) else 'NO'
             else:
@@ -109,20 +112,29 @@ class Processor(object):
         if len(found_signatures) > 1:
             other_signatures = '; '.join(found_signatures[1:])
 
-        top_signature = aggregate_signature_counts[0]
-        if top_signature.count:
+        if not self._undetermined(aggregate_signature_counts):
+            top_signature = aggregate_signature_counts[0]
             is_match = 'YES' if self._is_match(top_signature.name, input_file) else ''
             name = top_signature.name
             count = top_signature.count
         else:
             is_match = ''
-            name = 'No matches'
+            name = 'Not deteremined'
             count = ''
 
         summary_row = (filename, number_of_reads, name,
                 count, is_match, other_signatures)
 
         self.summary_rows.append(summary_row)
+
+    @staticmethod
+    def _undetermined(signature_counts):
+        if not signature_counts[0].count:
+            return True
+        if len(signature_counts) > 1:
+            # Tie
+            return signature_counts[0].count == signature_counts[1].count
+        return False
 
     @staticmethod
     def _count_signature(reads, signature):
