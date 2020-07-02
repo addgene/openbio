@@ -1,0 +1,83 @@
+count_spacers:
+    # For the files and paths below, use absolute paths e.g. /Users/Harry/fastq-data or
+    # paths relative to your working directory.
+
+    library_file: data/tkov3_guide_sequence.csv
+    fastq_file: data/190403Add_D19-6318_NA_sequence_sub.fastq
+
+    # Output folder
+    output_folder: analysis
+
+    ### Analysis parameters
+    sample: tkov3
+    # presence of guanine before spacer (yes/no)
+    guide_g: yes
+    # start index of key region
+    key_region_start: 30
+    # end index of key region
+    key_region_end: 55
+    # identifies the sequence before the guide to determine the guide position
+    key_region_sequence: CGAAACACC
+
+
+recombination:
+    # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
+    # /Users/Harry/csv-data or a path relative to the toolkit directory.
+    # You may use the same folder for input and output.
+    input_folder: data
+    output_folder: data
+
+    # The number of bases to retrieve before the seed sequence
+    HEAD: 10
+
+    # The number of bases to retrieve after the seed sequences
+    TAIL: 10
+
+    seed_sequences:
+        loxP: ATAACTTCGTATAGCATACATTATACGAAGTTAT
+        lox2272: ATAACTTCGTATAGGATACTTTATACGAAGTTAT
+
+
+serotypes:
+    # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
+    # /Users/Harry/csv-data or a path relative to the toolkit directory.
+    # You may use the same folder for input and output.
+
+    input_folder: data
+    output_folder: data
+
+    # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
+    # actual signatures, separated by a comma (each serotype can have multiple signatures)
+
+    signatures:
+        AAV1:
+            - AGTGCTTCAACGGGGGCCAG
+            - GGGCGTGAATCCATCATCAACCCTGG
+            - CCGGAGCTTCAAACACTGCATTGGACAAT
+        AAV2:
+            - AGGCAACAGACAAGCAGCTACC
+            - AACAGACAAGCAGCTACCGCA
+        AAV5:
+            - TCCAAGCCTTCCACCTCGTCAGACGCCGAA
+            - CACCAACAACCAGAGCTCCACCACTG
+            - GCCCGTCAGCAGCTTCATC
+        AAV7:
+            - AGTGAAACTGCAGGTAGTACC
+        AAV8:
+            - GCAAAACACGGCTCCTCAAAT
+            - CAGCAAGCGCTGGAACCCCGAGATCCAGTA
+            - AAATACCATCTGAATGGAAGAAATTCATTG
+            - CGTGGCAGATAACTTGCAGC
+            - ATCCTCCGACCACCTTCAACC
+        AAV9:
+            - AGTGCCCAAGCACAGGCGCA
+            - ATCTCTCAAAGACTATTAAC
+            - GGCGAGCAGTCTTCCAGGCA
+        AAVrh10:
+            - CTACAAATCTACAAATGTGGACTTTG
+        PHPeB:
+            - CTTTGGCGGTGCCTTTTAAGGCACAGGCGCAGA
+        PHPs:
+            - AGGCGGTTAGGACGTCTTTGGCACAGGCGCAGA
+        AAVrg:
+            - TAGCAGACCAAGACTACACAAAAACTGCT

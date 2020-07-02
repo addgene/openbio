@@ -1,6 +1,7 @@
 import click
 import logging
 
+from count_spacers import count_spacers
 from recombination import recombination
 from serotypes import serotypes
 from utils import log_to_stdout
@@ -13,11 +14,13 @@ def atk():
 
 atk.add_command(serotypes)
 atk.add_command(recombination)
+atk.add_command(count_spacers)
 
 
 if __name__ == "__main__":
     log_to_stdout(logging.INFO)
     try:
         atk()
-    except ValueError as e:
-        raise SystemExit('\nError: ' + str(e))
+    except Exception as e:
+        L.exception(e)
+        raise SystemExit('\nCommand terminated with an error: ' + str(e))
