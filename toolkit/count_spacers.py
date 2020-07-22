@@ -20,7 +20,7 @@ from collections import OrderedDict
 from datetime import datetime
 from logging import Logger
 
-from utils import get_params_for_command, log_to_stdout, read_fastq_file
+from utils import get_params_for_command, log_to_stdout, read_fastq_file, get_fastq_files
 
 L: Logger = logging.getLogger(__name__)
 
@@ -29,21 +29,21 @@ L: Logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option('-i', '--input', 'library_file', help='Name of file containing library sequences')
-@click.option('-f', '--fastq', 'fastq_file', help='Forward read FASTQ file')
+@click.option('-fd', '--fastq-folder', 'input_folder', help='Name of directory containing FASTQ files')
 @click.option('-od', '--output-folder', 'output_folder', help='Name of directory for output')
 @click.option('-g', '--guide-g', 'guide_g', flag_value=True, help='Presence of guanine before spacer', default=True)
 @click.option('-u', '--unattended', 'unattended', flag_value=True, help='Skip user prompts', default=False)
 @click.option('-p', '--param-file', 'param_file', help='Name of yaml file with configuration parameters',
 			  default='parameters.yml')
 
-def count_spacers(library_file, fastq_file, output_folder, guide_g, unattended, param_file):
+def count_spacers(library_file, input_folder, output_folder, guide_g, unattended, param_file):
 	"""
     Analyze sequencing data for sgRNA library distribution.
     Parameters can be configured in the  `parameters.yml` file, through command line options,
     or through the interactive prompts.
     Values passed in the command line override values in `parameters.yml`.
     """
-	config = Config(library_file, fastq_file, output_folder, guide_g, unattended, param_file)
+	config = Config(library_file, input_folder, output_folder, guide_g, unattended, param_file)
 	spacer_counter = SpacerCounter(config)
 	spacer_counter.execute()
 	L.info('Done!')
@@ -62,11 +62,6 @@ class SpacerCounter():
 		"""
 		L.info('\nProcessing...')
 
-		num_reads = 0  # total number of reads processed
-		perfect_matches = 0  # guides with perfect match to library
-		non_perfect_matches = 0  # number of guides without a perfect match to the library
-		key_not_found = 0  # count of reads where key was not found
-
 		# Add 'G' to key sequence if included in library
 		if self.config.guide_g:
 			self.config.key_region_sequence += 'G'
@@ -74,11 +69,24 @@ class SpacerCounter():
 		# open library sequences and initiate dictionary of read counts for each guide
 		library_sequences = self._get_library_sequences()
 
+		# read fastq files in the specified directory
+		files_to_process = get_fastq_files({'input_folder': self.config.input_folder})
+
+		for file in files_to_process:
+			self._process_fastq_file(file, library_sequences)
+
+	def _process_fastq_file(self, file, library_sequences):
+		num_reads = 0  # total number of reads processed
+		perfect_matches = 0  # guides with perfect match to library
+		non_perfect_matches = 0  # number of guides without a perfect match to the library
+		key_not_found = 0  # count of reads where key was not found
+		base_filename = os.path.basename(file)
+		base_filename = os.path.splitext(base_filename)[0]
 		# open fastq file and obtain reads
-		reads = read_fastq_file(self.config.fastq_file)
+		reads = read_fastq_file(file)
 
 		# process reads in fastq file
-		for read_sequence in reads: # contains the seq and Qscore etc.
+		for read_sequence in reads:  # contains the seq and Qscore etc.
 			num_reads += 1
 			key_region = read_sequence[self.config.key_region_start:self.config.key_region_end]
 			key_index = key_region.find(self.config.key_region_sequence)
@@ -95,25 +103,25 @@ class SpacerCounter():
 
 		# create ordered dictionary with guides and respective counts and output as a csv file
 		sorted_library_sequences = OrderedDict(sorted(library_sequences.items(), key=lambda t: t[0]))
-		self._write_counts(sorted_library_sequences)
+		self._write_counts(sorted_library_sequences, base_filename)
 
 		# percentage of guides that matched perfectly
 		all_matches = perfect_matches + non_perfect_matches
 		# avoid division by zero
 		if all_matches:
-			percent_matched = round(perfect_matches/float(all_matches) * 100, 1)
+			percent_matched = round(perfect_matches / float(all_matches) * 100, 1)
 		else:
 			percent_matched = 0
 
 		# percentage of undetected guides with no read counts
 		guides_with_reads = numpy.count_nonzero(library_sequences.values())
 		guides_no_reads = len(library_sequences.values()) - guides_with_reads
-		percent_no_reads = round(guides_no_reads/float(len(library_sequences.values())) * 100, 1)
+		percent_no_reads = round(guides_no_reads / float(len(library_sequences.values())) * 100, 1)
 		# skew ratio of top 10% to bottom 10% of guide counts
 		top_10 = numpy.percentile(list(library_sequences.values()), 90)
 		bottom_10 = numpy.percentile(list(library_sequences.values()), 10)
 		if top_10 != 0 and bottom_10 != 0:
-			skew_ratio = top_10/bottom_10
+			skew_ratio = top_10 / bottom_10
 		else:
 			skew_ratio = 'Not enough perfect matches to determine skew ratio'
 
@@ -127,11 +135,11 @@ class SpacerCounter():
 		statistics.append('Percentage of undetected guides: {}'.format(percent_no_reads))
 		statistics.append('Skew ratio of top 10% to bottom 10%: {}'.format(skew_ratio))
 		statistics = '\n'.join(statistics)
-		self._write_statistics(statistics)
+		self._write_statistics(statistics, base_filename)
 		L.info(statistics)
 
 		# Write parameters and user input values to log.txt
-		self._write_log()
+		self._write_log(base_filename)
 
 	# TODO rewrite with pandas
 	def _get_library_sequences(self):
@@ -140,13 +148,13 @@ class SpacerCounter():
 			reader = csv.reader(infile)
 			return {rows[0]: 0 for rows in reader}
 
-	def _get_output_file_name(self, suffix):
-		local_name = '{}{}'.format(self.config.sample, suffix)
+	def _get_output_file_name(self, base_filename, suffix):
+		local_name = '{}{}'.format(base_filename, suffix)
 		return os.path.join(self.config.output_folder, local_name)
 
 	# TODO change to pandas
-	def _write_counts(self, sorted_library_sequences):
-		filename = self._get_output_file_name('_library_counts.csv')
+	def _write_counts(self, sorted_library_sequences, base_filename):
+		filename = self._get_output_file_name(base_filename, '_library_counts.csv')
 		L.info('Generating {}...'.format(filename))
 		with io.open(filename, 'w') as f:
 			mywriter = csv.writer(f, delimiter=',')
@@ -154,14 +162,14 @@ class SpacerCounter():
 				count = sorted_library_sequences[guide]
 				mywriter.writerow([guide, count])
 
-	def _write_statistics(self, statistics: str):
-		filename = self._get_output_file_name('_statistics.txt')
+	def _write_statistics(self, statistics: str, base_filename):
+		filename = self._get_output_file_name(base_filename, '_statistics.txt')
 		L.info('Generating {}...'.format(filename))
 		with io.open(filename, 'w') as f:
 			f.write(statistics)
 
-	def _write_log(self):
-		filename = self._get_output_file_name('_log.txt')
+	def _write_log(self, base_filename):
+		filename = self._get_output_file_name(base_filename, '_log.txt')
 		L.info('Generating {}...'.format(filename))
 		with io.open(filename, 'w') as f:
 			f.write('Date and time: {}\n{}'.format(datetime.now(), self.config))
@@ -173,9 +181,9 @@ class Config():
 	(i.e. options given in the config_file are overriden by options given in the command_line) and validating them.
 	It provides an interactive mode where the user is prompted for new values.
 	"""
-	def __init__(self, library_file, fastq_file, output_folder, guide_g, unattended, param_file):
+	def __init__(self, library_file, input_folder, output_folder, guide_g, unattended, param_file):
 		params = get_params_for_command('count_spacers', param_file=param_file)
-		self.fastq_file = fastq_file or params.get('fastq_file', '')
+		self.input_folder = input_folder or params.get('input_folder', '')
 		self.library_file = library_file or params.get('library_file', '')
 		self.output_folder = output_folder or params.get('output_folder', '')
 		self.guide_g = guide_g or params.get('guide_g', '')
@@ -203,14 +211,16 @@ class Config():
 
 		if not self.library_file:
 			errors.append('Library file must be specified.')
-		if not self.fastq_file:
-			errors.append('FASTQ file must be specified.')
+		if not self.input_folder:
+			errors.append('FASTQ folder must be specified.')
 
-		for file in (self.library_file, self.fastq_file):
-			if file:
-				file_exists =  os.path.exists(file)
-				if not file_exists:
-					errors.append('Could not find file: {}'.format(file))
+		elif not os.path.isdir(self.input_folder):
+			errors.append('FASTQ folder specified is not a directory.')
+
+		if self.library_file:
+			file_exists = os.path.exists(self.library_file)
+			if not file_exists:
+				errors.append('Could not find file: {}'.format(self.library_file))
 
 		if not self.sample:
 			errors.append('Sample name must be specified.')
@@ -248,7 +258,7 @@ class Config():
 				'The current value is shown in brackets, hit enter to keep it. At any moment, use Ctrl-c to exit.'
 		)
 		self.library_file = click.prompt('Library file name', type=str, default=self.library_file)
-		self.fastq_file = click.prompt('FASTQ file name', type=str, default=self.fastq_file)
+		self.input_folder = click.prompt('FASTQ folder name', type=str, default=self.input_folder)
 		self.output_folder = click.prompt('Output folder', type=str, default=self.output_folder)
 		self.guide_g = click.prompt('Guide G?', type=bool, default='yes' if self.guide_g else 'no')
 		self.sample = click.prompt('Sample name', type=str, default=self.sample)
@@ -312,7 +322,7 @@ class Config():
 		"""
 		config = []
 		config.append('Library file: {}'.format(self.library_file))
-		config.append('FASTQ file: {}'.format(self.fastq_file))
+		config.append('FASTQ folder: {}'.format(self.input_folder))
 		config.append('Output folder: {}'.format(self.output_folder))
 		config.append('Guide G? {}'.format('yes' if self.guide_g else 'no'))
 		config.append('Sample name: {}'.format(self.sample))
@@ -320,6 +330,7 @@ class Config():
 		config.append('End index of key region: {}'.format(self.key_region_end))
 		config.append('Key region sequence: {}'.format(self.key_region_sequence))
 		return ('\n'.join(config))
+
 
 if __name__ == "__main__":
 	log_to_stdout(logging.INFO)

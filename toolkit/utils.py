@@ -50,9 +50,10 @@ def setup_dirs(params: Dict):
 
 def get_fastq_files(params: Dict) -> List[str]:
     # grab all files ending in .fastq
-    input_files = [input_file for input_file in glob.glob("{}/*.fastq".format(params.input_folder))]
+    input_files = [input_file for input_file in glob.glob("{}/*.fastq".format(params.get('input_folder')))]
+    input_files.extend([input_file for input_file in glob.glob("{}/*.fq".format(params.get('input_folder')))])
     if not input_files:
-        raise ValueError('No FASTQ files in folder: ' + params.input_folder)
+        raise ValueError('No FASTQ files in folder: ' + params.get('input_folder'))
 
     return input_files
 

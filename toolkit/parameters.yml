@@ -2,8 +2,8 @@ count_spacers:
     # For the files and paths below, use absolute paths e.g. /Users/Harry/fastq-data or
     # paths relative to your working directory.
 
-    library_file: data/tkov3_guide_sequence.csv
-    fastq_file: data/190403Add_D19-6318_NA_sequence_sub.fastq
+    library_file: data/Set_A.csv
+    input_folder: data/
 
     # Output folder
     output_folder: analysis
