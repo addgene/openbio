@@ -2,8 +2,6 @@
 # The Pooled Libraies Skew Analysis (plsa) command
 The __plsa__ command helps Addgene’s scientist team determine XXXX (Will)
 
-### Notes: 
-
 ## Configuration
 
 ## Procedure
@@ -18,6 +16,6 @@ The __plsa__ command helps Addgene’s scientist team determine XXXX (Will)
     ```
 1. Issue the following command:
     ```
-    python atk.py serotypes
+    python atk.py XXX
     ```
-1. Once the command finishes, you will find the output CSV files in the folder you selected. Two files will be generated: a full report and a summary. The file names will contain the date when the report was generated.
+1. Once the command finishes, XXX
