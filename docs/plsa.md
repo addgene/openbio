@@ -1,0 +1,23 @@
+[addgene/openbio/docs](https://addgene.github.io/openbio)
+# The Pooled Libraies Skew Analysis (plsa) command
+The __plsa__ command helps Addgene’s scientist team determine XXXX (Will)
+
+### Notes: 
+
+## Configuration
+
+## Procedure
+1. Make sure you have [downloaded](https://github.com/addgene/openbio/archive/master.zip) and expanded the latest code into your Home folder
+1. Open a Terminal window and activate your Python environment:
+    ```
+    workon openbio
+    ```
+1. Navigate to the toolkit folder:
+    ```
+    cd openbio-master/toolkit
+    ```
+1. Issue the following command:
+    ```
+    python atk.py serotypes
+    ```
+1. Once the command finishes, you will find the output CSV files in the folder you selected. Two files will be generated: a full report and a summary. The file names will contain the date when the report was generated.
