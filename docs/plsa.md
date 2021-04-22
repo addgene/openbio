@@ -1,5 +1,5 @@
 [addgene/openbio/docs](https://addgene.github.io/openbio)
-# The Pooled Libraies Skew Analysis (plsa) command
+# The Pooled Libraries Skew Analysis (plsa) command
 The __plsa__ command helps Addgene’s scientist team determine XXXX (Will)
 
 ## Configuration
@@ -16,6 +16,6 @@ The __plsa__ command helps Addgene’s scientist team determine XXXX (Will)
     ```
 1. Issue the following command:
     ```
-    python atk.py XXX
+    python atk.py plsa XXX
     ```
 1. Once the command finishes, XXX
