@@ -46,7 +46,3 @@ You will use the Terminal application to run a script that installs everything y
 ## Maintenance
 Please run the setup script periodically to pick up any new updates.
 
-If something goes wrong or you wish to start allover, the setup script has an option to completely delete the install directory. Use it cautiously:
-```
-./setup-openbio-workstation.sh nuke
-```
