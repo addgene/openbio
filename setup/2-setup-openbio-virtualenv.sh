@@ -11,10 +11,6 @@ source virtualenvwrapper.sh
 
 deactivate || echo "Not in a virtualenv"
 
-if [ "$1" == "nuke" ]; then
-    rmvirtualenv $ve_name
-fi
-
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd "$script_dir" || exit 1
 
