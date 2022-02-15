@@ -3,13 +3,6 @@
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 sudo_message="\nIf prompted for 'password' enter your mac/workstation password\n"
 
-if [ "$1" == "nuke" ]; then
-    echo -e "\n\n** You have selected the nuke option.  This will delete absolutely everything in /usr/local.  Hit ctrl-c now if this was unintended **\n\n"
-    read -rp "Hit enter to continue.  Ctrl-c to exit"
-    echo -e "$sudo_message"
-    sudo rm -rf /usr/local/*
-fi
-
 (xcode-select --install && echo -e "\n\n" && read -rp "Installing xcode command line tools.  Hit enter to continue once it is done") || true
 
 test -d /usr/local/Homebrew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
