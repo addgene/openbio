@@ -15,17 +15,31 @@ L = logging.getLogger(__name__)
 
 #### Command ####
 @click.command()
-def recombination():
+@click.argument('seeds')
+def recombination(seeds):
     """
     Detect recombination in VGS data. FASTQ files containing the data are read from
     an input folder and processed to return the sequences before and after a seed sequence.
-    The output are CSV files, one per FASTQ file and per seed sequence.'
+    The output are CSV files, one per FASTQ file and per seed sequence.
+
+    Arguments:
+
+    \b
+    SEEDS   Seed sequence(s) to use separated by "/". Options: LoxP, Lox2272, LoxN, FRT, F5, Lox71_66.
     """
     setup_dirs(params)
     input_files = get_fastq_files(params)
     output_files = []
+    seeds = seeds.split("/")
+
     for input_file in input_files:
-        for seed_sequence_name, seed_sequence in params.seed_sequences.items():
+        for seed_sequence_name in seeds:
+            try:
+                seed_sequence = params.seed_sequences[seed_sequence_name]
+            except Exception as e:
+                L.error(f'>> Error: {e}. Not a valid seed sequence. Valid seeds are: {", ".join(params.seed_sequences.keys())}')
+                sys.exit()
+
             L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
             processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
             try:

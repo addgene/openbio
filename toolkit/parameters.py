@@ -8,15 +8,20 @@ class Recombination_Parameters(object):
     output_folder = "data"
 
     # The number of bases to retrieve before the seed sequence
-    HEAD = 10
+    HEAD = 20
 
     # The number of bases to retrieve after the seed sequences
-    TAIL = 10
+    TAIL = 20
 
     seed_sequences = {
-        "loxP": "ATAACTTCGTATAGCATACATTATACGAAGTTAT",
-        "lox2272": "ATAACTTCGTATAGGATACTTTATACGAAGTTAT",
+        "LoxP": "ATAACTTCGTATAGCATACATTATACGAAGTTAT",
+        "Lox2272": "ATAACTTCGTATAGGATACTTTATACGAAGTTAT",
+        "LoxN":"ataacttcgtataaggtatactatacgaagttat",
+        "FRT":"GAAGTTCCTATTCTCTAGAAAGTATAGGAACTTC",
+        "F5":"GAAGTTCCTATTCTTCAAAAGGTATAGGAACTTC",
+        "Lox71_66":"GCATACAT",
     }
+
 
 
 
