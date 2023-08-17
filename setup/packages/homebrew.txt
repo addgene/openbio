@@ -1,3 +1,4 @@
 bash
+findutils
 git
 python@3

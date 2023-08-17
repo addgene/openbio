@@ -1,0 +1,9 @@
+Date and time: 2021-01-21 03:38:57.736226
+Library file: data/examples/count_spacers/example_library.csv
+FASTQ folder: data/examples/count_spacers
+Output folder: analysis
+Guide G? yes
+Sample name: tkov3
+Start index of key region: 30
+End index of key region: 55
+Key region sequence: CCCG

@@ -8,8 +8,8 @@ The recombination command helps Addgene’s Research team detect recombination e
 
 ![Recombination detection](recombination-2.png)
 
-The command’s parameters can be modified by editing the file `parameters.py` in your favorite text editor.
-To change the parameter values, locate the block named `Recombination_Parameters` and follow the examples in the file, paying special attention to the use of double quotes for all text. The parameters are:
+The command’s parameters can be modified by editing the file `parameters.yml` in your favorite text editor.
+To change the parameter values, locate the section named `recombination` and follow the examples in the file. The parameters are:
 * __input_folder__: the folder where the FASTQ files are. Enter the full path or a path relative to the toolkit folder.
 * __output_folder__: the folder for the output CSV files. Enter the full path or a path relative to the toolkit folder.
 * __HEAD__: the number of bases before the seed sequence

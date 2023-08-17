@@ -109,15 +109,14 @@ class SpacerCounter():
 		all_matches = perfect_matches + non_perfect_matches
 		# avoid division by zero
 		if all_matches:
-			percent_matched = round(perfect_matches / all_matches * 100, 6)
+			percent_matched = round(perfect_matches / float(all_matches) * 100, 1)
 		else:
 			percent_matched = 0
 
 		# percentage of undetected guides with no read counts
-		all_guides = len(library_sequences.values())
 		guides_with_reads = numpy.count_nonzero(library_sequences.values())
-		guides_no_reads = all_guides - guides_with_reads
-		percent_no_reads = round(guides_no_reads / all_guides * 100, 6)
+		guides_no_reads = len(library_sequences.values()) - guides_with_reads
+		percent_no_reads = round(guides_no_reads / float(len(library_sequences.values())) * 100, 1)
 		# skew ratio of top 10% to bottom 10% of guide counts
 		top_10 = numpy.percentile(list(library_sequences.values()), 90)
 		bottom_10 = numpy.percentile(list(library_sequences.values()), 10)

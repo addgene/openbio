@@ -11,7 +11,7 @@ You will use the Terminal application to run a script that installs everything y
   * Hit ENTER to execute the command. 
   * Use Ctrl-C to interrupt a command.
   * Use the Up arrow to get to the previously typed commands.
-
+ 
 ## Procedure
 1. [Download](https://github.com/addgene/openbio/archive/master.zip) the `addgene/openbio` GitHub repository and move it to your Home folder.
 1. Unzip it by double clicking on it. The top-level folder is called `openbio-master`
