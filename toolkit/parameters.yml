@@ -1,6 +1,8 @@
 count_spacers:
     # For the files and paths below, use absolute paths e.g. /Users/Harry/fastq-data or
-    # paths relative to your working directory.
+    # paths relative to the `toolkit` directory.
+    # If you're using the Docker container, replace your home path with /Home.  For example, if you
+    # want to use the folder /Users/Harry/fastq-data, you would replace it with /Home/fastq-data.
 
     library_file: data/examples/count_spacers/example_library.csv
     input_folder: data/examples/count_spacers
@@ -21,11 +23,13 @@ count_spacers:
 
 
 recombination:
-    # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
-    # /Users/Harry/csv-data or a path relative to the toolkit directory.
-    # You may use the same folder for input and output.
-    input_folder: data
-    output_folder: data
+    # Change these two values to the folders you prefer - use absolute paths e.g. /Users/Harry/fastq-data or
+    # paths relative to the `toolkit` directory.
+    # If you're using the Docker container, replace your home path with /Home.  For example, if you
+    # want to use the folder /Users/Harry/fastq-data, you would replace it with /Home/fastq-data.
+
+    input_folder: data/examples/recombination
+    output_folder: analysis/examples/recombination
 
     # The number of bases to retrieve before the seed sequence
     HEAD: 10
@@ -39,12 +43,13 @@ recombination:
 
 
 serotypes:
-    # Change these two values to the folders you prefer - use an absolute path e.g. /Users/Harry/fastq-data and
-    # /Users/Harry/csv-data or a path relative to the toolkit directory.
-    # You may use the same folder for input and output.
+    # Change these two values to the folders you prefer - use absolute paths e.g. /Users/Harry/fastq-data or
+    # paths relative to the `toolkit` directory.
+    # If you're using the Docker container, replace your home path with /Home.  For example, if you
+    # want to use the folder /Users/Harry/fastq-data, you would replace it with /Home/fastq-data.
 
-    input_folder: data
-    output_folder: data
+    input_folder: data/examples/serotypes
+    output_folder: analysis/examples/serotypes
 
     # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
     # actual signatures, separated by a comma (each serotype can have multiple signatures)

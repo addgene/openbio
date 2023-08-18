@@ -20,7 +20,7 @@ def get_params_for_command(command_name: str, param_file: str=PARAM_FILE_NAME) -
 
 def read_fastq_file_with_reverse_complements(file_name:str) -> List[str]:
     reads = []
-    with os.io.open(file_name, "rU") as handle:
+    with io.open(file_name, "rU") as handle:
         for record in SeqIO.parse(handle, "fastq"):
             reads.append(str(record.seq))
             reads.append(str(record.seq.reverse_complement()))

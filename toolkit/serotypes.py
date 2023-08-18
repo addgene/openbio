@@ -164,5 +164,3 @@ class Processor(object):
     def _get_output_filename(self, suffix):
         local_name = '{}_serotype_report_{}.csv'.format(date.today().isoformat(), suffix)
         return os.path.join(self.output_folder, local_name)
-
-

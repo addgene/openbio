@@ -26,15 +26,18 @@ def recombination():
     The output are CSV files, one per FASTQ file and per seed sequence.'
     """
     params = get_params_for_command('recombination')
+    if 'seed_sequences' not in params:
+        raise ValueError('Could not find "seed_sequences" parameter in parameters.yml')
+
     setup_dirs(params)
     input_files = get_fastq_files(params)
     output_files = []
     for input_file in input_files:
-        for seed_sequence_name, seed_sequence in params.seed_sequences.items():
+        for seed_sequence_name, seed_sequence in params.get('seed_sequences').items():
             L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
             processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
             try:
-                output_file = processor.process_and_write_to_file(params.output_folder)
+                output_file = processor.process_and_write_to_file(params.get('output_folder'))
                 if output_file:
                     output_files.append(output_file)
             except Exception as e:

@@ -5,4 +5,3 @@ RUN --mount=type=cache,target=/tmp/pip-cache [ \
     "install", \
     "-r", "/openbio-main/setup/requirements.txt" \
     ]
-COPY --chown=openbio:openbio toolkit /openbio-main/toolkit

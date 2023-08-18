@@ -6,3 +6,4 @@ services:
     command: bash
     volumes:
       - ~:/Home
+      - ./toolkit:/openbio-main/toolkit
