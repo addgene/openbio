@@ -1,0 +1,94 @@
+count_spacers:
+    # For the files and paths below, use absolute paths e.g. /Users/Harry/fastq-data or
+    # paths relative to the `toolkit` directory.
+    # If you're using the Docker container, start the path with /workdir - this container path is mapped to the
+    # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
+    # choice when you start the container.
+
+    library_file: /workdir/examples/data/count_spacers/example_library.csv
+    input_folder: /workdir/examples/data/count_spacers
+
+    # Output folder
+    output_folder: /workdir/analysis/examples/count_spacers
+
+    ### Analysis parameters
+    sample: tkov3
+    # presence of guanine before spacer (yes/no)
+    guide_g: yes
+    # start index of key region
+    key_region_start: 30
+    # end index of key region
+    key_region_end: 55
+    # identifies the sequence before the guide to determine the guide position
+    key_region_sequence: CCC
+
+
+recombination:
+    # Change these two values to the folders you prefer - use absolute paths e.g. /Users/Harry/fastq-data or
+    # paths relative to the `toolkit` directory.
+    # If you're using the Docker container, start the path with /workdir - this container path is mapped to the
+    # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
+    # choice when you start the container.
+
+    input_folder: /workdir/examples/data/recombination
+    output_folder: /workdir/examples/analysis/recombination
+
+    # The number of bases to retrieve before the seed sequence
+    HEAD: 20
+
+    # The number of bases to retrieve after the seed sequences
+    TAIL: 20
+
+    seed_sequences:
+        LoxP: ATAACTTCGTATAGCATACATTATACGAAGTTAT
+        Lox2272: ATAACTTCGTATAGGATACTTTATACGAAGTTAT
+        LoxN: ataacttcgtataaggtatactatacgaagttat
+        FRT: GAAGTTCCTATTCTCTAGAAAGTATAGGAACTTC
+        F5: GAAGTTCCTATTCTTCAAAAGGTATAGGAACTTC
+        Lox71_66: GCATACAT
+
+serotypes:
+    # Change these two values to the folders you prefer - use absolute paths e.g. /Users/Harry/fastq-data or
+    # paths relative to the `toolkit` directory.
+    # If you're using the Docker container, start the path with /workdir - this container path is mapped to the
+    # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
+    # choice when you start the container.
+
+    input_folder: /workdir/examples/data/serotypes
+    output_folder: /workdir/examples/analysis/serotypes
+
+    # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
+    # actual signatures, separated by a comma (each serotype can have multiple signatures)
+
+    signatures:
+        AAV1:
+            - AGTGCTTCAACGGGGGCCAG
+            - GGGCGTGAATCCATCATCAACCCTGG
+            - CCGGAGCTTCAAACACTGCATTGGACAAT
+        AAV2:
+            - AGGCAACAGACAAGCAGCTACC
+            - AACAGACAAGCAGCTACCGCA
+        AAV5:
+            - TCCAAGCCTTCCACCTCGTCAGACGCCGAA
+            - CACCAACAACCAGAGCTCCACCACTG
+            - GCCCGTCAGCAGCTTCATC
+        AAV7:
+            - AGTGAAACTGCAGGTAGTACC
+        AAV8:
+            - GCAAAACACGGCTCCTCAAAT
+            - CAGCAAGCGCTGGAACCCCGAGATCCAGTA
+            - AAATACCATCTGAATGGAAGAAATTCATTG
+            - CGTGGCAGATAACTTGCAGC
+            - ATCCTCCGACCACCTTCAACC
+        AAV9:
+            - AGTGCCCAAGCACAGGCGCA
+            - ATCTCTCAAAGACTATTAAC
+            - GGCGAGCAGTCTTCCAGGCA
+        AAVrh10:
+            - CTACAAATCTACAAATGTGGACTTTG
+        PHPeB:
+            - CTTTGGCGGTGCCTTTTAAGGCACAGGCGCAGA
+        PHPs:
+            - AGGCGGTTAGGACGTCTTTGGCACAGGCGCAGA
+        AAVrg:
+            - TAGCAGACCAAGACTACACAAAAACTGCT

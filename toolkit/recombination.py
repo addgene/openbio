@@ -1,35 +1,64 @@
-from __future__ import division
+import sys
 from collections import Counter
 
 import click
 import logging
 import os
-import sys
 
 from pandas import DataFrame
 
-from parameters import Recombination_Parameters as params
-from utils import get_fastq_files, read_fastq_file, setup_dirs,log_to_stdout
+from utils import (
+    get_fastq_files,
+    get_params_for_command,
+    read_fastq_file_with_reverse_complements,
+    setup_dirs
+)
+
 
 L = logging.getLogger(__name__)
 
 #### Command ####
 @click.command()
-def recombination():
+@click.argument('seeds', default=None, required=False)
+def recombination(seeds):
     """
     Detect recombination in VGS data. FASTQ files containing the data are read from
     an input folder and processed to return the sequences before and after a seed sequence.
-    The output are CSV files, one per FASTQ file and per seed sequence.'
+    The output are CSV files, one per FASTQ file and per seed sequence.
+
+    Arguments:
+    \b
+    SEEDS   Seed sequence(s) to use separated by "/". Options: LoxP, Lox2272, LoxN, FRT, F5, Lox71_66. If not
+    specified, all seeds will be used.
     """
+
+    params = get_params_for_command('recombination')
+    if 'seed_sequences' not in params:
+        raise ValueError('Could not find "seed_sequences" parameter in parameters.yml')
+    seed_sequences = params.get('seed_sequences')
+
     setup_dirs(params)
     input_files = get_fastq_files(params)
     output_files = []
+    if seeds:
+        seeds = seeds.split("/")
+    else:
+        seeds = seed_sequences.keys()
+
     for input_file in input_files:
-        for seed_sequence_name, seed_sequence in params.seed_sequences.items():
+        for seed_sequence_name in seeds:
+            try:
+                seed_sequence = seed_sequences[seed_sequence_name]
+            except Exception as e:
+                L.error(
+                    f'>> Error: {e}. Not a valid seed sequence. Valid seeds are: {", ".join(seed_sequences.keys())}'
+                )
+                sys.exit()
+
             L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
             processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
             try:
-                output_file = processor.process_and_write_to_file(params.output_folder)
+                output_file = processor.process_and_write_to_file(params.get('output_folder'))
                 if output_file:
                     output_files.append(output_file)
             except Exception as e:
@@ -70,6 +99,10 @@ class Pattern(object):
 
 class Processor(object):
     def __init__(self, input_file, seed_sequence_name, seed_sequence):
+        self.params = get_params_for_command('recombination')
+        self.head = self.params.get('HEAD', 0)
+        self.tail = self.params.get('TAIL', 0)
+
         self.input_file = input_file
         self.seed_sequence = seed_sequence
         self.global_data = GlobalData( seed_sequence_name)
@@ -78,7 +111,7 @@ class Processor(object):
         """
         Processes FASTQ input file and returns a list of CSV rows
         """
-        reads = read_fastq_file(self.input_file)
+        reads = read_fastq_file_with_reverse_complements(self.input_file)
 
         self.global_data.total_reads = len(reads) / 2
         self.global_data.seed_occurrences = sum(1 for read in reads if self.seed_sequence in read)
@@ -142,18 +175,18 @@ class Processor(object):
         if self.seed_sequence in read:
             seed_sequence_start = read.index(self.seed_sequence)
             # Seed sequence is too close to the beginning of the read
-            if seed_sequence_start < params.HEAD:
+            if seed_sequence_start < self.head:
                 return None
 
             seed_sequence_end = seed_sequence_start + len(self.seed_sequence)
             # Seed sequence is too close to the end of the read
-            if len(read) - seed_sequence_end <  params.TAIL:
+            if len(read) - seed_sequence_end <  self.tail:
                 return None
 
-            head_sequence = read[seed_sequence_start - params.HEAD: seed_sequence_start]
-            assert len(head_sequence) == params.HEAD
-            tail_sequence = read[seed_sequence_end: seed_sequence_end + params.TAIL]
-            assert len(tail_sequence) == params.TAIL
+            head_sequence = read[seed_sequence_start - self.head: seed_sequence_start]
+            assert len(head_sequence) == self.head
+            tail_sequence = read[seed_sequence_end: seed_sequence_end + self.tail]
+            assert len(tail_sequence) == self.tail
             return Pattern(head_sequence, self.seed_sequence, tail_sequence)
 
 
@@ -186,9 +219,9 @@ class Processor(object):
         preamble.append(('% Recombination', self.global_data.recombination_percentage))
         preamble.append(('',''))
 
-        preamble.append(('Preceding {} bases'.format(params.HEAD),
+        preamble.append(('Preceding {} bases'.format(self.head),
                     self.global_data.seed_sequence_name,
-                    'Subsequent {} bases'.format(params.TAIL),
+                    'Subsequent {} bases'.format(self.tail),
                     'Full Sequence',
                     'Occurrences',
                     'Notes'))
@@ -201,7 +234,7 @@ class Processor(object):
     def _get_output_file_name(self, input_file):
         return '{}-{}-{}-{}.csv'.format(
                 input_file[:input_file.index('.fastq')].replace(' ', '_'),
-                params.HEAD,
+                self.head,
                 self.global_data.seed_sequence_name,
-                params.TAIL
+                self.tail
         )
