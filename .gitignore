@@ -5,3 +5,4 @@
 /local.env
 .idea
 __pycache__
+*.fastq
