@@ -6,7 +6,21 @@ Addgene conducts a rigorous quality control process for all [plasmids](https://b
 The aim of this code repository is to make these tools available to the broader scientific community.
 Stay tuned as *the Addgene Toolkit* grows!
 
-# Setting up your environment
+# Prerequisites
+## Terminal application
+You will need to use a Terminal application for using the toolkit (either natively or via our docker container).
+
+If you're on a Mac, The Terminal app can be launched by going to Applications > Utilities and double clicking on 
+Terminal.
+We suggest adding this application to your Dock. The commands that you need to type in the Terminal window are in `this 
+font`.
+* Cheat sheet for the Mac Terminal app:
+    * Use TAB to complete a command or file name after typing a few letters.
+    * Hit ENTER to execute the command.
+    * Use Ctrl-C to interrupt a command.
+    * Use the Up arrow to get to the previously typed commands.
+
+## Python environment
 First of all [download](https://github.com/addgene/openbio/archive/main.zip) the 
 `addgene/openbio` zipfile, move it to your Home folder, and expand it. 
 If you already have a Python 3 environment of your liking, you simply need to navigate to the `openbio-main` root,
@@ -17,7 +31,8 @@ pip install -r requirements.txt
 and move on.
 
 If you don't already have a Python environment, you may use our Docker container, which includes everything you need to use the toolkit. 
-Please follow [these instructions](https://addgene.github.io/openbio/docker) to learn how to build and use it.
+Please visit [this page](https://addgene.github.io/openbio/docker) to learn how to build and use it.
+
 # The Addgene Toolkit
 ## Basics
 The entry point to the Addgene Toolkit is the command `atk`.
