@@ -4,3 +4,4 @@
 .DS_Store
 /local.env
 .idea
+__pycache__
