@@ -10,8 +10,8 @@ The recombination command helps Addgene’s Research team detect recombination e
 
 The command’s parameters can be modified by editing the file `parameters.yml` in your favorite text editor.
 To change the parameter values, locate the section named `recombination` and follow the examples in the file. The parameters are:
-* __input_folder__: the folder where the FASTQ files are. Enter the full path or a path relative to the toolkit folder.
-* __output_folder__: the folder for the output CSV files. Enter the full path or a path relative to the toolkit folder.
+* __input_folder__: the folder where the FASTQ files are (follow the examples in the file).
+* __output_folder__: the folder for the output CSV files (follow the examples in the file).
 * __HEAD__: the number of bases before the seed sequence
 * __TAIL__: the number of bases after the seed sequence
 * __seed_sequences__: the name and sequence of the seeds to look for. Add as many as you want, following the example syntax and separated by commas.
@@ -26,8 +26,7 @@ Lox2272 | ATAACTTCGTATAGGATACTTTATACGAAGTTAT
 
 ## Procedure
 1. Adjust the parameters for the script by editing the file `parameters.yaml` as described above.
-1. In a terminal window, navigate to the toolkit folder (if you're using our Docker container, run a shell in the 
-   container first):
+1. In a terminal window, navigate to the toolkit folder (if you're using our Docker container, run the container first):
     ```
     cd openbio-master/toolkit
     ```
