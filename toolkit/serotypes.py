@@ -5,8 +5,11 @@ import logging
 from collections import namedtuple
 from datetime import date, datetime
 from pandas import DataFrame
-from parameters import Serotypes_Parameters as params
-from utils import read_fastq_file, get_fastq_files, setup_dirs
+from utils import (
+    read_fastq_file_with_reverse_complements,
+    get_fastq_files, setup_dirs,
+    get_params_for_command
+)
 
 L = logging.getLogger(__name__)
 
@@ -20,6 +23,7 @@ def serotypes():
     thereby differentiating between various serotypes.
     """
     start = datetime.now()
+    params = get_params_for_command('serotypes')
     setup_dirs(params)
     input_files = get_fastq_files(params)
     L.info('Found {} FASTQ files.'.format(len(input_files)))
@@ -44,6 +48,12 @@ SignatureCount = namedtuple('SignatureCount', ['name', 'count'])
 class Processor(object):
 
     def __init__(self, input_files):
+        self.params = get_params_for_command('serotypes')
+        self.signatures = self.params.get('signatures')
+        self.output_folder = self.params.get('output_folder', '')
+        if not self.signatures:
+            raise ValueError('Could not find "signatures" parameter in parameters.yml')
+
         self.input_files = input_files
         self.main_rows = []
         self.summary_rows = []
@@ -68,13 +78,13 @@ class Processor(object):
 
     def _process_one_file(self, input_file):
         filename = os.path.basename(input_file)
-        reads = read_fastq_file(input_file)
+        reads = read_fastq_file_with_reverse_complements(input_file)
         # We include the reverse complement in reads, but don't need to include in count
         number_of_reads = len(reads) / 2
 
         signature_counts = []
         aggregate_signature_counts = []
-        for name, signature_list in params.signatures.items():
+        for name, signature_list in self.signatures.items():
             total_count = 0
             for index, signature in enumerate(signature_list):
                 subname = '{}-{}'.format(name, index + 1)
@@ -151,9 +161,6 @@ class Processor(object):
             input_file = os.path.basename(input_file)
         return signature_name.split('-')[0].lower() in input_file.lower()
 
-    @staticmethod
-    def _get_output_filename(suffix):
+    def _get_output_filename(self, suffix):
         local_name = '{}_serotype_report_{}.csv'.format(date.today().isoformat(), suffix)
-        return os.path.join(params.output_folder, local_name)
-
-
+        return os.path.join(self.output_folder, local_name)

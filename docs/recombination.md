@@ -8,10 +8,10 @@ The recombination command helps Addgene’s Research team detect recombination e
 
 ![Recombination detection](recombination-2.png)
 
-The command’s parameters can be modified by editing the file `parameters.py` in your favorite text editor.
-To change the parameter values, locate the block named `Recombination_Parameters` and follow the examples in the file, paying special attention to the use of double quotes for all text. The parameters are:
-* __input_folder__: the folder where the FASTQ files are. Enter the full path or a path relative to the toolkit folder.
-* __output_folder__: the folder for the output CSV files. Enter the full path or a path relative to the toolkit folder.
+The command’s parameters can be modified by editing the file `parameters.yml` in your favorite text editor.
+To change the parameter values, locate the section named `recombination` and follow the examples in the file. The parameters are:
+* __input_folder__: the folder where the FASTQ files are (follow the examples in the file).
+* __output_folder__: the folder for the output CSV files (follow the examples in the file).
 * __HEAD__: the number of bases before the seed sequence
 * __TAIL__: the number of bases after the seed sequence
 * __seed_sequences__: the name and sequence of the seeds to look for. Add as many as you want, following the example syntax and separated by commas.
@@ -25,13 +25,8 @@ Lox2272 | ATAACTTCGTATAGGATACTTTATACGAAGTTAT
 
 
 ## Procedure
-1. Make sure you have [downloaded](https://github.com/addgene/openbio/archive/master.zip) and expanded the latest code into your Home folder
-1. Adjust the parameters for the script by editing the file `parameters.py` as described above.
-1. Open a Terminal window and activate your Python environment:
-    ```
-    workon openbio
-    ```
-1. Navigate to the toolkit folder:
+1. Adjust the parameters for the script by editing the file `parameters.yaml` as described above.
+1. In a terminal window, navigate to the toolkit folder (if you're using our Docker container, run the container first):
     ```
     cd openbio-master/toolkit
     ```

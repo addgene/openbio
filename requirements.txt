@@ -1,3 +1,6 @@
 biopython
 click
+colorama
 pandas
+pyyaml
+

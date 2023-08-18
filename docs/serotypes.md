@@ -9,19 +9,15 @@ The __serotypes__ command helps Addgene’s Research team determine the serotype
 * If you include the name of the serotype you expect in the FASTQ file name, the command will report if the top match corresponds to this expectation.
 
 ## Configuration
-The command’s parameters can be modified by editing the file `parameters.py` (using your favorite text editor) To change the parameter values, locate the block named `Serotypes_Parameters` and follow the examples in the file, paying special attention to the use of double quotes for all text. The parameters are:
-* __input_folder__: the folder where the FASTQ files are. Enter the full path or a path relative to the toolkit folder.
-* __output_folder__: the folder for the output CSV files. Enter the full path or a path relative to the toolkit folder.
+The command’s parameters can be modified by editing the file `parameters.yml` (using your favorite text editor) To change the parameter values, locate the section named `serotypes` and follow the examples in the file. The parameters are:
+* __input_folder__: the folder where the FASTQ files are (follow the examples in the file).
+* __output_folder__: the folder for the output CSV files (follow the examples in the file).
 * __signatures__: name and sequences of the signatures that the command will look for. This parameter is pre-populated with the signatures that Addgene has identified for commonly used capsids.  Note that it is possible to specify more than one sequence to match for a given capsid. You may add other sequences if you need to, just follow the example syntax. 
 
 ## Procedure
-1. Make sure you have [downloaded](https://github.com/addgene/openbio/archive/master.zip) and expanded the latest code into your Home folder
-1. Adjust the parameters for the script by editing the file `parameters.py` as described above.
-1. Open a Terminal window and activate your Python environment:
-    ```
-    workon openbio
-    ```
-1. Navigate to the toolkit folder:
+1. Adjust the parameters for the script by editing the file `parameters.yaml` as described above.
+1. In a terminal window, navigate to the toolkit folder (if you're using our Docker container, run a shell in the
+   container first):
     ```
     cd openbio-master/toolkit
     ```
