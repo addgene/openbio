@@ -8,7 +8,7 @@ Stay tuned as *the Addgene Toolkit* grows!
 
 # Setting up your Python environment
 
-First of all, [download](https://github.com/addgene/openbio/archive/master.zip) and expand the `addgene/openbio` GitHub repository. 
+First of all, [download](https://github.com/addgene/openbio/archive/main.zip) and expand the `addgene/openbio` GitHub repository. 
 If you already have a Python 3 environment of your liking, you simply need to navigate to the `openbio-master` root, issue the command:
 ```
 pip install -r requirements.txt
