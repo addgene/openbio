@@ -10,8 +10,8 @@ The __serotypes__ command helps Addgene’s Research team determine the serotype
 
 ## Configuration
 The command’s parameters can be modified by editing the file `parameters.yml` (using your favorite text editor) To change the parameter values, locate the section named `serotypes` and follow the examples in the file. The parameters are:
-* __input_folder__: the folder where the FASTQ files are. Enter the full path or a path relative to the toolkit folder.
-* __output_folder__: the folder for the output CSV files. Enter the full path or a path relative to the toolkit folder.
+* __input_folder__: the folder where the FASTQ files are (follow the examples in the file).
+* __output_folder__: the folder for the output CSV files (follow the examples in the file).
 * __signatures__: name and sequences of the signatures that the command will look for. This parameter is pre-populated with the signatures that Addgene has identified for commonly used capsids.  Note that it is possible to specify more than one sequence to match for a given capsid. You may add other sequences if you need to, just follow the example syntax. 
 
 ## Procedure
