@@ -8,7 +8,7 @@ Stay tuned as *the Addgene Toolkit* grows!
 
 # Prerequisites
 ## Terminal application
-You will need to use a Terminal application for using the toolkit (either natively or via our docker container).
+You will need to use a Terminal application to launch toolkit commands (either natively or via our docker container).
 
 If you're on a Mac, The Terminal app can be launched by going to Applications > Utilities and double clicking on 
 Terminal.
