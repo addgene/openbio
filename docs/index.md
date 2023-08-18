@@ -6,28 +6,27 @@ Addgene conducts a rigorous quality control process for all [plasmids](https://b
 The aim of this code repository is to make these tools available to the broader scientific community.
 Stay tuned as *the Addgene Toolkit* grows!
 
-# Setting up your Python environment
-First of all, [download](https://github.com/addgene/openbio/archive/master.zip) and expand the `addgene/openbio` GitHub repository. 
-If you already have a Python 3 environment of your liking, you simply need to navigate to the `openbio-master` root, issue the command:
+# Setting up your environment
+First of all [download](https://github.com/addgene/openbio/archive/main.zip) and expand the 
+`addgene/openbio` zipfile. 
+If you already have a Python 3 environment of your liking, you simply need to navigate to the `openbio-main` root,
+issue the command:
 ```
 pip install -r requirements.txt
 ```
 and move on.
 
-If you don't already have a Python environment, and you have a Mac, you are welcome to use the shell script that we use internally. You need to have admin privileges on your Mac. 
-Follow [these instructions](https://addgene.github.io/openbio/setup).
-
+If you don't already have a Python environment, you may use our Docker container, which includes evrything you need. 
+Please follow [these instructions](https://addgene.github.io/openbio/docker) to learn how to build and use it.
 # The Addgene Toolkit
 ## Basics
 The entry point to the Addgene Toolkit is the command `atk`.
-Open up a Terminal and navigate to the toolkit directory:
+In a terminal window, navigate to the toolkit folder (if you're using our Docker container, run a shell in the
+container first):
 ```
-cd openbio-master/toolkit
+cd openbio-main/toolkit
 ```
-If you used our shell script to set up, activate the virtual environment by issuing the following command:
-```
-workon openbio
-```
+
 Run `atk` as follows to learn more:
 ```
 python atk.py --help
@@ -40,4 +39,3 @@ python atk.py [command]
 ## Commands
 1. __[Serotypes](https://addgene.github.io/openbio/serotypes)__ - detect and report specific signatures in NGS data, useful to differentiate viral serotypes.
 1. __[Recombination](https://addgene.github.io/openbio/recombination)__ - detect recombination in NGS data, used for Cre-Lox quality control.
-

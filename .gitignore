@@ -1,52 +1,6 @@
-*.pyc
-.*.sw?
 \#*\#*
 *~
 .\#*
-src/django/xapian
-src/django/whoosh
-src/reportlab/pdf_archive
-files/headers/css/addgene.min.css
-files/headers/js/addgene.min.js
-cucumber/results/
-cucumber/chromedriver.log
-cucumber/sf.log
-cucumber/addgene_fails.txt
-cucumber/reruntmp.txt
-cucumber/snapshot_fails.text
-cucumber/features-todo.txt
-cucumber/rerun.txt
-activate
 .DS_Store
-\.coverage
 /local.env
-/etc/prod-ops-git-rsa
-faboutput/
-htmlcov/
-testoutput/
-/.ipynb_checkpoints/
-*.ipynb
-history.sqlite
-.tm_properties
-static1/built
-.npm
-testrunner
 .idea
-tests/run_ci_test*
-src/django/public-site.lock
-src/django/public-site.log
-testrunner-last-tested-commit.txt
-
-# Produced by the hypothesis testing library
-.hypothesis
-
-# Default value of ADDGENE_MEDIA_ROOT
-/uploads/
-# Default values of ADDGENE_STATIC_ROOT
-/collectedstatic-*
-docs/build
-# Default db version file, created by load_database.sh, don't commit
-/tests/db/version
-
-# Ignore node_modules directory
-node_modules

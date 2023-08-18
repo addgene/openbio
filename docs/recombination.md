@@ -25,13 +25,9 @@ Lox2272 | ATAACTTCGTATAGGATACTTTATACGAAGTTAT
 
 
 ## Procedure
-1. Make sure you have [downloaded](https://github.com/addgene/openbio/archive/master.zip) and expanded the latest code into your Home folder
-1. Adjust the parameters for the script by editing the file `parameters.py` as described above.
-1. Open a Terminal window and activate your Python environment:
-    ```
-    workon openbio
-    ```
-1. Navigate to the toolkit folder:
+1. Adjust the parameters for the script by editing the file `parameters.yaml` as described above.
+1. In a terminal window, navigate to the toolkit folder (if you're using our Docker container, run a shell in the 
+   container first):
     ```
     cd openbio-master/toolkit
     ```

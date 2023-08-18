@@ -1,0 +1,8 @@
+services:
+  openbio:
+    build: .
+    stdin_open: true
+    tty: true
+    command: bash
+    volumes:
+      - ~:/Home

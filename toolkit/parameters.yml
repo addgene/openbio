@@ -6,7 +6,7 @@ count_spacers:
     input_folder: data/examples/count_spacers
 
     # Output folder
-    output_folder: analysis
+    output_folder: analysis/examples/count_spacers
 
     ### Analysis parameters
     sample: tkov3
