@@ -1,3 +1,4 @@
+import sys
 from collections import Counter
 
 import click
@@ -18,21 +19,42 @@ L = logging.getLogger(__name__)
 
 #### Command ####
 @click.command()
-def recombination():
+@click.argument('seeds', default=None, required=False)
+def recombination(seeds):
     """
     Detect recombination in VGS data. FASTQ files containing the data are read from
     an input folder and processed to return the sequences before and after a seed sequence.
-    The output are CSV files, one per FASTQ file and per seed sequence.'
+    The output are CSV files, one per FASTQ file and per seed sequence.
+
+    Arguments:
+    \b
+    SEEDS   Seed sequence(s) to use separated by "/". Options: LoxP, Lox2272, LoxN, FRT, F5, Lox71_66. If not
+    specified, all seeds will be used.
     """
+
     params = get_params_for_command('recombination')
     if 'seed_sequences' not in params:
         raise ValueError('Could not find "seed_sequences" parameter in parameters.yml')
+    seed_sequences = params.get('seed_sequences')
 
     setup_dirs(params)
     input_files = get_fastq_files(params)
     output_files = []
+    if seeds:
+        seeds = seeds.split("/")
+    else:
+        seeds = seed_sequences.keys()
+
     for input_file in input_files:
-        for seed_sequence_name, seed_sequence in params.get('seed_sequences').items():
+        for seed_sequence_name in seeds:
+            try:
+                seed_sequence = seed_sequences[seed_sequence_name]
+            except Exception as e:
+                L.error(
+                    f'>> Error: {e}. Not a valid seed sequence. Valid seeds are: {", ".join(seed_sequences.keys())}'
+                )
+                sys.exit()
+
             L.info('Processing file: {} with seed sequence: {}...'.format(input_file, seed_sequence_name))
             processor = Processor(input_file, seed_sequence_name, seed_sequence.upper())
             try:

@@ -1,4 +1,3 @@
-import io
 import logging
 import os
 import sys
@@ -20,7 +19,7 @@ def get_params_for_command(command_name: str, param_file: str=PARAM_FILE_NAME) -
 
 def read_fastq_file_with_reverse_complements(file_name:str) -> List[str]:
     reads = []
-    with io.open(file_name, "rU") as handle:
+    with open(file_name, "r") as handle:
         for record in SeqIO.parse(handle, "fastq"):
             reads.append(str(record.seq))
             reads.append(str(record.seq.reverse_complement()))
@@ -28,7 +27,7 @@ def read_fastq_file_with_reverse_complements(file_name:str) -> List[str]:
 
 
 def read_fastq_file(file_name:str, to_upper:bool=True) -> List[str]:
-    with io.open(file_name, "rU") as handle:
+    with open(file_name, "r") as handle:
         if to_upper:
             reads = [str.upper(str(record.seq)) for record in SeqIO.parse(handle, "fastq")]
         else:

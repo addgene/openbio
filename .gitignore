@@ -6,5 +6,5 @@
 .idea
 __pycache__
 *.fastq
-toolkit/analysis/**/*.txt
-toolkit/analysis/**/*.csv
+workdir/examples/analysis/**/*.txt
+workdir/examples/analysis/**/*.csv

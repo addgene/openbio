@@ -5,5 +5,5 @@ services:
     tty: true
     command: bash
     volumes:
-      - ~:/Home
+      - ${OPENBIO_WORKDIR:-./workdir}:/workdir
       - ./toolkit:/openbio-main/toolkit

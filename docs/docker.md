@@ -23,15 +23,36 @@ Windows, download and install [Docker Desktop](https://www.docker.com/products/d
 
 ## Running the Docker container
 
-1. Issue the following command:
+To start the container, issue the following command:
 
-    ```
-    docker compose run openbio
-    ```
-    This will take you to a shell prompt in the container. From this shell prompt you can use the Addgene Toolkit as 
-   explained [here](https://addgene.github.io/openbio) or in the individual command instructions.
+ ```
+ docker compose run openbio
+ ```
 
-1. Exit the container by typing the command `exit` at the shell prompt.
-2. In order to use the toolkit, you will need to enter your own parameters in `parameters.yaml`, which 
-   can be done with any text editor.
-   Inside the container, your Home directory is available as `/Home`. Please use this root path when entering folder information in the parameter file.
+This will take you to a shell prompt in the container. From this shell prompt you can use the Addgene Toolkit as 
+explained [here](https://addgene.github.io/openbio) or in the individual command instructions.
+
+Exit the container by typing the command `exit` at the shell prompt.
+
+## Working directory
+
+Inside the container, the path`/workdir` should be used to specify input and output file paths. Please use this root 
+path in `parameters.yml`. 
+
+The `/workdir` path is mapped by default to the`openbio-main/workdir` folder in your host 
+computer. This means that any files you place in the `openbio-main/workdir` folder will be available inside the container in the `/workdir` 
+folder. Similarly, any files you create in the `/workdir` folder inside the container will be available in the 
+`openbio-main/workdir` folder in your host computer. This is a convenient way to share your work files between 
+the host computer and the container.
+
+
+If you want to use a different folder in your host computer to share files with the container, start the container 
+with the following command:
+ ```
+ OPENBIO_WORKDIR=[YOUR_DIRECTORY] docker compose run openbio
+ ```
+For example, if you want to use the host computer folder `/Users/Harry/fastq-data`, use 
+the following command:
+ ```
+ OPENBIO_WORKDIR=/Users/Harry/fastq-data docker compose run openbio
+ ```
