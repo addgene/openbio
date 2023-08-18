@@ -7,6 +7,7 @@ The aim of this code repository is to make these tools available to the broader 
 Stay tuned as *the Addgene Toolkit* grows!
 
 # Setting up your Python environment
+
 First of all, [download](https://github.com/addgene/openbio/archive/master.zip) and expand the `addgene/openbio` GitHub repository. 
 If you already have a Python 3 environment of your liking, you simply need to navigate to the `openbio-master` root, issue the command:
 ```
@@ -40,4 +41,3 @@ python atk.py [command]
 ## Commands
 1. __[Serotypes](https://addgene.github.io/openbio/serotypes)__ - detect and report specific signatures in NGS data, useful to differentiate viral serotypes.
 1. __[Recombination](https://addgene.github.io/openbio/recombination)__ - detect recombination in NGS data, used for Cre-Lox quality control.
-
