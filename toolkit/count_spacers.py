@@ -92,7 +92,7 @@ class SpacerCounter():
 			key_index = key_region.find(self.config.key_region_sequence)
 			if key_index >= 0:
 				start_index = key_index + self.config.key_region_start + len(self.config.key_region_sequence)
-				guide = read_sequence[start_index:(start_index + 20)]
+				guide = read_sequence[start_index:(start_index + self.config.grna_length)]
 				if guide in library_sequences:
 					library_sequences[guide] += 1
 					perfect_matches += 1
@@ -132,7 +132,7 @@ class SpacerCounter():
 		statistics.append('Number of reads where key was not found: {}'.format(key_not_found))
 		statistics.append('Number of reads processed: {}'.format(num_reads))
 		statistics.append('Percentage of guides that matched perfectly: {}'.format(percent_matched))
-		statistics.append('Percentage of undetected guides: {}'.format(percent_no_reads))
+		statistics.append('Percentage of guides detected: {}'.format(percent_no_reads))
 		statistics.append('Skew ratio of top 10% to bottom 10%: {}'.format(skew_ratio))
 		statistics = '\n'.join(statistics)
 		self._write_statistics(statistics, base_filename)
@@ -191,6 +191,8 @@ class Config():
 		self.key_region_start = params.get('key_region_start', '')
 		self.key_region_end = params.get('key_region_end', '')
 		self.key_region_sequence = params.get('key_region_sequence', '')
+		self.grna_length = params.get('grna_length', '')
+
 		# Only prompt the user if in interactive mode
 		if not unattended:
 			self._ask_if_changes()
@@ -234,6 +236,9 @@ class Config():
 		if not self.key_region_sequence:
 			errors.append('Key region sequence must be specified.')
 
+		if not self.grna_length:
+			errors.append('gRNA length must be specified.')
+
 		if errors:
 			L.warning('Please correct the following errors:\n{}'.format('\n'.join(errors)))
 			return False
@@ -266,9 +271,9 @@ class Config():
 				'Start index of key region, integer numbers only', type=int, default=self.key_region_start
 		)
 		self.key_region_end = click.prompt(
-				'End index of key region, integer numbers only', type=int, default=self.key_region_end
-		)
-
+				'End index of key region, integer numbers only', type=int, default=self.key_region_end)
+		self.grna_length = click.prompt('Length of gRNA, integer numbers only', type=int, default=self.grna_length)
+		
 		# identifies sequence before guide to determine guide position while only accepting ATC
 		key = None
 		while not key:
@@ -329,6 +334,8 @@ class Config():
 		config.append('Start index of key region: {}'.format(self.key_region_start))
 		config.append('End index of key region: {}'.format(self.key_region_end))
 		config.append('Key region sequence: {}'.format(self.key_region_sequence))
+		config.append('Length of gRNAs: {}'.format(self.grna_length))
+
 		return ('\n'.join(config))
 
 
