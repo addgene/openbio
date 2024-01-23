@@ -114,9 +114,10 @@ class SpacerCounter():
 			percent_matched = 0
 
 		# percentage of undetected guides with no read counts
-		guides_with_reads = numpy.count_nonzero(library_sequences.values())
+		guides_with_reads = numpy.count_nonzero(list(library_sequences.values()))
 		guides_no_reads = len(library_sequences.values()) - guides_with_reads
 		percent_no_reads = round(guides_no_reads / float(len(library_sequences.values())) * 100, 1)
+
 		# skew ratio of top 10% to bottom 10% of guide counts
 		top_10 = numpy.percentile(list(library_sequences.values()), 90)
 		bottom_10 = numpy.percentile(list(library_sequences.values()), 10)
@@ -131,8 +132,8 @@ class SpacerCounter():
 		statistics.append('Number of nonperfect guide matches: {}'.format(non_perfect_matches))
 		statistics.append('Number of reads where key was not found: {}'.format(key_not_found))
 		statistics.append('Number of reads processed: {}'.format(num_reads))
-		statistics.append('Percentage of guides that matched perfectly: {}'.format(percent_matched))
-		statistics.append('Percentage of guides detected: {}'.format(percent_no_reads))
+		statistics.append('Percentage of reads that matched guide perfectly: {}'.format(percent_matched))
+		statistics.append('Percentage of guides undetected: {}'.format(percent_no_reads))
 		statistics.append('Skew ratio of top 10% to bottom 10%: {}'.format(skew_ratio))
 		statistics = '\n'.join(statistics)
 		self._write_statistics(statistics, base_filename)
