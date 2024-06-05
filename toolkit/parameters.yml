@@ -5,7 +5,7 @@ count_spacers:
     # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
     # choice when you start the container.
 
-    library_file: /workdir/examples/data/count_spacers/example_library.csv
+    library_file: /workdir/examples/data/count_spacers/metab_gRNA_lowercase.csv
     input_folder: /workdir/examples/data/count_spacers
 
     # Output folder
