@@ -12,15 +12,15 @@ count_spacers:
     output_folder: /workdir/examples/analysis/count_spacers
 
     ### Analysis parameters
-    sample: tkov3
+    sample: metab
     # presence of guanine before spacer (yes/no)
-    guide_g: yes
+    guide_g: no
     # start index of key region
-    key_region_start: 30
+    key_region_start: 10
     # end index of key region
-    key_region_end: 55
+    key_region_end: 80
     # identifies the sequence before the guide to determine the guide position
-    key_region_sequence: CCC
+    key_region_sequence: CACC
     # specifies the length of the gRNA
     grna_length: 20
 
