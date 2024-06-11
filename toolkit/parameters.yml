@@ -5,22 +5,22 @@ count_spacers:
     # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
     # choice when you start the container.
 
-    library_file: /workdir/examples/data/count_spacers/metab_gRNA_lowercase.csv
+    library_file: /workdir/examples/data/count_spacers/example_library.csv
     input_folder: /workdir/examples/data/count_spacers
 
     # Output folder
     output_folder: /workdir/examples/analysis/count_spacers
 
     ### Analysis parameters
-    sample: metab
+    sample: tkov3
     # presence of guanine before spacer (yes/no)
-    guide_g: no
+    guide_g: yes
     # start index of key region
-    key_region_start: 10
+    key_region_start: 30
     # end index of key region
-    key_region_end: 80
+    key_region_end: 55
     # identifies the sequence before the guide to determine the guide position
-    key_region_sequence: CACC
+    key_region_sequence: CCC
     # specifies the length of the gRNA
     grna_length: 20
 
