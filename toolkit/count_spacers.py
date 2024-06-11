@@ -145,19 +145,9 @@ class SpacerCounter():
 	# TODO rewrite with pandas
 	def _get_library_sequences(self):
 		# Open library sequences file and initiate dictionary of read counts for each guide
-		library_sequences = {}
 		with io.open(self.config.library_file, newline=None) as infile:
 			reader = csv.reader(infile)
-			for rows in reader:
-				try:
-					key = rows[0].upper()
-					# Remove any non-ASCII characters
-					key = ''.join(char for char in key if ord(char) < 128)
-					library_sequences[key] = 0
-				except UnicodeDecodeError:
-					# Handle encoding issues
-					print("Encoding issue with sequence:", rows[0])
-		return library_sequences
+			return {rows[0].upper(): 0 for rows in reader}
 
 	def _get_output_file_name(self, base_filename, suffix):
 		local_name = '{}{}'.format(base_filename, suffix)
