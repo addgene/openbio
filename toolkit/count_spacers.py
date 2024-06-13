@@ -92,7 +92,7 @@ class SpacerCounter():
 			key_index = key_region.find(self.config.key_region_sequence)
 			if key_index >= 0:
 				start_index = key_index + self.config.key_region_start + len(self.config.key_region_sequence)
-				guide = read_sequence[start_index:(start_index + self.config.grna_length)]
+				guide = read_sequence[start_index:(start_index + self.config.grna_length)].upper()
 				if guide in library_sequences:
 					library_sequences[guide] += 1
 					perfect_matches += 1
@@ -147,7 +147,7 @@ class SpacerCounter():
 		# Open library sequences file and initiate dictionary of read counts for each guide
 		with io.open(self.config.library_file, newline=None) as infile:
 			reader = csv.reader(infile)
-			return {rows[0]: 0 for rows in reader}
+			return {rows[0].upper(): 0 for rows in reader}
 
 	def _get_output_file_name(self, base_filename, suffix):
 		local_name = '{}{}'.format(base_filename, suffix)
