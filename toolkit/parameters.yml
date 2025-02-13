@@ -30,8 +30,8 @@ recombination:
     # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
     # choice when you start the container.
 
-    input_folder: /Users/hmcqueary/Documents/scripts/github/addgene/openbio_toolkit_scripts/recombination_report_scripts/workdir/input/recomb_test
-    output_folder: /Users/hmcqueary/Documents/scripts/github/addgene/openbio_toolkit_scripts/recombination_report_scripts/workdir/output/recomb_test
+    input_folder: /workdir/examples/data/recombination
+    output_folder: /workdir/examples/analysis/recombination
 
     # The number of bases to retrieve before the seed sequence
     HEAD: 20
@@ -55,8 +55,8 @@ serotypes:
     # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
     # choice when you start the container.
 
-    input_folder: /Users/hmcqueary/Documents/scripts/github/addgene/openbio_toolkit_scripts/recombination_report_scripts/workdir/input/serotypes
-    output_folder: /Users/hmcqueary/Documents/scripts/github/addgene/openbio_toolkit_scripts/recombination_report_scripts/workdir/output/serotypes
+    input_folder: /workdir/examples/data/serotypes
+    output_folder: /workdir/examples/analysis/serotypes
 
     # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
     # actual signatures, separated by a comma (each serotype can have multiple signatures)
