@@ -21,7 +21,8 @@ count_spacers:
     key_region_end: 55
     # identifies the sequence before the guide to determine the guide position
     key_region_sequence: CCC
-
+    # specifies the length of the gRNA
+    grna_length: 20
 
 recombination:
     # Change these two values to the folders you prefer - use absolute paths e.g. /Users/Harry/fastq-data or
