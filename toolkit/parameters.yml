@@ -31,8 +31,8 @@ recombination:
     # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
     # choice when you start the container.
 
-    input_folder: /workdir/examples/data/recombination
-    output_folder: /workdir/examples/analysis/recombination
+    input_folder: /workdir/input/recombination
+    output_folder: /workdir/output/recombination
 
     # The number of bases to retrieve before the seed sequence
     HEAD: 20
@@ -45,8 +45,9 @@ recombination:
         Lox2272: ATAACTTCGTATAGGATACTTTATACGAAGTTAT
         LoxN: ATAACTTCGTATAAGGTATACTATACGAAGTTAT
         FRT: GAAGTTCCTATTCTCTAGAAAGTATAGGAACTTC
+        FRT3: GAAGTTCCTATTCTTCAAATAGTATAGGAACTTC
         F5: GAAGTTCCTATTCTTCAAAAGGTATAGGAACTTC
-        Lox71_66: TACCGTTCGTATAATGTATGCTATACGAAGTTAT
+        Lox71_66_old: GCATACAT
 
 
 serotypes:
@@ -56,13 +57,13 @@ serotypes:
     # "workdir" directory that's included with openbio, and you can optionally map it to the directory of your
     # choice when you start the container.
 
-    input_folder: /workdir/examples/data/serotypes
-    output_folder: /workdir/examples/analysis/serotypes
+    input_folder: /workdir/input/serotypes
+    output_folder: /workdir/output/serotypes
 
     # These are the signatures that will be matched. The first part is the name, the part in brackets contains the
     # actual signatures, separated by a comma (each serotype can have multiple signatures)
 
-signatures:
+    signatures:
         AAV1:
             - GGGCGTGAATCCATCATCAACCCTGG
             - AAGAGACTCAACTTCAAACTCTTCA
