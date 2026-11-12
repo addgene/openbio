@@ -66,13 +66,12 @@ class SpacerCounter():
 		if self.config.guide_g:
 			self.config.key_region_sequence += 'G'
 
-		# open library sequences and initiate dictionary of read counts for each guide
-		library_sequences = self._get_library_sequences()
-
 		# read fastq files in the specified directory
 		files_to_process = get_fastq_files({'input_folder': self.config.input_folder})
 
 		for file in files_to_process:
+                        # fresh dictionary (all counts = 0) for each file, so counts don't carry over
+			library_sequences = self._get_library_sequences()
 			self._process_fastq_file(file, library_sequences)
 
 	def _process_fastq_file(self, file, library_sequences):
